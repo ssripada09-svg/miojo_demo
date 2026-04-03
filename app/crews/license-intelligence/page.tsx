@@ -10,8 +10,6 @@ import {
   X,
   CheckCircle,
   AlertTriangle,
-  Clock,
-  ExternalLink,
   Users,
   Calendar,
   Zap
@@ -23,7 +21,6 @@ import {
   DataTable, 
   MetricCard, 
   MetricCardGrid,
-  StatusBadge,
   FedRAMPBadge,
   ComplianceBadge
 } from '@/components/shared';
@@ -33,11 +30,10 @@ import {
   getLatestUsageByTool,
   getIntegrationsByTool,
   calculateTotalSpend,
-  calculateFedRAMPCoverage,
-  getUniqueCategories
+  calculateFedRAMPCoverage
 } from '@/lib/data';
 import { formatCurrency, formatPercentage, formatDate } from '@/lib/formatters';
-import type { Tool, UsageMetric, ToolCategory } from '@/types/data';
+import type { Tool, ToolCategory } from '@/types/data';
 
 // Categories for filtering
 const CATEGORIES: ToolCategory[] = ['AI/ML', 'Analytics', 'Automation', 'Collaboration', 'Security', 'Developer'];

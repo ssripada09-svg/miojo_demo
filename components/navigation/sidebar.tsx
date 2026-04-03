@@ -57,9 +57,19 @@ const navigation = [
   },
 ]
 
-export function Sidebar() {
+interface SidebarProps {
+  onNavigate?: () => void
+}
+
+export function Sidebar({ onNavigate }: SidebarProps) {
   const pathname = usePathname()
   const [collapsed, setCollapsed] = useState(false)
+
+  const handleNavClick = () => {
+    if (onNavigate) {
+      onNavigate()
+    }
+  }
 
   return (
     <div
@@ -70,14 +80,14 @@ export function Sidebar() {
     >
       {/* Header */}
       <div className="flex items-center h-16 px-4 border-b border-pharos-border">
-        <Link href="/" className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded-lg bg-pharos-teal flex items-center justify-center">
+        <Link href="/" className="flex items-center gap-3" onClick={handleNavClick}>
+          <div className="w-8 h-8 rounded-lg bg-pharos-teal flex items-center justify-center flex-shrink-0">
             <span className="text-white font-bold text-sm">P</span>
           </div>
           {!collapsed && (
-            <div className="flex flex-col">
-              <span className="font-semibold text-white text-sm">Pharos Helm</span>
-              <span className="text-xs text-muted-foreground">CACI Demo</span>
+            <div className="flex flex-col min-w-0">
+              <span className="font-semibold text-white text-sm truncate">Pharos Helm</span>
+              <span className="text-xs text-muted-foreground truncate">CACI Demo</span>
             </div>
           )}
         </Link>
@@ -101,6 +111,7 @@ export function Sidebar() {
                     <Link
                       key={subItem.href}
                       href={subItem.href}
+                      onClick={handleNavClick}
                       className={cn(
                         "flex items-center gap-3 px-3 py-2 rounded-lg text-sm transition-colors",
                         isActive
@@ -111,9 +122,9 @@ export function Sidebar() {
                     >
                       <subItem.icon className="w-5 h-5 flex-shrink-0" />
                       {!collapsed && (
-                        <div className="flex flex-col">
-                          <span>{subItem.name}</span>
-                          <span className="text-xs text-muted-foreground">
+                        <div className="flex flex-col min-w-0">
+                          <span className="truncate">{subItem.name}</span>
+                          <span className="text-xs text-muted-foreground truncate">
                             {subItem.description}
                           </span>
                         </div>
@@ -131,6 +142,7 @@ export function Sidebar() {
             <Link
               key={item.href}
               href={item.href!}
+              onClick={handleNavClick}
               className={cn(
                 "flex items-center gap-3 px-3 py-2 rounded-lg text-sm transition-colors",
                 isActive
@@ -140,14 +152,14 @@ export function Sidebar() {
               title={collapsed ? item.name : undefined}
             >
               <item.icon className="w-5 h-5 flex-shrink-0" />
-              {!collapsed && <span>{item.name}</span>}
+              {!collapsed && <span className="truncate">{item.name}</span>}
             </Link>
           )
         })}
       </nav>
 
-      {/* Collapse toggle */}
-      <div className="p-2 border-t border-pharos-border">
+      {/* Collapse toggle - hidden on mobile */}
+      <div className="p-2 border-t border-pharos-border hidden lg:block">
         <button
           onClick={() => setCollapsed(!collapsed)}
           className="flex items-center justify-center w-full py-2 text-muted-foreground hover:text-white transition-colors rounded-lg hover:bg-pharos-border/50"

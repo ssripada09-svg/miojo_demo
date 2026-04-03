@@ -32,10 +32,11 @@ export function Header() {
   const isOnGovernancePage = pathname === '/governance';
   
   return (
-    <header className="h-14 border-b border-pharos-border bg-pharos-card flex items-center justify-between px-6">
-      {/* Left: Page context */}
-      <div className="flex items-center gap-3">
-        <span className="text-sm text-muted-foreground">CACI Demo Environment</span>
+    <header className="h-14 border-b border-pharos-border bg-pharos-card flex items-center justify-between px-4 md:px-6">
+      {/* Left: Page context - offset for mobile menu button */}
+      <div className="flex items-center gap-3 pl-10 lg:pl-0">
+        <span className="text-sm text-muted-foreground hidden sm:inline">CACI Demo Environment</span>
+        <span className="text-sm text-muted-foreground sm:hidden">CACI Demo</span>
       </div>
 
       {/* Right: Aegis compliance pulse + user */}
