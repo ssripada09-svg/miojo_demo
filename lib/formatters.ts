@@ -95,11 +95,12 @@ export function formatDate(
     return formatRelativeDate(dateObj);
   }
 
-  const formatOptions: Intl.DateTimeFormatOptions = {
+  const formatOptionsMap: Record<string, Intl.DateTimeFormatOptions> = {
     short: { month: 'numeric', day: 'numeric', year: '2-digit' },
     medium: { month: 'short', day: 'numeric', year: 'numeric' },
     long: { month: 'long', day: 'numeric', year: 'numeric' },
-  }[format];
+  };
+  const formatOptions: Intl.DateTimeFormatOptions = formatOptionsMap[format] || formatOptionsMap.medium;
 
   if (includeTime) {
     formatOptions.hour = 'numeric';

@@ -1,0 +1,244 @@
+[
+  {
+    "id": "cmd-001",
+    "category": "license_query",
+    "naturalLanguage": "How many unused OpenAI licenses do we have?",
+    "intent": "get_unused_licenses",
+    "entities": [
+      {"name": "tool_name", "type": "tool_name", "required": true, "examples": ["OpenAI", "Slack", "Teams"]}
+    ],
+    "expectedResponse": "OpenAI Enterprise has 33 unused licenses out of 500 total (6.6% unused). This represents $1,980/month in potential savings.",
+    "toolsInvolved": ["ai-001"],
+    "permissions": ["license_read"]
+  },
+  {
+    "id": "cmd-002",
+    "category": "license_query",
+    "naturalLanguage": "Show me all licenses expiring in the next 90 days",
+    "intent": "get_expiring_licenses",
+    "entities": [
+      {"name": "time_period", "type": "time_period", "required": false, "examples": ["30 days", "90 days", "6 months"]}
+    ],
+    "expectedResponse": "3 licenses expiring in the next 90 days:\n1. Zoom Enterprise (1,500 licenses) - Expires Feb 28, 2026\n2. Docker Business (200 licenses) - Expires Mar 31, 2026\n3. Notion Team (200 licenses) - Expires Mar 31, 2026",
+    "toolsInvolved": ["co-003", "de-004", "co-005"],
+    "permissions": ["license_read"]
+  },
+  {
+    "id": "cmd-003",
+    "category": "license_query",
+    "naturalLanguage": "What's our total spend on AI tools per month?",
+    "intent": "get_category_spend",
+    "entities": [
+      {"name": "category", "type": "tool_category", "required": true, "examples": ["AI/ML", "Security", "Collaboration"]}
+    ],
+    "expectedResponse": "Monthly AI/ML tool spend: ~$98,500\n- OpenAI Enterprise: $28,020\n- Azure OpenAI: ~$15,000 (consumption)\n- Claude Team: $5,940\n- DataRobot: $2,700\n- Other AI tools: $46,840",
+    "toolsInvolved": ["ai-001", "ai-002", "ai-003", "ai-004", "ai-005", "ai-006", "ai-007", "ai-008", "ai-009", "ai-010"],
+    "permissions": ["cost_read"]
+  },
+  {
+    "id": "cmd-004",
+    "category": "usage_analytics",
+    "naturalLanguage": "Show me the adoption trend for OpenAI over the last 12 months",
+    "intent": "get_adoption_trend",
+    "entities": [
+      {"name": "tool_name", "type": "tool_name", "required": true, "examples": ["OpenAI", "Claude", "Power BI"]},
+      {"name": "time_period", "type": "time_period", "required": false, "examples": ["6 months", "1 year", "Q1"]}
+    ],
+    "expectedResponse": "OpenAI Enterprise adoption trend (Apr 2025 - Mar 2026):\n📈 Strong growth trajectory\n- Apr 2025: 198 active users (39.6%)\n- Mar 2026: 467 active users (93.4%)\n- Growth: +136% active users over 12 months",
+    "toolsInvolved": ["ai-001"],
+    "permissions": ["usage_read"]
+  },
+  {
+    "id": "cmd-005",
+    "category": "usage_analytics",
+    "naturalLanguage": "Which AI tools have the lowest utilization?",
+    "intent": "get_low_utilization_tools",
+    "entities": [
+      {"name": "category", "type": "tool_category", "required": false, "examples": ["AI/ML", "Analytics"]},
+      {"name": "threshold", "type": "threshold", "required": false, "examples": ["50%", "30%", "below average"]}
+    ],
+    "expectedResponse": "AI/ML tools with low utilization (<60%):\n1. Hugging Face Enterprise: 56% (42/75 licenses active)\n2. DataRobot Enterprise: 60% (18/30 licenses active)\n3. Weights & Biases: 80% (32/40 licenses active)\n\nRecommendation: Consider license consolidation for ~$2,100/month savings.",
+    "toolsInvolved": ["ai-006", "ai-007", "ai-008"],
+    "permissions": ["usage_read"]
+  },
+  {
+    "id": "cmd-006",
+    "category": "cost_optimization",
+    "naturalLanguage": "Find opportunities to reduce software spending by 10%",
+    "intent": "get_cost_savings_opportunities",
+    "entities": [
+      {"name": "target_reduction", "type": "threshold", "required": false, "examples": ["10%", "$50,000", "20%"]}
+    ],
+    "expectedResponse": "Cost optimization opportunities (targeting 10% = ~$48,000/month):\n\n1. **Unused Licenses** (~$25,000/month)\n   - Power BI: 188 unused = $2,632\n   - Slack: 544 unused = $8,160\n   - Jira: 255 unused = $4,463\n\n2. **Tool Consolidation** (~$15,000/month)\n   - Slack + Teams overlap\n   - Multiple project management tools\n\n3. **Right-sizing** (~$8,000/month)\n   - JetBrains: 52 inactive users\n   - Alteryx: 13 unused licenses",
+    "toolsInvolved": ["ALL"],
+    "permissions": ["cost_read", "license_read", "usage_read"]
+  },
+  {
+    "id": "cmd-007",
+    "category": "compliance_check",
+    "naturalLanguage": "Which tools are not FedRAMP authorized?",
+    "intent": "get_non_compliant_tools",
+    "entities": [
+      {"name": "certification", "type": "certification", "required": true, "examples": ["FedRAMP", "SOC 2", "HIPAA"]}
+    ],
+    "expectedResponse": "Tools without FedRAMP authorization (19 tools):\n\n**High Risk (handling CUI):**\n1. OpenAI Enterprise - In Process ⏳\n2. Claude Team - In Process ⏳\n3. Notion Team - Not applicable\n4. Figma Enterprise - Not applicable\n5. GitHub Copilot - Not applicable\n\n⚠️ 5 tools handling CUI without FedRAMP authorization",
+    "toolsInvolved": ["ai-001", "ai-002", "co-005", "co-007", "de-003"],
+    "permissions": ["compliance_read"]
+  },
+  {
+    "id": "cmd-008",
+    "category": "compliance_check",
+    "naturalLanguage": "Show me our overall compliance posture",
+    "intent": "get_compliance_summary",
+    "entities": [],
+    "expectedResponse": "Organization Compliance Posture:\n\n**Overall Score: 87/100** ⚠️\n\n✅ Strong:\n- FedRAMP coverage: 62% of tools authorized\n- SOC 2 Type II: 96% of tools certified\n- MFA enabled: 92% of tools\n- SSO enabled: 94% of tools\n\n⚠️ Needs Attention:\n- 8 tools in FedRAMP process\n- 3 tools handling CUI without authorization",
+    "toolsInvolved": ["ALL"],
+    "permissions": ["compliance_read"]
+  },
+  {
+    "id": "cmd-009",
+    "category": "integration_status",
+    "naturalLanguage": "Are all our integrations healthy?",
+    "intent": "check_integration_health",
+    "entities": [],
+    "expectedResponse": "Integration Health Dashboard:\n\n**Overall: 97.2% healthy** ✅\n\n- Active: 25/25 integrations\n- Degraded: 0\n- Failed: 0\n- Avg latency: 198ms\n- Avg error rate: 0.32%\n\n**Watch list:**\n- Miro → Confluence: 94% health (0.8% errors)\n- UiPath → SAP: 94% health (1.2% errors, high latency)",
+    "toolsInvolved": ["ALL"],
+    "permissions": ["integration_read"]
+  },
+  {
+    "id": "cmd-010",
+    "category": "integration_status",
+    "naturalLanguage": "What data flows between Splunk and CrowdStrike?",
+    "intent": "describe_integration",
+    "entities": [
+      {"name": "source_tool", "type": "tool_name", "required": true, "examples": ["Splunk", "CrowdStrike"]},
+      {"name": "target_tool", "type": "tool_name", "required": true, "examples": ["Splunk", "CrowdStrike"]}
+    ],
+    "expectedResponse": "CrowdStrike → Splunk Integration:\n\n**Connection Details:**\n- Type: REST API\n- Auth: API Key\n- Direction: CrowdStrike → Splunk (one-way)\n- Frequency: Real-time\n- Health: 99%\n\n**Data Types:**\n- Detection alerts\n- Incident reports\n- Endpoint telemetry",
+    "toolsInvolved": ["se-001", "se-003"],
+    "permissions": ["integration_read"]
+  },
+  {
+    "id": "cmd-011",
+    "category": "tool_administration",
+    "naturalLanguage": "Provision 5 new Jira licenses for the Security team",
+    "intent": "provision_licenses",
+    "entities": [
+      {"name": "tool_name", "type": "tool_name", "required": true, "examples": ["Jira", "Slack", "Teams"]},
+      {"name": "quantity", "type": "number", "required": true, "examples": ["5", "10", "25"]},
+      {"name": "department", "type": "department", "required": true, "examples": ["Security", "Engineering", "HR"]}
+    ],
+    "expectedResponse": "License Provisioning Request:\n\n**Tool:** Jira Premium\n**Quantity:** 5 new licenses\n**Department:** Security\n**Monthly cost:** $87.50 ($17.50 × 5)\n\n**Availability check:** ✅\n- Current: 745/1000 assigned\n- After: 750/1000 assigned (75% utilized)",
+    "toolsInvolved": ["de-002"],
+    "permissions": ["license_write", "provisioning"]
+  },
+  {
+    "id": "cmd-012",
+    "category": "reporting",
+    "naturalLanguage": "Generate a monthly software spend report",
+    "intent": "generate_report",
+    "entities": [
+      {"name": "report_type", "type": "report_type", "required": true, "examples": ["spend", "usage", "compliance"]},
+      {"name": "time_period", "type": "time_period", "required": false, "examples": ["monthly", "quarterly", "YTD"]}
+    ],
+    "expectedResponse": "📊 Monthly Software Spend Report - March 2026\n\n**Total spend:** ~$487,650\n\n**By Category:**\n| Category | Spend | % of Total |\n|----------|-------|------------|\n| Collaboration | $125,600 | 26% |\n| AI/ML | $98,500 | 20% |\n| Automation | $89,400 | 18% |\n| Security | $78,450 | 16% |\n| Analytics | $67,200 | 14% |\n| Developer | $28,500 | 6% |",
+    "toolsInvolved": ["ALL"],
+    "permissions": ["report_read", "cost_read"]
+  },
+  {
+    "id": "cmd-013",
+    "category": "license_query",
+    "naturalLanguage": "List all tools owned by the Engineering department",
+    "intent": "get_tools_by_department",
+    "entities": [
+      {"name": "department", "type": "department", "required": true, "examples": ["Engineering", "Security", "HR"]}
+    ],
+    "expectedResponse": "Engineering department owns 2 tools:\n1. GitHub Enterprise (800 licenses, 82% utilized)\n2. JetBrains All Products (150 licenses, 65% utilized)\n\nTotal monthly cost: $19,614",
+    "toolsInvolved": ["de-001", "de-005"],
+    "permissions": ["license_read"]
+  },
+  {
+    "id": "cmd-014",
+    "category": "cost_optimization",
+    "naturalLanguage": "Which tools have the highest cost per user?",
+    "intent": "get_highest_cost_tools",
+    "entities": [
+      {"name": "limit", "type": "threshold", "required": false, "examples": ["top 5", "top 10", "above $100"]}
+    ],
+    "expectedResponse": "Highest cost per license (Top 5):\n1. Alteryx Designer: $450/user/month\n2. UiPath Enterprise: $420/robot/month\n3. Automation Anywhere: $380/robot/month\n4. DataRobot: $150/user/month\n5. ServiceNow: $100/user/month\n\n⚠️ Consider ROI analysis for top 3 tools.",
+    "toolsInvolved": ["an-007", "au-001", "au-003", "ai-007", "au-006"],
+    "permissions": ["cost_read", "usage_read"]
+  },
+  {
+    "id": "cmd-015",
+    "category": "usage_analytics",
+    "naturalLanguage": "How many API calls did we make to OpenAI last month?",
+    "intent": "get_api_usage",
+    "entities": [
+      {"name": "tool_name", "type": "tool_name", "required": true, "examples": ["OpenAI", "Claude", "AWS Bedrock"]},
+      {"name": "time_period", "type": "time_period", "required": false, "examples": ["last month", "this quarter", "YTD"]}
+    ],
+    "expectedResponse": "OpenAI Enterprise API usage (March 2026):\n- Total API calls: 389,000\n- Daily average: 12,548 calls\n- Peak day: March 15 (18,234 calls)\n- Trend: +9.3% vs February",
+    "toolsInvolved": ["ai-001"],
+    "permissions": ["usage_read"]
+  },
+  {
+    "id": "cmd-016",
+    "category": "compliance_check",
+    "naturalLanguage": "Check if we're ready for CMMC Level 2 certification",
+    "intent": "check_cmmc_readiness",
+    "entities": [
+      {"name": "level", "type": "certification", "required": false, "examples": ["Level 1", "Level 2", "Level 3"]}
+    ],
+    "expectedResponse": "CMMC Level 2 Readiness Assessment:\n\n**Overall: 78% Ready** 🟡\n\n**Strong Areas:**\n- Identity & Authentication: 92%\n- Incident Response: 88%\n- Access Control: 85%\n\n**Gaps:**\n- 8 tools missing required encryption controls\n- 5 tools need access review automation\n\nEstimated remediation: 6-8 weeks, $45,000",
+    "toolsInvolved": ["ALL"],
+    "permissions": ["compliance_read", "security_audit"]
+  },
+  {
+    "id": "cmd-017",
+    "category": "provisioning",
+    "naturalLanguage": "Onboard a new contractor with standard developer tools",
+    "intent": "onboard_user",
+    "entities": [
+      {"name": "user_type", "type": "user_type", "required": true, "examples": ["contractor", "employee", "intern"]},
+      {"name": "role", "type": "role", "required": true, "examples": ["developer", "analyst", "manager"]}
+    ],
+    "expectedResponse": "🚀 New Contractor Onboarding - Developer Role\n\n**Standard Developer Tool Package:**\n1. ✅ GitHub Enterprise (included)\n2. ✅ Jira Premium (included)\n3. ✅ Slack Business+ (included)\n4. ✅ VS Code + Copilot ($19/mo)\n5. ✅ Confluence (included)\n\n**Monthly cost:** $19/user\n**Provisioning time:** 4 hours",
+    "toolsInvolved": ["de-001", "de-002", "de-003", "co-001", "co-004"],
+    "permissions": ["provisioning", "user_create"]
+  },
+  {
+    "id": "cmd-018",
+    "category": "license_query",
+    "naturalLanguage": "Who is the business owner for Tableau?",
+    "intent": "get_tool_owner",
+    "entities": [
+      {"name": "tool_name", "type": "tool_name", "required": true, "examples": ["Tableau", "Snowflake", "Jira"]}
+    ],
+    "expectedResponse": "Tableau Creator ownership:\n- Business Owner: Sandra Hughes (Executive Analytics)\n- Technical Owner: Timothy Scott\n- Last Reviewed: January 25, 2026\n- Risk Score: 28/100",
+    "toolsInvolved": ["an-002"],
+    "permissions": ["license_read"]
+  },
+  {
+    "id": "cmd-019",
+    "category": "reporting",
+    "naturalLanguage": "Show me tool adoption trends over the past year",
+    "intent": "trend_analysis",
+    "entities": [
+      {"name": "time_period", "type": "time_period", "required": false, "examples": ["past year", "last 6 months", "YTD"]}
+    ],
+    "expectedResponse": "📈 Tool Adoption Trends (Apr 2025 - Mar 2026)\n\n**Fastest Growing:**\n1. OpenAI Enterprise: +136% active users\n2. GitHub Copilot: +89% active users\n3. Power Automate: +45% active users\n\n**Declining:**\n1. Alteryx: -23% active users\n2. Qlik Sense: -18% active users",
+    "toolsInvolved": ["ALL"],
+    "permissions": ["report_read", "usage_read"]
+  },
+  {
+    "id": "cmd-020",
+    "category": "integration_status",
+    "naturalLanguage": "Which tools integrate with our identity provider?",
+    "intent": "list_sso_integrations",
+    "entities": [],
+    "expectedResponse": "Okta Identity Cloud Integrations:\n\n**SSO Enabled (47 tools):**\n✅ Microsoft 365 | ✅ Salesforce | ✅ AWS\n✅ Slack | ✅ Zoom | ✅ GitHub\n...and 41 more\n\n**SSO Not Configured (3 tools):**\n⚠️ JetBrains All Products - Manual auth\n⚠️ n8n Enterprise - Local auth  \n⚠️ Make (Integromat) - Email/password",
+    "toolsInvolved": ["se-002"],
+    "permissions": ["integration_read", "security_read"]
+  }
+]

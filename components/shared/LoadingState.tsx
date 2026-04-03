@@ -76,8 +76,7 @@ export function TableSkeleton({ rows = 5, columns = 4, className }: TableSkeleto
             {Array.from({ length: columns }).map((_, colIdx) => (
               <Skeleton
                 key={colIdx}
-                className="h-5 flex-1"
-                style={{ maxWidth: colIdx === 0 ? '200px' : '100px' }}
+                className={colIdx === 0 ? "h-5 flex-1 max-w-[200px]" : "h-5 flex-1 max-w-[100px]"}
               />
             ))}
           </div>
@@ -98,9 +97,9 @@ export function ChartSkeleton({ className }: SkeletonProps) {
         </div>
         <div className="flex items-end justify-between gap-2 h-48">
           {Array.from({ length: 12 }).map((_, i) => (
-            <Skeleton
+            <div
               key={i}
-              className="flex-1 rounded-t"
+              className="flex-1 rounded-t bg-pharos-border animate-pulse"
               style={{ height: `${Math.random() * 60 + 20}%` }}
             />
           ))}
