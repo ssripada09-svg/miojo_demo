@@ -4,6 +4,7 @@ import { useState, useRef, useEffect, useCallback } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
+import { AegisFooter } from "@/components/shared"
 import { 
   MessageSquare, 
   Send, 
@@ -218,20 +219,118 @@ function generateDestructiveResponse(input: string): { action: string; impact: s
   }
 }
 
-// Generate fallback response
+// Generate fallback response - now sounds intelligent and helpful
 function generateFallbackResponse(input: string): string {
-  return `I couldn't find a specific command matching your query: "${input}"
+  const inputLower = input.toLowerCase()
+  
+  // Generate contextual suggestions based on what they typed
+  let suggestions: string[] = []
+  
+  if (inputLower.includes('cost') || inputLower.includes('spend') || inputLower.includes('budget') || inputLower.includes('money')) {
+    suggestions = [
+      '"What\'s our total spend on AI tools per month?"',
+      '"Which tools have the highest cost per user?"',
+      '"Find opportunities to reduce software spending by 10%"'
+    ]
+  } else if (inputLower.includes('user') || inputLower.includes('license') || inputLower.includes('access')) {
+    suggestions = [
+      '"How many unused OpenAI licenses do we have?"',
+      '"Provision 5 new Jira licenses for the Security team"',
+      '"Onboard a new contractor with standard developer tools"'
+    ]
+  } else if (inputLower.includes('security') || inputLower.includes('compliance') || inputLower.includes('fedramp') || inputLower.includes('audit')) {
+    suggestions = [
+      '"Which tools are not FedRAMP authorized?"',
+      '"Show me our overall compliance posture"',
+      '"Check if we\'re ready for CMMC Level 2 certification"'
+    ]
+  } else if (inputLower.includes('integration') || inputLower.includes('connect') || inputLower.includes('api')) {
+    suggestions = [
+      '"Are all our integrations healthy?"',
+      '"What data flows between Splunk and CrowdStrike?"',
+      '"Which tools integrate with our identity provider?"'
+    ]
+  } else {
+    suggestions = [
+      '"What\'s our total spend on AI tools per month?"',
+      '"Show me our overall compliance posture"',
+      '"List all tools owned by the Engineering department"'
+    ]
+  }
+  
+  return `I can help with that. Let me search across your tool inventory...
 
-**Try one of these related commands:**
-• "What's our total spend on AI tools per month?"
-• "Show me our overall compliance posture"
-• "How many unused OpenAI licenses do we have?"
+For specific queries like "${input}", try asking about:
+• **Tool utilization** — license usage and active users
+• **Compliance status** — FedRAMP, CMMC, SOC 2 readiness  
+• **Cost analysis** — spend optimization opportunities
+• **User access** — provisioning and offboarding
 
-Or browse the **Command Library** on the right for more options.`
+**Related queries you might try:**
+${suggestions.map(s => `• ${s}`).join('\n')}
+
+You can also use the **quick actions** above or browse the **Command Library** for more options.`
 }
 
+// Pre-populated conversation showing intelligent assistant
+const initialMessages: Message[] = [
+  {
+    id: 'msg-init-1',
+    role: 'user',
+    content: 'How many AI tools do we have and what\'s our monthly spend?',
+    timestamp: new Date(Date.now() - 180000), // 3 min ago
+  },
+  {
+    id: 'msg-init-2',
+    role: 'assistant',
+    content: `You have **12 AI/ML tools** with a combined monthly spend of **$483,200**.
+
+**Top 3 by cost:**
+1. Azure OpenAI Service — $125,000/mo (247 users)
+2. AWS Bedrock — $98,500/mo (consumption-based)
+3. Anthropic Claude Enterprise — $72,000/mo (180 seats)
+
+**Key insights:**
+• Average utilization across AI tools: **47%**
+• 3 tools have <30% utilization representing $142K potential savings
+• All AI tools are FedRAMP authorized ✓
+
+Would you like me to identify specific optimization opportunities?`,
+    timestamp: new Date(Date.now() - 175000),
+  },
+  {
+    id: 'msg-init-3',
+    role: 'user',
+    content: 'Show me tools with less than 30% utilization',
+    timestamp: new Date(Date.now() - 120000), // 2 min ago
+  },
+  {
+    id: 'msg-init-4',
+    role: 'assistant',
+    content: `Found **8 tools** with <30% utilization representing **$215K monthly spend**:
+
+| Tool | Utilization | Monthly Cost | Recommendation |
+|------|-------------|--------------|----------------|
+| Tableau Creator | 24% | $47,000 | Downgrade 52 seats to Viewer |
+| UiPath Enterprise | 18% | $42,000 | Consolidate with Automation Anywhere |
+| Monday.com | 22% | $28,500 | Migrate to Jira (already licensed) |
+| Notion Team | 15% | $12,400 | ⚠️ Non-FedRAMP, recommend migration |
+| Perplexity Pro | 28% | $8,200 | Convert to shared pool |
+| Miro Business | 19% | $15,600 | Consolidate to Figma whiteboard |
+| Loom Business | 12% | $9,800 | Archive - low adoption |
+| Grammarly Business | 26% | $18,400 | Reduce seats by 40% |
+
+**Total potential savings: $142,000/month** ($1.7M annually)
+
+🛡️ *Note: Notion flagged for CUI compliance review — shadow AI policy violation detected.*
+
+Would you like me to generate a detailed optimization report?`,
+    timestamp: new Date(Date.now() - 115000),
+  },
+]
+
 export default function OperatorAssistantPage() {
-  const [messages, setMessages] = useState<Message[]>([])
+  const [messages, setMessages] = useState<Message[]>(initialMessages)
   const [inputValue, setInputValue] = useState("")
   const [isTyping, setIsTyping] = useState(false)
   const [expandedCategories, setExpandedCategories] = useState<string[]>(["Inventory"])
@@ -241,7 +340,7 @@ export default function OperatorAssistantPage() {
     impact: "",
     onConfirm: () => {},
   })
-  const [auditCount, setAuditCount] = useState(0)
+  const [auditCount, setAuditCount] = useState(4) // Pre-populated messages counted
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false)
   
   const messagesEndRef = useRef<HTMLDivElement>(null)
@@ -652,6 +751,9 @@ export default function OperatorAssistantPage() {
           </Card>
         </div>
       )}
+
+      {/* Aegis Governance Footer */}
+      <AegisFooter />
     </div>
   )
 }

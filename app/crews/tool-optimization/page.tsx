@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useMemo } from 'react';
+import React, { useMemo, useState, useCallback } from 'react';
 import { 
   TrendingUp, 
   TrendingDown, 
@@ -27,6 +27,7 @@ import {
 } from 'recharts';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { AegisFooter } from '@/components/shared';
 import { ChartContainer } from '@/components/shared/ChartContainer';
 import { MetricCard, MetricCardGrid } from '@/components/shared/MetricCard';
 import {
@@ -310,6 +311,14 @@ function ActionBadge({ action }: { action: 'Renew' | 'Renegotiate' | 'Consolidat
 }
 
 export default function ToolOptimizationPage() {
+  const [exportToast, setExportToast] = useState<string | null>(null);
+
+  // Handle export/report button clicks with mock toast
+  const handleExport = useCallback((reportType: string) => {
+    setExportToast(`${reportType} queued — report will be delivered to your email within 5 minutes`);
+    setTimeout(() => setExportToast(null), 4000);
+  }, []);
+
   // Calculate all data
   const tools = useMemo(() => getTools(), []);
   const metrics = useMemo(() => calculateOptimizationMetrics(), []);
@@ -622,12 +631,33 @@ export default function ToolOptimizationPage() {
                 <span className="text-white font-medium">{renewals.length}</span>
               </div>
             </div>
-            <button className="px-4 py-2 bg-pharos-gold text-white rounded-lg text-sm font-medium hover:bg-pharos-gold/80 transition-colors">
+            <button 
+              className="px-4 py-2 bg-pharos-gold text-white rounded-lg text-sm font-medium hover:bg-pharos-gold/80 transition-colors"
+              onClick={() => handleExport('Optimization Report')}
+            >
               Generate Report
             </button>
           </div>
         </CardContent>
       </Card>
+
+      {/* Aegis Governance Footer */}
+      <AegisFooter />
+
+      {/* Export Toast Notification */}
+      {exportToast && (
+        <div className="fixed bottom-6 right-6 z-50 animate-in slide-in-from-bottom-4 fade-in duration-300">
+          <div className="bg-pharos-card border border-pass/30 rounded-lg shadow-lg p-4 flex items-center gap-3 max-w-md">
+            <div className="p-2 rounded-full bg-pass/10">
+              <CheckCircle className="h-5 w-5 text-pass" />
+            </div>
+            <div>
+              <p className="text-sm font-medium text-white">Report Started</p>
+              <p className="text-xs text-muted-foreground">{exportToast}</p>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

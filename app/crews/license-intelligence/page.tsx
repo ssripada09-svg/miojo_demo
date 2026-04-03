@@ -22,7 +22,8 @@ import {
   MetricCard, 
   MetricCardGrid,
   FedRAMPBadge,
-  ComplianceBadge
+  ComplianceBadge,
+  AegisFooter
 } from '@/components/shared';
 import type { Column } from '@/components/shared/DataTable';
 import { 
@@ -516,6 +517,9 @@ export default function LicenseIntelligencePage() {
           onClose={() => setSelectedTool(null)} 
         />
       )}
+
+      {/* Aegis Governance Footer */}
+      <AegisFooter />
     </div>
   );
 }

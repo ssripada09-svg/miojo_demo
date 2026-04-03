@@ -46,3 +46,6 @@ export {
   WidgetEmptyState, 
   ComingSoon,
 } from './EmptyState';
+
+// Aegis Footer
+export { AegisFooter } from './AegisFooter';

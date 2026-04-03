@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useCallback } from 'react';
 import { 
   Shield, 
   CheckCircle, 
@@ -518,6 +518,13 @@ export default function GovernancePage() {
   const [auditFilter, setAuditFilter] = useState<AuditFilterType>('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [policyCategory, setPolicyCategory] = useState<string>('all');
+  const [exportToast, setExportToast] = useState<string | null>(null);
+
+  // Handle export button clicks with mock toast
+  const handleExport = useCallback((reportType: string) => {
+    setExportToast(`${reportType} queued — report will be delivered to your email within 5 minutes`);
+    setTimeout(() => setExportToast(null), 4000);
+  }, []);
   
   // Filter audit entries
   const filteredAuditEntries = useMemo(() => {
@@ -696,7 +703,12 @@ export default function GovernancePage() {
                   Comprehensive activity log with full traceability
                 </CardDescription>
               </div>
-              <Button variant="outline" size="sm" className="gap-2">
+              <Button 
+                variant="outline" 
+                size="sm" 
+                className="gap-2"
+                onClick={() => handleExport('Audit Log export')}
+              >
                 <Download className="h-4 w-4" />
                 Export Log
               </Button>
@@ -1007,11 +1019,18 @@ export default function GovernancePage() {
               </div>
             </div>
             <div className="flex items-center gap-3">
-              <Button variant="outline" className="gap-2">
+              <Button 
+                variant="outline" 
+                className="gap-2"
+                onClick={() => handleExport('Audit Log export')}
+              >
                 <Download className="h-4 w-4" />
                 Export Audit Log
               </Button>
-              <Button className="bg-pharos-purple hover:bg-pharos-purple/80 gap-2">
+              <Button 
+                className="bg-pharos-purple hover:bg-pharos-purple/80 gap-2"
+                onClick={() => handleExport('Compliance Report')}
+              >
                 <FileText className="h-4 w-4" />
                 Generate Compliance Report
               </Button>
@@ -1019,6 +1038,21 @@ export default function GovernancePage() {
           </div>
         </CardContent>
       </Card>
+
+      {/* Export Toast Notification */}
+      {exportToast && (
+        <div className="fixed bottom-6 right-6 z-50 animate-in slide-in-from-bottom-4 fade-in duration-300">
+          <div className="bg-pharos-card border border-pass/30 rounded-lg shadow-lg p-4 flex items-center gap-3 max-w-md">
+            <div className="p-2 rounded-full bg-pass/10">
+              <CheckCircle className="h-5 w-5 text-pass" />
+            </div>
+            <div>
+              <p className="text-sm font-medium text-white">Export Started</p>
+              <p className="text-xs text-muted-foreground">{exportToast}</p>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

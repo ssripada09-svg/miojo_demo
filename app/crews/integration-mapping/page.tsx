@@ -18,6 +18,7 @@ import {
 import "@xyflow/react/dist/style.css"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { AegisFooter } from "@/components/shared"
 import {
   Network,
   AlertTriangle,
@@ -763,6 +764,9 @@ export default function IntegrationMappingPage() {
           </CardContent>
         )}
       </Card>
+
+      {/* Aegis Governance Footer */}
+      <AegisFooter />
     </div>
   )
 }
