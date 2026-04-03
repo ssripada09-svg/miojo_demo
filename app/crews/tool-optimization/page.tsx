@@ -467,10 +467,10 @@ export default function ToolOptimizationPage() {
             <PieChart>
               <Pie
                 data={categoryData}
-                cx="50%"
-                cy="45%"
-                innerRadius={60}
-                outerRadius={90}
+                cx="35%"
+                cy="50%"
+                innerRadius={50}
+                outerRadius={80}
                 paddingAngle={2}
                 dataKey="value"
               >
@@ -494,9 +494,9 @@ export default function ToolOptimizationPage() {
               />
               <Legend
                 layout="vertical"
-                verticalAlign="bottom"
-                align="center"
-                wrapperStyle={{ paddingTop: 20 }}
+                verticalAlign="middle"
+                align="right"
+                wrapperStyle={{ paddingLeft: 20, right: 0 }}
                 formatter={(value) => <span className="text-sm text-muted-foreground">{value}</span>}
               />
             </PieChart>
