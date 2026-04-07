@@ -149,14 +149,14 @@ function ToolDetailModal({
             </div>
             <div className="p-4 rounded-lg bg-pharos-bg border border-pharos-border">
               <p className="text-xs text-muted-foreground">Integrations</p>
-              <p className="text-lg font-bold text-pharos-teal">{integrations.length}</p>
+              <p className="text-lg font-bold text-pharos-blue">{integrations.length}</p>
             </div>
           </div>
           
           {/* License Details */}
           <div>
             <h3 className="text-sm font-medium text-white mb-3 flex items-center gap-2">
-              <Users className="h-4 w-4 text-pharos-teal" />
+              <Users className="h-4 w-4 text-pharos-blue" />
               License Details
             </h3>
             <div className="grid grid-cols-2 gap-4 p-4 rounded-lg bg-pharos-bg border border-pharos-border">
@@ -182,7 +182,7 @@ function ToolDetailModal({
           {/* Contract Info */}
           <div>
             <h3 className="text-sm font-medium text-white mb-3 flex items-center gap-2">
-              <Calendar className="h-4 w-4 text-pharos-teal" />
+              <Calendar className="h-4 w-4 text-pharos-blue" />
               Contract Information
             </h3>
             <div className="grid grid-cols-2 gap-4 p-4 rounded-lg bg-pharos-bg border border-pharos-border">
@@ -209,7 +209,7 @@ function ToolDetailModal({
           {usage?.featuresUsed && usage.featuresUsed.length > 0 && (
             <div>
               <h3 className="text-sm font-medium text-white mb-3 flex items-center gap-2">
-                <Zap className="h-4 w-4 text-pharos-teal" />
+                <Zap className="h-4 w-4 text-pharos-blue" />
                 Features Used
               </h3>
               <div className="flex flex-wrap gap-2">
@@ -217,7 +217,7 @@ function ToolDetailModal({
                   <Badge 
                     key={feature}
                     variant="outline"
-                    className="bg-pharos-teal/10 text-pharos-teal border-pharos-teal/20"
+                    className="bg-pharos-blue/10 text-pharos-blue border-pharos-blue/20"
                   >
                     {feature}
                   </Badge>
@@ -229,7 +229,7 @@ function ToolDetailModal({
           {/* Compliance Certifications */}
           <div>
             <h3 className="text-sm font-medium text-white mb-3 flex items-center gap-2">
-              <Shield className="h-4 w-4 text-pharos-teal" />
+              <Shield className="h-4 w-4 text-pharos-blue" />
               Compliance Certifications
             </h3>
             <div className="flex flex-wrap gap-2">
@@ -331,7 +331,7 @@ export default function LicenseIntelligencePage() {
       header: 'Category',
       sortable: true,
       render: (value) => (
-        <Badge variant="outline" className="bg-pharos-teal/10 text-pharos-teal border-pharos-teal/20">
+        <Badge variant="outline" className="bg-pharos-blue/10 text-pharos-blue border-pharos-blue/20">
           {String(value)}
         </Badge>
       )
@@ -390,8 +390,8 @@ export default function LicenseIntelligencePage() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-bold text-white flex items-center gap-3">
-            <div className="p-2 rounded-lg bg-pharos-teal/10">
-              <FileSearch className="h-6 w-6 text-pharos-teal" />
+            <div className="p-2 rounded-lg bg-pharos-blue/10">
+              <FileSearch className="h-6 w-6 text-pharos-blue" />
             </div>
             License Intelligence
           </h1>
@@ -399,7 +399,7 @@ export default function LicenseIntelligencePage() {
             Tool inventory, compliance mapping, and feature overlap analysis
           </p>
         </div>
-        <Badge variant="outline" className="bg-pharos-teal/10 text-pharos-teal border-pharos-teal/20">
+        <Badge variant="outline" className="bg-pharos-blue/10 text-pharos-blue border-pharos-blue/20">
           Last scanned: 2h ago
         </Badge>
       </div>
@@ -454,7 +454,7 @@ export default function LicenseIntelligencePage() {
                   key={cert}
                   className="flex items-center gap-2 px-3 py-2 rounded-lg bg-pharos-bg border border-pharos-border"
                 >
-                  <Shield className="h-4 w-4 text-pharos-teal" />
+                  <Shield className="h-4 w-4 text-pharos-blue" />
                   <span className="text-sm text-white">{cert}</span>
                   <Badge variant="outline" className="bg-pass/10 text-pass border-pass/20 text-xs">
                     {count} tools
@@ -472,7 +472,7 @@ export default function LicenseIntelligencePage() {
           variant={categoryFilter === 'all' ? 'default' : 'outline'}
           size="sm"
           onClick={() => setCategoryFilter('all')}
-          className={categoryFilter === 'all' ? 'bg-pharos-teal text-white' : ''}
+          className={categoryFilter === 'all' ? 'bg-pharos-blue text-white' : ''}
         >
           All
         </Button>
@@ -482,7 +482,7 @@ export default function LicenseIntelligencePage() {
             variant={categoryFilter === cat ? 'default' : 'outline'}
             size="sm"
             onClick={() => setCategoryFilter(cat)}
-            className={categoryFilter === cat ? 'bg-pharos-teal text-white' : ''}
+            className={categoryFilter === cat ? 'bg-pharos-blue text-white' : ''}
           >
             {cat}
           </Button>

@@ -1,132 +1,95 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { 
-  DollarSign, 
-  Package, 
-  TrendingDown, 
+import {
   Shield,
-  FileSearch,
-  TrendingUp,
-  MessageSquare,
-  Network,
   Activity,
   CheckCircle2,
   AlertTriangle,
   Clock,
   Zap,
+  ArrowRight,
+  TrendingUp,
 } from "lucide-react"
 import Link from "next/link"
+import { suites } from "@/lib/suites"
 
-const kpiCards = [
-  {
-    title: "Total Tools",
-    value: "50",
-    change: "6 categories",
-    changeType: "neutral" as const,
-    icon: Package,
-    description: "Full inventory mapped",
+const suiteMetrics: Record<string, { stats: { label: string; value: string }[]; description: string }> = {
+  'license-optimization': {
+    description: 'Enterprise tool governance, spend optimization, and compliance monitoring for federal IT portfolios.',
+    stats: [
+      { label: 'FedRAMP', value: '72%' },
+      { label: 'Identified Savings', value: '$720K' },
+      { label: 'Compliance', value: '94%' },
+    ],
   },
-  {
-    title: "Monthly Spend",
-    value: "$2.4M",
-    change: "+12% YoY",
-    changeType: "neutral" as const,
-    icon: DollarSign,
-    description: "Across all tools",
+  'proposal-optimization': {
+    description: 'AI-powered pipeline intelligence, proposal acceleration, and competitive analysis for federal BD.',
+    stats: [
+      { label: 'Under Evaluation', value: '$16B' },
+      { label: 'New-Biz Win Rate', value: '31%' },
+      { label: 'Median Response', value: '24 days' },
+    ],
   },
-  {
-    title: "Identified Savings",
-    value: "$720K",
-    change: "30% of spend",
-    changeType: "positive" as const,
-    icon: TrendingDown,
-    description: "Annual waste identified",
+  'operational-excellence': {
+    description: 'Workforce management, contract delivery, and institutional knowledge activation at scale.',
+    stats: [
+      { label: 'Active Contracts', value: '523' },
+      { label: 'Billable Util.', value: '76.3%' },
+      { label: 'Cleared Employees', value: '15,902' },
+    ],
   },
-  {
-    title: "Compliance Score",
-    value: "94%",
-    change: "+8% this quarter",
-    changeType: "positive" as const,
-    icon: Shield,
-    description: "NIST AI RMF aligned",
-  },
-]
-
-const crewCards = [
-  {
-    title: "License Intelligence",
-    description: "Map your tool portfolio, identify overlaps, and ensure compliance",
-    icon: FileSearch,
-    href: "/crews/license-intelligence",
-    stats: "50 tools • 72% FedRAMP",
-    color: "pharos-teal",
-    status: "Active",
-  },
-  {
-    title: "Tool Optimization",
-    description: "Monitor usage, optimize spend, and consolidate redundant tools",
-    icon: TrendingUp,
-    href: "/crews/tool-optimization",
-    stats: "$720K savings • 43% utilization",
-    color: "pharos-gold",
-    status: "Active",
-  },
-  {
-    title: "Operator Assistant",
-    description: "Natural language interface for tool management operations",
-    icon: MessageSquare,
-    href: "/crews/operator-assistant",
-    stats: "50+ commands • Audit-logged",
-    color: "pharos-purple",
-    status: "Active",
-  },
-  {
-    title: "Integration Mapping",
-    description: "Visualize API connections, data flows, and identify redundancies",
-    icon: Network,
-    href: "/crews/integration-mapping",
-    stats: "247 flows • 12 CUI-sensitive",
-    color: "pharos-teal",
-    status: "Active",
-  },
-]
+}
 
 const recentActivity = [
   {
     id: 1,
     type: "success",
     icon: CheckCircle2,
-    title: "License audit completed",
-    description: "Identified 3 unused Salesforce licenses",
-    time: "2 hours ago",
-    crew: "License Intelligence",
+    title: "Pipeline coverage recalculated",
+    description: "Weighted pipeline at 3.84x vs 3.0x floor — healthy coverage",
+    time: "1 hour ago",
+    crew: "Opportunity Intelligence",
+    suite: "Proposal Optimization",
   },
   {
     id: 2,
     type: "warning",
     icon: AlertTriangle,
-    title: "Compliance drift detected",
-    description: "ServiceNow module missing FedRAMP authorization",
-    time: "4 hours ago",
-    crew: "License Intelligence",
+    title: "ATLAS C2 change-order alert",
+    description: "45.0% CO rate flagged — delivery risk and capture signal",
+    time: "3 hours ago",
+    crew: "Contract Delivery",
+    suite: "Operational Excellence",
   },
   {
     id: 3,
     type: "info",
     icon: Activity,
-    title: "Cost analysis complete",
-    description: "$48K monthly savings opportunity in collaboration tools",
-    time: "6 hours ago",
-    crew: "Tool Optimization",
+    title: "Bench cost model updated",
+    description: "1,000-person bench at $3.9M/week — utilization at 76.3%",
+    time: "5 hours ago",
+    crew: "Workforce Utilization",
+    suite: "Operational Excellence",
   },
   {
     id: 4,
     type: "success",
     icon: Zap,
-    title: "Integration mapped",
-    description: "Discovered 12 new API connections to Salesforce",
+    title: "Proposal compliance check passed",
+    description: "DoJ IT Modernization — 99% compliant, final production phase",
+    time: "6 hours ago",
+    crew: "Proposal Acceleration",
+    suite: "Proposal Optimization",
+  },
+  {
+    id: 5,
+    type: "info",
+    icon: TrendingUp,
+    title: "License audit completed",
+    description: "Identified 3 unused Salesforce licenses — $48K savings",
     time: "1 day ago",
-    crew: "Integration Mapping",
+    crew: "License Intelligence",
+    suite: "License Optimization",
   },
 ]
 
@@ -147,7 +110,7 @@ export default function DashboardPage() {
             </div>
             <h1 className="text-2xl md:text-3xl font-bold text-white">Pharos Command Center</h1>
             <p className="text-muted-foreground mt-1">
-              AI Workforce Management for Enterprise Tool Governance
+              AI Workforce Management — 3 Suites &middot; 14 Crews
             </p>
           </div>
           <div className="flex items-center gap-2 text-sm">
@@ -159,77 +122,80 @@ export default function DashboardPage() {
         </div>
       </div>
 
-      {/* KPI Cards */}
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
-        {kpiCards.map((kpi) => (
-          <Card key={kpi.title} className="bg-pharos-card border-pharos-border">
-            <CardHeader className="flex flex-row items-center justify-between pb-2 p-3 md:p-6 md:pb-2">
-              <CardTitle className="text-xs md:text-sm font-medium text-muted-foreground">
-                {kpi.title}
-              </CardTitle>
-              <kpi.icon className="h-4 w-4 text-muted-foreground hidden sm:block" />
-            </CardHeader>
-            <CardContent className="p-3 pt-0 md:p-6 md:pt-0">
-              <div className="text-xl md:text-2xl font-bold text-white">{kpi.value}</div>
-              <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 mt-1">
-                <Badge 
-                  variant="outline" 
-                  className={`text-xs w-fit ${
-                    kpi.changeType === "positive" 
-                      ? "bg-pass/10 text-pass border-pass/20" 
-                      : "bg-pharos-border/50 text-muted-foreground border-pharos-border"
-                  }`}
-                >
-                  {kpi.change}
-                </Badge>
-                <span className="text-xs text-muted-foreground hidden md:inline">{kpi.description}</span>
-              </div>
-            </CardContent>
-          </Card>
-        ))}
-      </div>
-
       {/* Main Content Grid */}
       <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
-        {/* Crew Cards - Takes 2 columns on xl */}
+        {/* Suite Cards - Takes 2 columns on xl */}
         <div className="xl:col-span-2 space-y-4">
-          <h2 className="text-lg md:text-xl font-semibold text-white">AI Crews</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {crewCards.map((crew) => (
-              <Link key={crew.title} href={crew.href}>
-                <Card className="bg-pharos-card border-pharos-border hover:border-pharos-teal/50 transition-colors cursor-pointer h-full">
-                  <CardHeader className="flex flex-row items-start gap-3 md:gap-4 p-4 md:p-6">
-                    <div 
-                      className={`p-2 rounded-lg flex-shrink-0 ${
-                        crew.color === "pharos-teal" 
-                          ? "bg-pharos-teal/10 text-pharos-teal" 
-                          : crew.color === "pharos-gold"
-                          ? "bg-pharos-gold/10 text-pharos-gold"
-                          : "bg-pharos-purple/10 text-pharos-purple"
-                      }`}
-                    >
-                      <crew.icon className="h-4 w-4 md:h-5 md:w-5" />
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-center justify-between gap-2">
-                        <CardTitle className="text-white text-sm md:text-base">{crew.title}</CardTitle>
-                        <Badge variant="outline" className="bg-pass/10 text-pass border-pass/20 text-xs flex-shrink-0">
-                          {crew.status}
+          <h2 className="text-lg md:text-xl font-semibold text-white">AI Suites</h2>
+          <div className="space-y-4">
+            {suites.map((suite) => {
+              const meta = suiteMetrics[suite.id]
+              return (
+                <Card key={suite.id} className="bg-pharos-card border-pharos-border">
+                  <CardHeader className="p-4 md:p-6 pb-3">
+                    <div className="flex items-start justify-between gap-3">
+                      <div className="flex items-center gap-3">
+                        <div
+                          className="w-3 h-8 rounded-full flex-shrink-0"
+                          style={{ backgroundColor: suite.color }}
+                        />
+                        <div>
+                          <CardTitle className="text-white text-base md:text-lg">{suite.name}</CardTitle>
+                          <CardDescription className="mt-0.5 text-xs md:text-sm">
+                            {meta?.description || suite.description}
+                          </CardDescription>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-2 flex-shrink-0">
+                        <Badge variant="outline" className="text-xs border-pharos-border text-muted-foreground">
+                          {suite.audience}
+                        </Badge>
+                        <Badge
+                          variant="outline"
+                          className="text-xs"
+                          style={{
+                            backgroundColor: `${suite.color}15`,
+                            color: suite.color,
+                            borderColor: `${suite.color}30`,
+                          }}
+                        >
+                          {suite.crews.length} crews
                         </Badge>
                       </div>
-                      <CardDescription className="mt-1 text-xs md:text-sm line-clamp-2">
-                        {crew.description}
-                      </CardDescription>
                     </div>
                   </CardHeader>
-                  <CardContent className="p-4 pt-0 md:p-6 md:pt-0">
-                    <div className="text-xs md:text-sm text-muted-foreground">
-                      {crew.stats}
+                  <CardContent className="p-4 md:p-6 pt-0 space-y-4">
+                    {/* Suite-level metrics */}
+                    {meta && (
+                      <div className="grid grid-cols-3 gap-3">
+                        {meta.stats.map((stat) => (
+                          <div key={stat.label} className="bg-pharos-bg rounded-lg p-3 border border-pharos-border">
+                            <p className="text-xs text-muted-foreground">{stat.label}</p>
+                            <p className="text-lg font-bold text-white">{stat.value}</p>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+
+                    {/* Crew links */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                      {suite.crews.map((crew) => (
+                        <Link
+                          key={crew.slug}
+                          href={`/crews/${crew.slug}`}
+                          className="flex items-center gap-2 px-3 py-2 rounded-lg bg-pharos-bg border border-pharos-border hover:border-opacity-60 transition-colors group"
+                          style={{ ['--suite-color' as string]: suite.color }}
+                        >
+                          <crew.icon className="w-4 h-4 text-muted-foreground group-hover:text-white transition-colors" style={{ color: undefined }} />
+                          <span className="text-sm text-muted-foreground group-hover:text-white transition-colors flex-1">{crew.name}</span>
+                          <ArrowRight className="w-3.5 h-3.5 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
+                        </Link>
+                      ))}
                     </div>
                   </CardContent>
                 </Card>
-              </Link>
-            ))}
+              )
+            })}
           </div>
         </div>
 
@@ -257,7 +223,7 @@ export default function DashboardPage() {
                         <p className="text-xs text-muted-foreground mt-0.5 line-clamp-2">
                           {activity.description}
                         </p>
-                        <div className="flex items-center gap-2 mt-1.5">
+                        <div className="flex items-center gap-2 mt-1.5 flex-wrap">
                           <Badge variant="outline" className="text-xs bg-pharos-border/30 border-pharos-border">
                             {activity.crew}
                           </Badge>
@@ -270,36 +236,38 @@ export default function DashboardPage() {
               </div>
             </CardContent>
           </Card>
+
+          {/* Quick Stats Footer */}
+          <Card className="bg-pharos-card border-pharos-border">
+            <CardContent className="p-4">
+              <div className="space-y-3 text-sm">
+                <div className="flex justify-between">
+                  <span className="text-muted-foreground">Revenue (FY)</span>
+                  <span className="text-white font-medium">$8.63B</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-muted-foreground">Total Backlog</span>
+                  <span className="text-white font-medium">$31.4B</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-muted-foreground">Book-to-Bill</span>
+                  <span className="text-pass font-medium">1.09x</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-muted-foreground">Shadow AI</span>
+                  <span className="text-warning font-medium">71%</span>
+                </div>
+                <Link
+                  href="/governance"
+                  className="text-pharos-teal hover:underline whitespace-nowrap block pt-1 text-xs"
+                >
+                  View Aegis Governance →
+                </Link>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </div>
-
-      {/* Quick Stats Footer */}
-      <Card className="bg-pharos-card border-pharos-border">
-        <CardContent className="p-4 md:pt-6">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-sm">
-            <div className="flex flex-wrap items-center gap-4 md:gap-6">
-              <div>
-                <span className="text-muted-foreground">Shadow AI: </span>
-                <span className="text-warning font-medium">71%</span>
-              </div>
-              <div>
-                <span className="text-muted-foreground">Unused Licenses: </span>
-                <span className="text-fail font-medium">$174K/mo</span>
-              </div>
-              <div>
-                <span className="text-muted-foreground">FedRAMP: </span>
-                <span className="text-pass font-medium">72%</span>
-              </div>
-            </div>
-            <Link 
-              href="/governance" 
-              className="text-pharos-teal hover:underline whitespace-nowrap"
-            >
-              View Aegis Governance →
-            </Link>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   )
 }

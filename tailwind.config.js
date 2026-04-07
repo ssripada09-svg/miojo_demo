@@ -26,6 +26,7 @@ const config = {
           teal: '#1FB6B8',
           gold: '#E68A3F',
           purple: '#A78BFA',
+          blue: '#3B82F6',
         },
         pass: '#22C55E',
         fail: '#EF4444',

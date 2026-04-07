@@ -104,7 +104,7 @@ interface ClusterData {
 // Category mapping
 const categoryConfig: Record<string, { icon: typeof Brain; color: string; label: string }> = {
   "AI/ML": { icon: Brain, color: "#A78BFA", label: "AI/ML Platform" },
-  Analytics: { icon: BarChart3, color: "#1FB6B8", label: "Analytics" },
+  Analytics: { icon: BarChart3, color: "#3B82F6", label: "Analytics" },
   Automation: { icon: Zap, color: "#E68A3F", label: "Automation" },
   Collaboration: { icon: Users, color: "#60A5FA", label: "Collaboration" },
   Security: { icon: Shield, color: "#22C55E", label: "Security" },
@@ -269,15 +269,15 @@ function SupernodeComponent({ data, selected }: NodeProps<Node<SupernodeData>>) 
   return (
     <div
       className={`relative p-4 rounded-xl border-2 transition-all duration-300 cursor-pointer min-w-[160px] ${
-        selected ? "shadow-lg shadow-pharos-teal/30" : ""
+        selected ? "shadow-lg shadow-pharos-blue/30" : ""
       } ${isExpanded ? "min-w-[280px]" : ""}`}
       style={{
         backgroundColor: "#14181C",
         borderColor: selected ? color : `${color}60`,
       }}
     >
-      <Handle type="target" position={Position.Left} className="!bg-pharos-teal !w-3 !h-3" />
-      <Handle type="source" position={Position.Right} className="!bg-pharos-teal !w-3 !h-3" />
+      <Handle type="target" position={Position.Left} className="!bg-pharos-blue !w-3 !h-3" />
+      <Handle type="source" position={Position.Right} className="!bg-pharos-blue !w-3 !h-3" />
 
       {/* Header */}
       <div className="flex items-center gap-3 mb-2">
@@ -526,8 +526,8 @@ export default function IntegrationMappingPage() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-bold text-white flex items-center gap-3">
-            <div className="p-2 rounded-lg bg-pharos-teal/10">
-              <Network className="h-6 w-6 text-pharos-teal" />
+            <div className="p-2 rounded-lg bg-pharos-blue/10">
+              <Network className="h-6 w-6 text-pharos-blue" />
             </div>
             Integration Mapping
           </h1>
@@ -535,7 +535,7 @@ export default function IntegrationMappingPage() {
             API connections, data flows, and integration health monitoring
           </p>
         </div>
-        <Badge variant="outline" className="bg-pharos-teal/10 text-pharos-teal border-pharos-teal/20">
+        <Badge variant="outline" className="bg-pharos-blue/10 text-pharos-blue border-pharos-blue/20">
           <Activity className="w-3 h-3 mr-1" />
           Live Monitoring
         </Badge>
@@ -546,7 +546,7 @@ export default function IntegrationMappingPage() {
         <Card className="bg-pharos-card border-pharos-border">
           <CardHeader className="flex flex-row items-center justify-between pb-2">
             <CardTitle className="text-sm font-medium text-muted-foreground">Total Integrations</CardTitle>
-            <Network className="h-4 w-4 text-pharos-teal" />
+            <Network className="h-4 w-4 text-pharos-blue" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold text-white">{stats.totalIntegrations}</div>
@@ -637,7 +637,7 @@ export default function IntegrationMappingPage() {
                 <Controls className="!bg-pharos-card !border-pharos-border !rounded-lg [&_button]:!bg-pharos-card [&_button]:!border-pharos-border [&_button]:!fill-white" />
                 <MiniMap
                   className="!bg-pharos-card !border-pharos-border !rounded-lg"
-                  nodeColor={(node) => (node.data?.color as string) || "#1FB6B8"}
+                  nodeColor={(node) => (node.data?.color as string) || "#3B82F6"}
                   maskColor="rgba(11, 15, 18, 0.8)"
                 />
               </ReactFlow>
@@ -671,13 +671,13 @@ export default function IntegrationMappingPage() {
               {filteredIntegrations.map((flow) => (
                 <div
                   key={flow.id}
-                  className="p-3 rounded-lg bg-pharos-bg border border-pharos-border hover:border-pharos-teal/30 transition-colors"
+                  className="p-3 rounded-lg bg-pharos-bg border border-pharos-border hover:border-pharos-blue/30 transition-colors"
                 >
                   <div className="flex items-center gap-2 mb-2">
                     <span className="text-sm font-medium text-white truncate">
                       {flow.name.split("→")[0]?.trim() || flow.name}
                     </span>
-                    <ArrowRight className="w-4 h-4 text-pharos-teal flex-shrink-0" />
+                    <ArrowRight className="w-4 h-4 text-pharos-blue flex-shrink-0" />
                     <span className="text-sm font-medium text-white truncate">
                       {flow.name.split("→")[1]?.trim() || "Target"}
                     </span>

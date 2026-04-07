@@ -545,7 +545,7 @@ export default function OperatorAssistantPage() {
                 <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${
                   msg.role === "user" 
                     ? "bg-pharos-purple" 
-                    : "bg-pharos-teal"
+                    : "bg-pharos-blue"
                 }`}>
                   {msg.role === "user" ? (
                     <User className="w-4 h-4 text-white" />
@@ -569,7 +569,7 @@ export default function OperatorAssistantPage() {
             {/* Typing indicator */}
             {isTyping && (
               <div className="flex gap-3">
-                <div className="w-8 h-8 rounded-full bg-pharos-teal flex items-center justify-center">
+                <div className="w-8 h-8 rounded-full bg-pharos-blue flex items-center justify-center">
                   <Bot className="w-4 h-4 text-white" />
                 </div>
                 <div className="bg-pharos-bg border border-pharos-border p-3 rounded-lg">
@@ -645,7 +645,7 @@ export default function OperatorAssistantPage() {
                         className="w-full flex items-center justify-between p-2 hover:bg-pharos-bg rounded cursor-pointer transition-colors"
                       >
                         <div className="flex items-center gap-2">
-                          <Icon className="w-4 h-4 text-pharos-teal" />
+                          <Icon className="w-4 h-4 text-pharos-blue" />
                           <span className="text-sm text-white">{category.name}</span>
                         </div>
                         {isExpanded ? (

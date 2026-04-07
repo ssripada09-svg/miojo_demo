@@ -42,6 +42,7 @@ import type { Tool } from '@/types/data';
 // Pharos color palette
 const PHAROS_COLORS = {
   teal: '#1FB6B8',
+  blue: '#3B82F6',
   gold: '#E68A3F',
   purple: '#A78BFA',
   pass: '#22C55E',
@@ -379,7 +380,7 @@ export default function ToolOptimizationPage() {
           value={formatCurrency(metrics.aiSpend, { compact: true })}
           icon={<Zap className="h-5 w-5" />}
           subtitle={`${metrics.aiSpendPercent}% of total`}
-          valueClassName="text-pharos-teal"
+          valueClassName="text-pharos-blue"
         />
         <MetricCard
           label="Identified Waste"
@@ -548,7 +549,7 @@ export default function ToolOptimizationPage() {
             </div>
             
             {recommendations.length > 5 && (
-              <button className="w-full mt-4 py-2 text-sm text-pharos-teal hover:text-pharos-teal/80 flex items-center justify-center gap-1">
+              <button className="w-full mt-4 py-2 text-sm text-pharos-blue hover:text-pharos-blue/80 flex items-center justify-center gap-1">
                 View all {recommendations.length} recommendations
                 <ArrowRight className="h-4 w-4" />
               </button>
@@ -626,7 +627,7 @@ export default function ToolOptimizationPage() {
                 <span className="text-white font-medium">{formatCurrency(quickWins, { compact: true })}</span>
               </div>
               <div className="flex items-center gap-2">
-                <Calendar className="h-4 w-4 text-pharos-teal" />
+                <Calendar className="h-4 w-4 text-pharos-blue" />
                 <span className="text-muted-foreground">Renewals This Quarter:</span>
                 <span className="text-white font-medium">{renewals.length}</span>
               </div>
