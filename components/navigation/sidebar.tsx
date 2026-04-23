@@ -62,7 +62,7 @@ export function Sidebar({ onNavigate }: SidebarProps) {
               alt="Pharos"
               width={34}
               height={34}
-              className="w-8 h-8 object-contain"
+              className="w-8 h-8 object-contain invert brightness-0 opacity-95"
               priority
             />
           </div>
