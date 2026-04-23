@@ -58,11 +58,11 @@ export function Sidebar({ onNavigate }: SidebarProps) {
         <Link href="/" className="flex items-center gap-3 min-w-0" onClick={handleNavClick}>
           <div className="w-10 h-10 flex items-center justify-center flex-shrink-0">
             <Image
-              src="/brand/pharos-mark-white.png"
+              src="/brand/pharos-mark-black.jpg"
               alt="Pharos"
-              width={34}
-              height={34}
-              className="w-8 h-8 object-contain invert brightness-0 opacity-95"
+              width={40}
+              height={40}
+              className="w-9 h-9 object-contain"
               priority
             />
           </div>
