@@ -56,13 +56,13 @@ export function Sidebar({ onNavigate }: SidebarProps) {
       {/* Header */}
       <div className="flex items-center h-16 px-4 border-b border-[var(--ph-border)] bg-bg-raised">
         <Link href="/" className="flex items-center gap-3 min-w-0" onClick={handleNavClick}>
-          <div className="w-8 h-8 rounded-lg bg-[#0F0F0E] flex items-center justify-center flex-shrink-0 shadow-sm">
+          <div className="w-10 h-10 flex items-center justify-center flex-shrink-0">
             <Image
               src="/brand/pharos-mark-white.png"
               alt="Pharos"
-              width={24}
-              height={24}
-              className="w-5 h-5 object-contain"
+              width={34}
+              height={34}
+              className="w-8 h-8 object-contain"
               priority
             />
           </div>
