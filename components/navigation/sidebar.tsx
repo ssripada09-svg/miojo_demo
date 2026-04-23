@@ -53,15 +53,15 @@ export function Sidebar({ onNavigate }: SidebarProps) {
       )}
     >
       {/* Header */}
-      <div className="flex items-center h-16 px-4 border-b border-[var(--ph-border)]">
-        <Link href="/" className="flex items-center gap-3" onClick={handleNavClick}>
-          <div className="w-8 h-8 rounded-lg bg-teal-deep flex items-center justify-center flex-shrink-0">
+      <div className="flex items-center h-16 px-4 border-b border-[var(--ph-border)] bg-bg-raised">
+        <Link href="/" className="flex items-center gap-3 min-w-0" onClick={handleNavClick}>
+          <div className="w-8 h-8 rounded-lg bg-teal-deep flex items-center justify-center flex-shrink-0 shadow-sm shadow-teal/20">
             <span className="text-white font-bold text-sm">P</span>
           </div>
           {!collapsed && (
             <div className="flex flex-col min-w-0">
-              <span className="font-semibold text-ink text-sm truncate tracking-[-0.01em]">Pharos Helm</span>
-              <span className="text-xs text-ink-muted truncate">CACI Demo</span>
+              <span className="font-semibold text-ink text-sm uppercase tracking-[0.04em] truncate">Pharos</span>
+              <span className="text-[11px] text-ink-muted truncate">Helm · CACI Demo</span>
             </div>
           )}
         </Link>

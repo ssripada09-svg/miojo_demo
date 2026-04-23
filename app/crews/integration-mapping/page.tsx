@@ -620,7 +620,7 @@ export default function IntegrationMappingPage() {
             </div>
           </CardHeader>
           <CardContent>
-            <div className="h-[500px] border border-pharos-border rounded-lg overflow-hidden">
+            <div className="h-[500px] border border-pharos-border rounded-lg overflow-hidden bg-pharos-bg">
               <ReactFlow
                 nodes={nodes}
                 edges={edges}
@@ -631,14 +631,14 @@ export default function IntegrationMappingPage() {
                 fitView
                 attributionPosition="bottom-left"
                 proOptions={{ hideAttribution: true }}
-                style={{ backgroundColor: "#0B0F12" }}
+                style={{ backgroundColor: "#F8F5EF" }}
               >
-                <Background color="#2E3338" gap={20} />
-                <Controls className="!bg-pharos-card !border-pharos-border !rounded-lg [&_button]:!bg-pharos-card [&_button]:!border-pharos-border [&_button]:!fill-white" />
+                <Background color="rgba(15, 15, 14, 0.08)" gap={20} />
+                <Controls className="!bg-pharos-card !border-pharos-border !rounded-lg [&_button]:!bg-pharos-card [&_button]:!border-pharos-border [&_button]:!fill-[#0F0F0E]" />
                 <MiniMap
                   className="!bg-pharos-card !border-pharos-border !rounded-lg"
                   nodeColor={(node) => (node.data?.color as string) || "#3B82F6"}
-                  maskColor="rgba(11, 15, 18, 0.8)"
+                  maskColor="rgba(246, 244, 238, 0.7)"
                 />
               </ReactFlow>
             </div>
