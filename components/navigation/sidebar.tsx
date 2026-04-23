@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
@@ -55,12 +56,19 @@ export function Sidebar({ onNavigate }: SidebarProps) {
       {/* Header */}
       <div className="flex items-center h-16 px-4 border-b border-[var(--ph-border)] bg-bg-raised">
         <Link href="/" className="flex items-center gap-3 min-w-0" onClick={handleNavClick}>
-          <div className="w-8 h-8 rounded-lg bg-teal-deep flex items-center justify-center flex-shrink-0 shadow-sm shadow-teal/20">
-            <span className="text-white font-bold text-sm">P</span>
+          <div className="w-8 h-8 rounded-lg bg-[#0F0F0E] flex items-center justify-center flex-shrink-0 shadow-sm">
+            <Image
+              src="/brand/pharos-mark-white.png"
+              alt="Pharos"
+              width={24}
+              height={24}
+              className="w-5 h-5 object-contain"
+              priority
+            />
           </div>
           {!collapsed && (
             <div className="flex flex-col min-w-0">
-              <span className="font-semibold text-ink text-sm uppercase tracking-[0.04em] truncate">Pharos</span>
+              <span className="font-semibold text-ink text-sm uppercase tracking-[0.06em] truncate">Pharos</span>
               <span className="text-[11px] text-ink-muted truncate">Helm · CACI Demo</span>
             </div>
           )}

@@ -272,8 +272,9 @@ function SupernodeComponent({ data, selected }: NodeProps<Node<SupernodeData>>) 
         selected ? "shadow-lg shadow-pharos-blue/30" : ""
       } ${isExpanded ? "min-w-[280px]" : ""}`}
       style={{
-        backgroundColor: "#14181C",
-        borderColor: selected ? color : `${color}60`,
+        backgroundColor: "#FDFCF8",
+        borderColor: selected ? color : `${color}55`,
+        boxShadow: selected ? `0 12px 28px ${color}18` : "0 1px 2px rgba(15,15,14,0.06)",
       }}
     >
       <Handle type="target" position={Position.Left} className="!bg-pharos-blue !w-3 !h-3" />
