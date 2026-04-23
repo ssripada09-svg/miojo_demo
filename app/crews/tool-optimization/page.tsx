@@ -465,13 +465,13 @@ export default function ToolOptimizationPage() {
           height={320}
         >
           <ResponsiveContainer width="100%" height="100%">
-            <PieChart>
+            <PieChart margin={{ top: 8, right: 12, bottom: 8, left: 8 }}>
               <Pie
                 data={categoryData}
-                cx="35%"
+                cx="32%"
                 cy="50%"
-                innerRadius={50}
-                outerRadius={80}
+                innerRadius={42}
+                outerRadius={68}
                 paddingAngle={2}
                 dataKey="value"
               >
@@ -497,7 +497,7 @@ export default function ToolOptimizationPage() {
                 layout="vertical"
                 verticalAlign="middle"
                 align="right"
-                wrapperStyle={{ paddingLeft: 20, right: 0 }}
+                wrapperStyle={{ paddingLeft: 12, right: 0, fontSize: '12px' }}
                 formatter={(value) => <span className="text-sm text-muted-foreground">{value}</span>}
               />
             </PieChart>
