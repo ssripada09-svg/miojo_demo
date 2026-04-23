@@ -21,12 +21,10 @@ export function Sidebar({ onNavigate }: SidebarProps) {
   const pathname = usePathname()
   const [collapsed, setCollapsed] = useState(false)
   const [expandedSuites, setExpandedSuites] = useState<Record<string, boolean>>(() => {
-    // Auto-expand the suite that contains the current crew
     const initial: Record<string, boolean> = {}
     for (const suite of suites) {
       initial[suite.id] = suite.crews.some(c => pathname === `/crews/${c.slug}`)
     }
-    // If none matched, expand all
     if (!Object.values(initial).some(Boolean)) {
       for (const suite of suites) initial[suite.id] = true
     }
@@ -43,27 +41,27 @@ export function Sidebar({ onNavigate }: SidebarProps) {
 
   const colorStyles: Record<string, { bg: string; text: string; dot: string }> = {
     'pharos-blue': { bg: 'bg-pharos-blue/10', text: 'text-pharos-blue', dot: 'bg-pharos-blue' },
-    'pharos-teal': { bg: 'bg-pharos-teal/10', text: 'text-pharos-teal', dot: 'bg-pharos-teal' },
-    'pharos-gold': { bg: 'bg-pharos-gold/10', text: 'text-pharos-gold', dot: 'bg-pharos-gold' },
+    'pharos-teal': { bg: 'bg-teal-tint',      text: 'text-teal-deep',    dot: 'bg-teal' },
+    'pharos-gold': { bg: 'bg-gold-tint',      text: 'text-gold-deep',    dot: 'bg-gold' },
   }
 
   return (
     <div
       className={cn(
-        "flex flex-col h-full bg-pharos-card border-r border-pharos-border transition-all duration-300",
+        "flex flex-col h-full bg-bg-raised border-r border-[var(--ph-border)] transition-all duration-300",
         collapsed ? "w-16" : "w-64"
       )}
     >
       {/* Header */}
-      <div className="flex items-center h-16 px-4 border-b border-pharos-border">
+      <div className="flex items-center h-16 px-4 border-b border-[var(--ph-border)]">
         <Link href="/" className="flex items-center gap-3" onClick={handleNavClick}>
-          <div className="w-8 h-8 rounded-lg bg-pharos-teal flex items-center justify-center flex-shrink-0">
+          <div className="w-8 h-8 rounded-lg bg-teal-deep flex items-center justify-center flex-shrink-0">
             <span className="text-white font-bold text-sm">P</span>
           </div>
           {!collapsed && (
             <div className="flex flex-col min-w-0">
-              <span className="font-semibold text-white text-sm truncate">Pharos Helm</span>
-              <span className="text-xs text-muted-foreground truncate">CACI Demo</span>
+              <span className="font-semibold text-ink text-sm truncate tracking-[-0.01em]">Pharos Helm</span>
+              <span className="text-xs text-ink-muted truncate">CACI Demo</span>
             </div>
           )}
         </Link>
@@ -78,8 +76,8 @@ export function Sidebar({ onNavigate }: SidebarProps) {
           className={cn(
             "flex items-center gap-3 px-3 py-2 rounded-lg text-sm transition-colors",
             pathname === "/"
-              ? "bg-pharos-teal/10 text-pharos-teal"
-              : "text-muted-foreground hover:bg-pharos-border/50 hover:text-white"
+              ? "bg-teal-tint text-teal-deep font-medium"
+              : "text-ink-muted hover:bg-[var(--ph-surface-sunk)] hover:text-ink"
           )}
           title={collapsed ? "Dashboard" : undefined}
         >
@@ -99,15 +97,15 @@ export function Sidebar({ onNavigate }: SidebarProps) {
                 <button
                   onClick={() => toggleSuite(suite.id)}
                   className={cn(
-                    "flex items-center gap-2 w-full px-3 py-2 text-xs font-semibold uppercase tracking-wider rounded-lg transition-colors",
+                    "flex items-center gap-2 w-full px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.15em] rounded-lg transition-colors font-mono",
                     hasActiveCrew
                       ? `${styles.text}`
-                      : "text-muted-foreground hover:text-white"
+                      : "text-ink-faint hover:text-ink"
                   )}
                 >
                   <div className={cn("w-2 h-2 rounded-full flex-shrink-0", styles.dot)} />
                   <span className="truncate flex-1 text-left">{suite.name}</span>
-                  <span className="text-[10px] font-normal normal-case tracking-normal text-muted-foreground mr-1">
+                  <span className="text-[9px] font-normal normal-case tracking-normal text-ink-faint mr-1">
                     {suite.audience}
                   </span>
                   <ChevronDown className={cn(
@@ -136,8 +134,8 @@ export function Sidebar({ onNavigate }: SidebarProps) {
                       "flex items-center gap-3 px-3 py-2 rounded-lg text-sm transition-colors",
                       !collapsed && "pl-7",
                       isActive
-                        ? `${styles.bg} ${styles.text}`
-                        : "text-muted-foreground hover:bg-pharos-border/50 hover:text-white"
+                        ? `${styles.bg} ${styles.text} font-medium`
+                        : "text-ink-muted hover:bg-[var(--ph-surface-sunk)] hover:text-ink"
                     )}
                     title={collapsed ? crew.name : undefined}
                   >
@@ -145,7 +143,7 @@ export function Sidebar({ onNavigate }: SidebarProps) {
                     {!collapsed && (
                       <div className="flex flex-col min-w-0">
                         <span className="truncate">{crew.name}</span>
-                        <span className="text-xs text-muted-foreground truncate">
+                        <span className="text-xs text-ink-faint truncate">
                           {crew.description}
                         </span>
                       </div>
@@ -157,7 +155,7 @@ export function Sidebar({ onNavigate }: SidebarProps) {
           )
         })}
 
-        {/* Governance - separate, purple */}
+        {/* Governance — Aegis-scoped purple */}
         <div className="pt-2">
           <Link
             href="/governance"
@@ -165,8 +163,8 @@ export function Sidebar({ onNavigate }: SidebarProps) {
             className={cn(
               "flex items-center gap-3 px-3 py-2 rounded-lg text-sm transition-colors",
               pathname === "/governance"
-                ? "bg-pharos-purple/10 text-pharos-purple"
-                : "text-muted-foreground hover:bg-pharos-border/50 hover:text-white"
+                ? "bg-pharos-purple/10 text-pharos-purple font-medium"
+                : "text-ink-muted hover:bg-[var(--ph-surface-sunk)] hover:text-ink"
             )}
             title={collapsed ? "Governance" : undefined}
           >
@@ -176,11 +174,11 @@ export function Sidebar({ onNavigate }: SidebarProps) {
         </div>
       </nav>
 
-      {/* Collapse toggle - hidden on mobile */}
-      <div className="p-2 border-t border-pharos-border hidden lg:block">
+      {/* Collapse toggle — hidden on mobile */}
+      <div className="p-2 border-t border-[var(--ph-border)] hidden lg:block">
         <button
           onClick={() => setCollapsed(!collapsed)}
-          className="flex items-center justify-center w-full py-2 text-muted-foreground hover:text-white transition-colors rounded-lg hover:bg-pharos-border/50"
+          className="flex items-center justify-center w-full py-2 text-ink-muted hover:text-ink transition-colors rounded-lg hover:bg-[var(--ph-surface-sunk)]"
         >
           {collapsed ? (
             <ChevronRight className="w-5 h-5" />

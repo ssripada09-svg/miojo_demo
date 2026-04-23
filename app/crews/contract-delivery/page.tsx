@@ -113,7 +113,7 @@ const followOnColumns: Column<FollowOnRow>[] = [
     sortable: true,
     render: (value) => {
       const v = value as number;
-      return <span className="font-semibold text-white">{v.toFixed(1)}</span>;
+      return <span className="font-semibold text-ink">{v.toFixed(1)}</span>;
     },
   },
   {
@@ -165,7 +165,7 @@ const scopeColumns: Column<ScopeExpansionRow>[] = [
     sortable: true,
     render: (value) => {
       const v = value as number;
-      return <span className="font-semibold text-white">{v.toFixed(1)}</span>;
+      return <span className="font-semibold text-ink">{v.toFixed(1)}</span>;
     },
   },
 ];
@@ -185,7 +185,7 @@ function DeliveryTooltip({
     <div className="rounded-lg border border-pharos-border bg-pharos-card p-3 shadow-lg">
       <div className="flex items-center gap-2 mb-1">
         <div className="h-3 w-3 rounded-full" style={{ backgroundColor: entry.payload.fill }} />
-        <p className="text-sm font-medium text-white">{entry.payload.band}</p>
+        <p className="text-sm font-medium text-ink">{entry.payload.band}</p>
       </div>
       <p className="text-sm text-muted-foreground">{entry.value}% threshold</p>
     </div>
@@ -200,7 +200,7 @@ export default function ContractDeliveryPage() {
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-white flex items-center gap-3">
+          <h1 className="text-2xl font-bold text-ink flex items-center gap-3">
             <div className="p-2 rounded-lg bg-pharos-gold/10">
               <Truck className="h-6 w-6 text-pharos-gold" />
             </div>
@@ -278,7 +278,7 @@ export default function ContractDeliveryPage() {
             <div className="p-2 rounded-full bg-pharos-gold/10">
               <AlertTriangle className="h-5 w-5 text-pharos-gold" />
             </div>
-            <p className="text-sm font-medium text-white">
+            <p className="text-sm font-medium text-ink">
               ATLAS C2 is running at a <span className="text-pharos-gold font-bold">45.0%</span> change-order rate — a delivery risk and a follow-on capture signal at the same time.
             </p>
           </div>
@@ -309,7 +309,7 @@ export default function ContractDeliveryPage() {
       {/* Follow-On Readiness Table */}
       <Card className="bg-pharos-card border-pharos-border">
         <CardHeader>
-          <CardTitle className="text-white">Follow-On Readiness</CardTitle>
+          <CardTitle className="text-ink">Follow-On Readiness</CardTitle>
           <CardDescription>
             Contract delivery posture for recompete and follow-on capture
           </CardDescription>
@@ -327,7 +327,7 @@ export default function ContractDeliveryPage() {
       {/* Scope Expansion Hotspots Table */}
       <Card className="bg-pharos-card border-pharos-border">
         <CardHeader>
-          <CardTitle className="text-white">Scope Expansion Hotspots</CardTitle>
+          <CardTitle className="text-ink">Scope Expansion Hotspots</CardTitle>
           <CardDescription>
             Contracts with elevated change-order rates signaling scope growth or delivery risk
           </CardDescription>

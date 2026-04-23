@@ -1,97 +1,270 @@
+/* ============================================================
+   Pharos Signal & System — ported from embed-mvp @ db85843
+   Cream shell + charcoal ink + teal/gold accents.
+   Aegis governance retains purple as a scoped accent only.
+
+   Fonts: Inter, JetBrains Mono, and Fraunces are loaded via
+   next/font/google in app/layout.tsx. CSS @import is not used
+   to avoid violating the rule that @import must precede all
+   non-@charset / non-@layer rules (including @tailwind).
+   ============================================================ */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-  :root {
-    /* Pharos Dark Theme (default) */
-    --background: 210 25% 5%; /* #0B0F12 */
-    --foreground: 0 0% 100%; /* White */
-    
-    --card: 210 15% 9%; /* #14181C */
-    --card-foreground: 0 0% 100%;
-    
-    --popover: 210 15% 9%;
-    --popover-foreground: 0 0% 100%;
-    
-    --primary: 181 71% 42%; /* Pharos Teal #1FB6B8 */
+  :root,
+  [data-theme="light"] {
+    /* ---------- v72 shell tokens (hero/nav/footer) ---------- */
+    --ph-bg:             #F6F4EE;
+    --ph-bg-raised:      #FDFCF8;
+    --ph-surface:        #FFFFFF;
+    --ph-surface-sunk:   #EEEBE2;
+
+    --ph-ink:            #0F0F0E;
+    --ph-ink-soft:       rgba(15,15,14,0.82);
+    --ph-ink-muted:      rgba(15,15,14,0.62);
+    --ph-ink-faint:      rgba(15,15,14,0.46);
+    --ph-ink-ghost:      rgba(15,15,14,0.26);
+    --ph-ink-on-accent:  #FFFFFF;
+
+    --ph-teal:           #1FB6B8;
+    --ph-teal-strong:    #17999B;
+    --ph-teal-deep:      #0F7A7C;
+    --ph-teal-tint:      rgba(31,182,184,0.10);
+    --ph-teal-glow:      rgba(31,182,184,0.28);
+
+    --ph-gold:           #E68A3F;
+    --ph-gold-strong:    #C87730;
+    --ph-gold-deep:      #A8601F;
+    --ph-gold-tint:      rgba(230,138,63,0.10);
+
+    --ph-success:        #15803D;
+    --ph-warn:           #B45309;
+    --ph-danger:         #B91C1C;
+
+    --ph-border:         rgba(15,15,14,0.10);
+    --ph-border-strong:  rgba(15,15,14,0.18);
+    --ph-hairline:       rgba(15,15,14,0.06);
+
+    --ph-grad-timeline:  linear-gradient(90deg, var(--ph-teal) 0%, var(--ph-teal) 35%, var(--ph-gold) 65%, var(--ph-ink) 100%);
+    --ph-grad-display:   linear-gradient(92deg, var(--ph-teal-strong) 0%, var(--ph-teal-deep) 50%, var(--ph-gold-strong) 100%);
+
+    --ph-shadow-xs:      0 1px 0 rgba(15,15,14,0.04);
+    --ph-shadow-sm:      0 1px 2px rgba(15,15,14,0.06);
+    --ph-shadow-md:      0 1px 2px rgba(15,15,14,0.04), 0 8px 24px rgba(15,15,14,0.08);
+    --ph-shadow-lg:      0 1px 2px rgba(15,15,14,0.05), 0 20px 60px rgba(15,15,14,0.12);
+    --ph-shadow-cta:     0 1px 0 rgba(168,96,31,0.5), 0 10px 28px rgba(230,138,63,0.32);
+
+    --ph-ease-out:       cubic-bezier(0.16, 1, 0.3, 1);
+    --ph-ease-in-out:    cubic-bezier(0.65, 0, 0.35, 1);
+
+    /* ---------- Aegis (CACI-scoped) ---------- */
+    --ph-purple:         #6D5BD0;
+    --ph-purple-strong:  #5D4CC0;
+    --ph-purple-tint:    rgba(109,91,208,0.10);
+
+    /* ---------- Generic shadcn-style vars — rebound to cream ---------- */
+    /* HSL triples so hsl(var(--name)) resolves correctly */
+    --background:        44 27% 95%;   /* ~#F6F4EE */
+    --foreground:        60 4% 6%;     /* ~#0F0F0E */
+
+    --card:              0 0% 100%;    /* #FFFFFF */
+    --card-foreground:   60 4% 6%;
+
+    --popover:           0 0% 100%;
+    --popover-foreground: 60 4% 6%;
+
+    --primary:           181 58% 33%;  /* ~#17999B teal-strong */
     --primary-foreground: 0 0% 100%;
-    
-    --secondary: 210 15% 14%; /* #2E3338 */
-    --secondary-foreground: 0 0% 100%;
-    
-    --muted: 210 15% 14%;
-    --muted-foreground: 212 10% 55%; /* #8A929C - accessible muted text */
-    
-    --accent: 27 78% 57%; /* Pharos Gold #E68A3F */
+
+    --secondary:         44 27% 91%;   /* ~#EEEBE2 surface-sunk */
+    --secondary-foreground: 60 4% 6%;
+
+    --muted:             44 27% 91%;
+    --muted-foreground:  60 4% 38%;    /* ~rgba(15,15,14,0.62) ink-muted */
+
+    --accent:            25 76% 57%;   /* #E68A3F gold */
     --accent-foreground: 0 0% 100%;
-    
-    --destructive: 0 84% 60%; /* Red */
+
+    --destructive:       0 72% 42%;    /* #B91C1C */
     --destructive-foreground: 0 0% 100%;
-    
-    --border: 210 10% 20%; /* #2E3338 */
-    --input: 210 10% 20%;
-    --ring: 181 71% 42%; /* Teal for focus rings */
-    
+
+    --border:            60 4% 90%;    /* thin hairline on cream */
+    --input:             60 4% 84%;
+    --ring:              181 71% 42%;  /* teal focus ring */
+
     --radius: 0.5rem;
   }
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
+  * { @apply border-border; }
   body {
-    @apply bg-pharos-bg text-foreground font-sans;
-    font-feature-settings: "rlig" 1, "calt" 1;
+    background-color: var(--ph-bg);
+    color: var(--ph-ink);
+    font-family: var(--font-inter), 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-feature-settings: 'ss01','cv11','rlig' 1,'calt' 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
+  html { scroll-behavior: smooth; }
 }
 
-/* Custom scrollbar for dark theme */
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+*:focus-visible {
+  outline: 2px solid var(--ph-teal);
+  outline-offset: 2px;
 }
 
-::-webkit-scrollbar-track {
-  background: #14181C;
+/* Scrollbar — cream */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: var(--ph-bg-raised); }
+::-webkit-scrollbar-thumb { background: var(--ph-border-strong); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--ph-ink-muted); }
+
+/* ============================================================
+   Typography helpers — v72 verbatim
+   ============================================================ */
+.ph-display {
+  font-family: var(--font-inter), 'Inter', -apple-system, sans-serif;
+  font-size: clamp(3rem, 6.2vw, 6.75rem);
+  font-weight: 560;
+  line-height: 1.0;
+  letter-spacing: -0.028em;
+  color: var(--ph-ink);
+  font-feature-settings: 'ss01','cv11','kern' 1;
+  word-spacing: 0.01em;
+}
+.ph-h1 {
+  font-family: var(--font-inter), 'Inter', -apple-system, sans-serif;
+  font-size: clamp(2.75rem, 5.2vw, 4.75rem);
+  font-weight: 560;
+  line-height: 0.98;
+  letter-spacing: -0.032em;
+  color: var(--ph-ink);
+}
+.ph-h2 {
+  font-family: var(--font-inter), 'Inter', -apple-system, sans-serif;
+  font-size: clamp(2rem, 3.6vw, 3.25rem);
+  font-weight: 560;
+  line-height: 1.04;
+  letter-spacing: -0.028em;
+  color: var(--ph-ink);
+}
+.ph-h3 {
+  font-family: var(--font-inter), 'Inter', -apple-system, sans-serif;
+  font-size: 1.375rem;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  color: var(--ph-ink);
+}
+.ph-lede {
+  font-family: var(--font-inter), 'Inter', -apple-system, sans-serif;
+  font-size: clamp(1.125rem, 1.5vw, 1.375rem);
+  font-weight: 400;
+  line-height: 1.45;
+  letter-spacing: -0.008em;
+  color: var(--ph-ink-soft);
+}
+.ph-body {
+  font-family: var(--font-inter), 'Inter', -apple-system, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--ph-ink-muted);
+}
+.ph-display-serif-italic {
+  font-family: var(--font-fraunces), 'Fraunces', Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  font-variation-settings: 'opsz' 144, 'SOFT' 50;
+  color: var(--ph-teal-deep);
+  letter-spacing: -0.025em;
+}
+.ph-stat {
+  font-family: var(--font-fraunces), 'Fraunces', Georgia, serif;
+  font-variation-settings: 'opsz' 144;
+  font-weight: 500;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 0.92;
+  letter-spacing: -0.04em;
+  color: var(--ph-ink);
+  font-feature-settings: 'tnum' 1, 'lnum' 1;
+}
+.ph-eyebrow {
+  font-family: var(--font-jetbrains-mono), 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ph-teal-deep);
+}
+.ph-eyebrow-num {
+  font-family: var(--font-jetbrains-mono), 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ph-ink-muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+.ph-eyebrow-num::before {
+  content: attr(data-num);
+  color: var(--ph-teal-deep);
+  font-weight: 600;
+}
+.ph-mono {
+  font-family: var(--font-jetbrains-mono), 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: var(--ph-ink-muted);
+}
+.ph-rule {
+  display: inline-block;
+  width: 2rem;
+  height: 1px;
+  background: var(--ph-teal-deep);
+  vertical-align: middle;
+  margin-right: 0.75rem;
 }
 
-::-webkit-scrollbar-thumb {
-  background: #2E3338;
-  border-radius: 4px;
+/* ============================================================
+   Section backgrounds
+   ============================================================ */
+.bg-pharos-hero,
+.hero-with-glow {
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%, var(--ph-teal-tint), transparent 55%),
+    radial-gradient(circle at 20% 80%, var(--ph-gold-tint), transparent 45%),
+    linear-gradient(180deg, var(--ph-bg-raised) 0%, var(--ph-bg) 100%);
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #3E4348;
+.pharos-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, var(--ph-teal) 20%, var(--ph-teal) 80%, transparent 100%);
+  opacity: 0.4;
 }
 
-/* Utility classes for Pharos colors */
-.text-primary-teal {
-  color: #1FB6B8;
+.pharos-glow-teal {
+  box-shadow: 0 0 60px var(--ph-teal-glow), 0 0 120px rgba(31,182,184,0.08);
 }
 
-.text-accent-gold {
-  color: #E68A3F;
-}
+/* ============================================================
+   Status utilities (preserved for status text)
+   ============================================================ */
+.status-pass     { color: var(--ph-success); }
+.status-fail     { color: var(--ph-danger); }
+.status-warning  { color: var(--ph-warn); }
 
-.text-accent-purple {
-  color: #A78BFA;
-}
+/* Text utilities compatibility */
+.text-primary-teal { color: var(--ph-teal-deep); }
+.text-accent-gold  { color: var(--ph-gold-strong); }
+.text-accent-purple { color: var(--ph-purple); }
 
-.bg-card-pharos {
-  background-color: #14181C;
-}
-
-/* Status indicator utilities */
-.status-pass {
-  color: #22C55E;
-}
-
-.status-fail {
-  color: #EF4444;
-}
-
-.status-warning {
-  color: #F59E0B;
-}
+/* Legacy surface compat — ensure cream if anything still references */
+.bg-card-pharos { background-color: var(--ph-surface); }

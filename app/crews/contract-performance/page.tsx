@@ -116,7 +116,7 @@ function CparsTooltip({
     <div className="rounded-lg border border-pharos-border bg-pharos-card p-3 shadow-lg">
       <div className="flex items-center gap-2 mb-1">
         <div className="h-3 w-3 rounded-full" style={{ backgroundColor: entry.payload.color }} />
-        <p className="text-sm font-medium text-white">{entry.name}</p>
+        <p className="text-sm font-medium text-ink">{entry.name}</p>
       </div>
       <p className="text-sm text-muted-foreground">{entry.value} contracts</p>
     </div>
@@ -129,7 +129,7 @@ export default function ContractPerformancePage() {
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-white flex items-center gap-3">
+          <h1 className="text-2xl font-bold text-ink flex items-center gap-3">
             <div className="p-2 rounded-lg bg-pharos-teal/10">
               <BarChart3 className="h-6 w-6 text-pharos-teal" />
             </div>
@@ -201,7 +201,7 @@ export default function ContractPerformancePage() {
             <div className="p-2 rounded-full bg-pharos-teal/10">
               <AlertTriangle className="h-5 w-5 text-pharos-teal" />
             </div>
-            <p className="text-sm font-medium text-white">
+            <p className="text-sm font-medium text-ink">
               Only <span className="text-pharos-teal font-bold">3.4%</span> of the portfolio is at CPI/SPI risk — but{' '}
               <span className="text-pharos-teal font-bold">36%</span> is already inside the 12-month recompete window.
             </p>
@@ -269,32 +269,32 @@ export default function ContractPerformancePage() {
 
         <Card className="bg-pharos-card border-pharos-border">
           <CardHeader>
-            <CardTitle className="text-white">Portfolio Health Summary</CardTitle>
+            <CardTitle className="text-ink">Portfolio Health Summary</CardTitle>
             <CardDescription>Key takeaways from current performance data</CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="flex items-start gap-3">
               <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 shrink-0" />
               <p className="text-sm text-muted-foreground">
-                <span className="text-white font-medium">72%</span> of contracts rated Exceptional or Very Good in CPARS.
+                <span className="text-ink font-medium">72%</span> of contracts rated Exceptional or Very Good in CPARS.
               </p>
             </div>
             <div className="flex items-start gap-3">
               <AlertTriangle className="h-5 w-5 text-yellow-500 mt-0.5 shrink-0" />
               <p className="text-sm text-muted-foreground">
-                <span className="text-white font-medium">13 contracts</span> are below the CPI 0.90 threshold requiring corrective action plans.
+                <span className="text-ink font-medium">13 contracts</span> are below the CPI 0.90 threshold requiring corrective action plans.
               </p>
             </div>
             <div className="flex items-start gap-3">
               <TrendingDown className="h-5 w-5 text-red-500 mt-0.5 shrink-0" />
               <p className="text-sm text-muted-foreground">
-                <span className="text-white font-medium">Average OTD at 79.8%</span> — below the 85% target, driven by 3 outlier programs.
+                <span className="text-ink font-medium">Average OTD at 79.8%</span> — below the 85% target, driven by 3 outlier programs.
               </p>
             </div>
             <div className="flex items-start gap-3">
               <Activity className="h-5 w-5 text-pharos-teal mt-0.5 shrink-0" />
               <p className="text-sm text-muted-foreground">
-                <span className="text-white font-medium">18 recompetes</span> within 12 months representing $510M in at-risk revenue.
+                <span className="text-ink font-medium">18 recompetes</span> within 12 months representing $510M in at-risk revenue.
               </p>
             </div>
           </CardContent>
@@ -304,7 +304,7 @@ export default function ContractPerformancePage() {
       {/* Risk Contracts Table */}
       <Card className="bg-pharos-card border-pharos-border">
         <CardHeader>
-          <CardTitle className="text-white">Highest-Risk Contracts</CardTitle>
+          <CardTitle className="text-ink">Highest-Risk Contracts</CardTitle>
           <CardDescription>
             Contracts flagged for CPI, SPI, or OTD performance below threshold
           </CardDescription>

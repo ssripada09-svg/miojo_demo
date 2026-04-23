@@ -83,7 +83,7 @@ function ProductivityTooltip({
   if (!active || !payload || !payload.length) return null;
   return (
     <div className="rounded-lg border border-pharos-border bg-pharos-card p-3 shadow-lg">
-      <p className="text-sm font-medium text-white mb-1">{label}</p>
+      <p className="text-sm font-medium text-ink mb-1">{label}</p>
       {payload.map((entry) => (
         <p key={entry.dataKey} className="text-sm text-muted-foreground">
           <span style={{ color: entry.color }} className="font-medium">
@@ -104,7 +104,7 @@ const knowledgeHealthColumns: Column<KnowledgeHealthRow>[] = [
     header: 'Category',
     sortable: true,
     className: 'min-w-[280px]',
-    render: (value) => <span className="font-medium text-white">{String(value)}</span>,
+    render: (value) => <span className="font-medium text-ink">{String(value)}</span>,
   },
   {
     key: 'value',
@@ -126,7 +126,7 @@ const retrievalColumns: Column<RetrievalCapabilityRow>[] = [
     header: 'Capability',
     sortable: true,
     className: 'min-w-[280px]',
-    render: (value) => <span className="font-medium text-white">{String(value)}</span>,
+    render: (value) => <span className="font-medium text-ink">{String(value)}</span>,
   },
   {
     key: 'impact',
@@ -144,7 +144,7 @@ export default function KnowledgeActivationPage() {
       {/* Page Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-white flex items-center gap-3">
+          <h1 className="text-2xl font-bold text-ink flex items-center gap-3">
             <div className="p-2 rounded-lg bg-pharos-gold/10">
               <BookOpen className="h-6 w-6 text-pharos-gold" />
             </div>
@@ -218,7 +218,7 @@ export default function KnowledgeActivationPage() {
             <div className="p-3 rounded-lg bg-pharos-gold/10 shrink-0">
               <Brain className="h-6 w-6 text-pharos-gold" />
             </div>
-            <p className="text-white text-lg font-medium">
+            <p className="text-ink text-lg font-medium">
               Knowledge friction costs large organizations about{' '}
               <span className="text-pharos-gold font-bold">$47M/year</span>{' '}
               — before proposal capacity loss is counted.
@@ -261,7 +261,7 @@ export default function KnowledgeActivationPage() {
       {/* Knowledge Health Table */}
       <Card className="bg-pharos-card border-pharos-border">
         <CardHeader>
-          <CardTitle className="text-white flex items-center gap-2">
+          <CardTitle className="text-ink flex items-center gap-2">
             <AlertTriangle className="h-5 w-5 text-pharos-gold" />
             Knowledge Health
           </CardTitle>
@@ -283,7 +283,7 @@ export default function KnowledgeActivationPage() {
       {/* Retrieval Capabilities Table */}
       <Card className="bg-pharos-card border-pharos-border">
         <CardHeader>
-          <CardTitle className="text-white flex items-center gap-2">
+          <CardTitle className="text-ink flex items-center gap-2">
             <Search className="h-5 w-5 text-pharos-gold" />
             Retrieval Capabilities
           </CardTitle>

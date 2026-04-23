@@ -66,11 +66,17 @@ export function MetricCard({
   };
 
   return (
-    <div className={cn('bg-card rounded-lg border border-border p-6', className)}>
+    <div
+      className={cn(
+        'bg-card rounded-lg border border-border p-6 transition-all duration-300',
+        'hover:border-[rgba(31,182,184,0.45)] hover:shadow-md hover:-translate-y-0.5',
+        className,
+      )}
+    >
       <div className="flex items-start justify-between">
         <div className="space-y-1">
-          <p className="text-sm font-medium text-muted-foreground">{label}</p>
-          <p className={cn('text-2xl font-bold text-foreground', valueClassName)}>
+          <p className="text-[11px] font-semibold tracking-[0.08em] uppercase text-ink-muted">{label}</p>
+          <p className={cn('text-2xl font-semibold text-ink tracking-[-0.01em]', valueClassName)}>
             {value}
           </p>
           {subtitle && (

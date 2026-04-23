@@ -104,7 +104,7 @@ function StageTooltip({ active, payload }: { active?: boolean; payload?: Array<{
   const data = payload[0].payload;
   return (
     <div className="rounded-lg border border-pharos-border bg-pharos-card p-3 shadow-lg">
-      <p className="text-sm font-medium text-white">{data.stage}</p>
+      <p className="text-sm font-medium text-ink">{data.stage}</p>
       <p className="text-sm text-muted-foreground">{data.value} opportunities</p>
     </div>
   );
@@ -115,7 +115,7 @@ function CoverageTooltip({ active, payload }: { active?: boolean; payload?: Arra
   const data = payload[0].payload;
   return (
     <div className="rounded-lg border border-pharos-border bg-pharos-card p-3 shadow-lg">
-      <p className="text-sm font-medium text-white">{data.label}</p>
+      <p className="text-sm font-medium text-ink">{data.label}</p>
       <p className="text-sm text-muted-foreground">{data.value}x</p>
     </div>
   );
@@ -129,7 +129,7 @@ const columns: Column<OpportunityRow>[] = [
     header: 'Opportunity',
     sortable: true,
     className: 'min-w-[200px]',
-    render: (value) => <span className="font-medium text-white">{String(value)}</span>,
+    render: (value) => <span className="font-medium text-ink">{String(value)}</span>,
   },
   {
     key: 'agency',
@@ -145,7 +145,7 @@ const columns: Column<OpportunityRow>[] = [
     key: 'estValue',
     header: 'Est. Value',
     sortable: true,
-    render: (value) => <span className="font-medium text-white">{String(value)}</span>,
+    render: (value) => <span className="font-medium text-ink">{String(value)}</span>,
   },
   {
     key: 'stage',
@@ -169,7 +169,7 @@ const columns: Column<OpportunityRow>[] = [
     key: 'weightedValue',
     header: 'Weighted Value',
     sortable: true,
-    render: (value) => <span className="text-white">{String(value)}</span>,
+    render: (value) => <span className="text-ink">{String(value)}</span>,
   },
   {
     key: 'incumbent',
@@ -200,7 +200,7 @@ export default function OpportunityIntelligencePage() {
       {/* Page Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-white flex items-center gap-3">
+          <h1 className="text-2xl font-bold text-ink flex items-center gap-3">
             <div className="p-2 rounded-lg bg-pharos-teal/10">
               <Search className="h-6 w-6 text-pharos-teal" />
             </div>
@@ -271,7 +271,7 @@ export default function OpportunityIntelligencePage() {
             <div className="p-3 rounded-lg bg-pharos-teal/10 shrink-0">
               <Target className="h-6 w-6 text-pharos-teal" />
             </div>
-            <p className="text-white text-lg font-medium">
+            <p className="text-ink text-lg font-medium">
               <span className="text-pharos-teal font-bold">$27B-$38B</span>{' '}
               qualified pipeline floor required to support a{' '}
               <span className="text-pharos-teal font-bold">$9.2B-$9.4B</span>{' '}
@@ -359,7 +359,7 @@ export default function OpportunityIntelligencePage() {
       {/* Opportunity Table */}
       <Card className="bg-pharos-card border-pharos-border">
         <CardHeader>
-          <CardTitle className="text-white">Active Pipeline</CardTitle>
+          <CardTitle className="text-ink">Active Pipeline</CardTitle>
         </CardHeader>
         <CardContent>
           <DataTable<OpportunityRow>

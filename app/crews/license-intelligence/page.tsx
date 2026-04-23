@@ -100,7 +100,7 @@ function ToolDetailModal({
     <div className="fixed inset-0 z-50 flex items-center justify-center">
       {/* Backdrop */}
       <div 
-        className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+        className="absolute inset-0 bg-ink/20 backdrop-blur-sm"
         onClick={onClose}
       />
       
@@ -109,7 +109,7 @@ function ToolDetailModal({
         {/* Header */}
         <div className="sticky top-0 bg-pharos-card border-b border-pharos-border p-6 flex items-start justify-between">
           <div>
-            <h2 className="text-xl font-bold text-white flex items-center gap-2">
+            <h2 className="text-xl font-bold text-ink flex items-center gap-2">
               {tool.name}
               <FedRAMPBadge status={tool.fedrampStatus} />
             </h2>
@@ -119,7 +119,7 @@ function ToolDetailModal({
             variant="ghost" 
             size="icon" 
             onClick={onClose}
-            className="text-muted-foreground hover:text-white"
+            className="text-muted-foreground hover:text-ink"
           >
             <X className="h-5 w-5" />
           </Button>
@@ -129,11 +129,11 @@ function ToolDetailModal({
         <div className="p-6 space-y-6">
           {/* Key Metrics */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div className="p-4 rounded-lg bg-pharos-bg border border-pharos-border">
+            <div className="p-4 rounded-lg bg-[var(--ph-surface-sunk)] border border-pharos-border">
               <p className="text-xs text-muted-foreground">Monthly Cost</p>
-              <p className="text-lg font-bold text-white">{formatCurrency(tool.monthlyCost, { compact: true })}</p>
+              <p className="text-lg font-bold text-ink">{formatCurrency(tool.monthlyCost, { compact: true })}</p>
             </div>
-            <div className="p-4 rounded-lg bg-pharos-bg border border-pharos-border">
+            <div className="p-4 rounded-lg bg-[var(--ph-surface-sunk)] border border-pharos-border">
               <p className="text-xs text-muted-foreground">Utilization</p>
               <p className={`text-lg font-bold ${
                 tool.utilization >= 70 ? 'text-pass' : 
@@ -143,11 +143,11 @@ function ToolDetailModal({
                 {formatPercentage(tool.utilization, { decimals: 0 })}
               </p>
             </div>
-            <div className="p-4 rounded-lg bg-pharos-bg border border-pharos-border">
+            <div className="p-4 rounded-lg bg-[var(--ph-surface-sunk)] border border-pharos-border">
               <p className="text-xs text-muted-foreground">Active Users</p>
-              <p className="text-lg font-bold text-white">{tool.activeUsers.toLocaleString()}</p>
+              <p className="text-lg font-bold text-ink">{tool.activeUsers.toLocaleString()}</p>
             </div>
-            <div className="p-4 rounded-lg bg-pharos-bg border border-pharos-border">
+            <div className="p-4 rounded-lg bg-[var(--ph-surface-sunk)] border border-pharos-border">
               <p className="text-xs text-muted-foreground">Integrations</p>
               <p className="text-lg font-bold text-pharos-blue">{integrations.length}</p>
             </div>
@@ -155,52 +155,52 @@ function ToolDetailModal({
           
           {/* License Details */}
           <div>
-            <h3 className="text-sm font-medium text-white mb-3 flex items-center gap-2">
+            <h3 className="text-sm font-medium text-ink mb-3 flex items-center gap-2">
               <Users className="h-4 w-4 text-pharos-blue" />
               License Details
             </h3>
-            <div className="grid grid-cols-2 gap-4 p-4 rounded-lg bg-pharos-bg border border-pharos-border">
+            <div className="grid grid-cols-2 gap-4 p-4 rounded-lg bg-[var(--ph-surface-sunk)] border border-pharos-border">
               <div>
                 <p className="text-xs text-muted-foreground">License Model</p>
-                <p className="text-sm text-white capitalize">{tool.licenseModel.replace('_', ' ')}</p>
+                <p className="text-sm text-ink capitalize">{tool.licenseModel.replace('_', ' ')}</p>
               </div>
               <div>
                 <p className="text-xs text-muted-foreground">Price</p>
-                <p className="text-sm text-white">{formatCurrency(tool.pricePerUnit, { showCents: true })} / {tool.pricingUnit.split('/')[0]}</p>
+                <p className="text-sm text-ink">{formatCurrency(tool.pricePerUnit, { showCents: true })} / {tool.pricingUnit.split('/')[0]}</p>
               </div>
               <div>
                 <p className="text-xs text-muted-foreground">Total Licenses</p>
-                <p className="text-sm text-white">{tool.totalLicenses.toLocaleString()}</p>
+                <p className="text-sm text-ink">{tool.totalLicenses.toLocaleString()}</p>
               </div>
               <div>
                 <p className="text-xs text-muted-foreground">Assigned</p>
-                <p className="text-sm text-white">{tool.assignedLicenses.toLocaleString()}</p>
+                <p className="text-sm text-ink">{tool.assignedLicenses.toLocaleString()}</p>
               </div>
             </div>
           </div>
           
           {/* Contract Info */}
           <div>
-            <h3 className="text-sm font-medium text-white mb-3 flex items-center gap-2">
+            <h3 className="text-sm font-medium text-ink mb-3 flex items-center gap-2">
               <Calendar className="h-4 w-4 text-pharos-blue" />
               Contract Information
             </h3>
-            <div className="grid grid-cols-2 gap-4 p-4 rounded-lg bg-pharos-bg border border-pharos-border">
+            <div className="grid grid-cols-2 gap-4 p-4 rounded-lg bg-[var(--ph-surface-sunk)] border border-pharos-border">
               <div>
                 <p className="text-xs text-muted-foreground">Contract Start</p>
-                <p className="text-sm text-white">{formatDate(tool.contractStartDate)}</p>
+                <p className="text-sm text-ink">{formatDate(tool.contractStartDate)}</p>
               </div>
               <div>
                 <p className="text-xs text-muted-foreground">Contract End</p>
-                <p className="text-sm text-white">{formatDate(tool.contractEndDate)}</p>
+                <p className="text-sm text-ink">{formatDate(tool.contractEndDate)}</p>
               </div>
               <div>
                 <p className="text-xs text-muted-foreground">Business Owner</p>
-                <p className="text-sm text-white">{tool.businessOwner}</p>
+                <p className="text-sm text-ink">{tool.businessOwner}</p>
               </div>
               <div>
                 <p className="text-xs text-muted-foreground">Technical Owner</p>
-                <p className="text-sm text-white">{tool.technicalOwner}</p>
+                <p className="text-sm text-ink">{tool.technicalOwner}</p>
               </div>
             </div>
           </div>
@@ -208,7 +208,7 @@ function ToolDetailModal({
           {/* Features Used */}
           {usage?.featuresUsed && usage.featuresUsed.length > 0 && (
             <div>
-              <h3 className="text-sm font-medium text-white mb-3 flex items-center gap-2">
+              <h3 className="text-sm font-medium text-ink mb-3 flex items-center gap-2">
                 <Zap className="h-4 w-4 text-pharos-blue" />
                 Features Used
               </h3>
@@ -228,7 +228,7 @@ function ToolDetailModal({
           
           {/* Compliance Certifications */}
           <div>
-            <h3 className="text-sm font-medium text-white mb-3 flex items-center gap-2">
+            <h3 className="text-sm font-medium text-ink mb-3 flex items-center gap-2">
               <Shield className="h-4 w-4 text-pharos-blue" />
               Compliance Certifications
             </h3>
@@ -248,7 +248,7 @@ function ToolDetailModal({
           
           {/* Security Settings */}
           <div>
-            <h3 className="text-sm font-medium text-white mb-3">Security Configuration</h3>
+            <h3 className="text-sm font-medium text-ink mb-3">Security Configuration</h3>
             <div className="grid grid-cols-3 gap-4">
               <div className="flex items-center gap-2">
                 {tool.ssoEnabled ? (
@@ -321,7 +321,7 @@ export default function LicenseIntelligencePage() {
       sortable: true,
       render: (_, row) => (
         <div>
-          <span className="font-medium text-white">{row.name}</span>
+          <span className="font-medium text-ink">{row.name}</span>
           <p className="text-xs text-muted-foreground">{row.vendor}</p>
         </div>
       )
@@ -349,7 +349,7 @@ export default function LicenseIntelligencePage() {
       header: 'Monthly Cost',
       sortable: true,
       render: (value) => (
-        <span className="text-white font-medium">{formatCurrency(Number(value), { compact: true })}</span>
+        <span className="text-ink font-medium">{formatCurrency(Number(value), { compact: true })}</span>
       )
     },
     {
@@ -389,7 +389,7 @@ export default function LicenseIntelligencePage() {
       {/* Page Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-white flex items-center gap-3">
+          <h1 className="text-2xl font-bold text-ink flex items-center gap-3">
             <div className="p-2 rounded-lg bg-pharos-blue/10">
               <FileSearch className="h-6 w-6 text-pharos-blue" />
             </div>
@@ -441,7 +441,7 @@ export default function LicenseIntelligencePage() {
       {/* Compliance Badges Summary */}
       <Card className="bg-pharos-card border-pharos-border">
         <CardHeader className="pb-3">
-          <CardTitle className="text-white text-sm">Compliance Coverage</CardTitle>
+          <CardTitle className="text-ink text-sm">Compliance Coverage</CardTitle>
           <CardDescription>Certification coverage across tool portfolio</CardDescription>
         </CardHeader>
         <CardContent>
@@ -452,10 +452,10 @@ export default function LicenseIntelligencePage() {
               .map(([cert, count]) => (
                 <div 
                   key={cert}
-                  className="flex items-center gap-2 px-3 py-2 rounded-lg bg-pharos-bg border border-pharos-border"
+                  className="flex items-center gap-2 px-3 py-2 rounded-lg bg-[var(--ph-surface-sunk)] border border-pharos-border"
                 >
                   <Shield className="h-4 w-4 text-pharos-blue" />
-                  <span className="text-sm text-white">{cert}</span>
+                  <span className="text-sm text-ink">{cert}</span>
                   <Badge variant="outline" className="bg-pass/10 text-pass border-pass/20 text-xs">
                     {count} tools
                   </Badge>
@@ -492,7 +492,7 @@ export default function LicenseIntelligencePage() {
       {/* Tool Inventory Table */}
       <Card className="bg-pharos-card border-pharos-border">
         <CardHeader>
-          <CardTitle className="text-white">Tool Inventory</CardTitle>
+          <CardTitle className="text-ink">Tool Inventory</CardTitle>
           <CardDescription>
             Click on any row to view detailed tool information
           </CardDescription>

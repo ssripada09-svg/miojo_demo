@@ -96,27 +96,28 @@ const recentActivity = [
 export default function DashboardPage() {
   return (
     <div className="space-y-6 md:space-y-8">
-      {/* Demo Environment Banner */}
-      <div className="bg-gradient-to-r from-pharos-teal/20 to-pharos-purple/20 border border-pharos-teal/30 rounded-lg p-4 md:p-6">
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-          <div>
-            <div className="flex items-center gap-2 mb-2">
-              <Badge className="bg-pharos-teal/20 text-pharos-teal border-pharos-teal/30">
-                CACI Demo Environment
-              </Badge>
-              <Badge variant="outline" className="border-pharos-gold/30 text-pharos-gold">
-                Deploy360
-              </Badge>
+      {/* Editorial hero — cream shell with v72 hairline + italic accent */}
+      <div className="relative overflow-hidden rounded-2xl border border-[var(--ph-border)] bg-bg-raised hero-with-glow px-6 py-8 md:px-10 md:py-12">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+          <div className="max-w-3xl">
+            <div className="flex items-center mb-5">
+              <span className="ph-rule" />
+              <span className="ph-eyebrow">CACI Demo · Deploy360</span>
             </div>
-            <h1 className="text-2xl md:text-3xl font-bold text-white">Pharos Command Center</h1>
-            <p className="text-muted-foreground mt-1">
-              AI Workforce Management — 3 Suites &middot; 14 Crews
+            <h1 className="ph-h2 text-balance mb-3">
+              Pharos <span className="ph-display-serif-italic" style={{ fontSize: 'inherit', lineHeight: 'inherit' }}>Command</span> Center
+            </h1>
+            <p className="ph-lede max-w-2xl">
+              AI Workforce Management — 3 Suites · 14 Crews, governed by Aegis.
             </p>
           </div>
-          <div className="flex items-center gap-2 text-sm">
-            <div className="flex items-center gap-1.5">
-              <div className="w-2 h-2 rounded-full bg-pass animate-pulse" />
-              <span className="text-muted-foreground">All systems operational</span>
+          <div className="flex items-center gap-2 text-sm flex-shrink-0">
+            <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-[var(--ph-border)] bg-surface">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full rounded-full bg-pass opacity-60 animate-ping" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-pass" />
+              </span>
+              <span className="text-ink-muted">All systems operational</span>
             </div>
           </div>
         </div>
@@ -126,7 +127,7 @@ export default function DashboardPage() {
       <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
         {/* Suite Cards - Takes 2 columns on xl */}
         <div className="xl:col-span-2 space-y-4">
-          <h2 className="text-lg md:text-xl font-semibold text-white">AI Suites</h2>
+          <h2 className="text-lg md:text-xl font-semibold text-ink">AI Suites</h2>
           <div className="space-y-4">
             {suites.map((suite) => {
               const meta = suiteMetrics[suite.id]
@@ -140,7 +141,7 @@ export default function DashboardPage() {
                           style={{ backgroundColor: suite.color }}
                         />
                         <div>
-                          <CardTitle className="text-white text-base md:text-lg">{suite.name}</CardTitle>
+                          <CardTitle className="text-ink text-base md:text-lg">{suite.name}</CardTitle>
                           <CardDescription className="mt-0.5 text-xs md:text-sm">
                             {meta?.description || suite.description}
                           </CardDescription>
@@ -169,9 +170,9 @@ export default function DashboardPage() {
                     {meta && (
                       <div className="grid grid-cols-3 gap-3">
                         {meta.stats.map((stat) => (
-                          <div key={stat.label} className="bg-pharos-bg rounded-lg p-3 border border-pharos-border">
+                          <div key={stat.label} className="bg-[var(--ph-surface-sunk)] rounded-lg p-3 border border-[var(--ph-border)]">
                             <p className="text-xs text-muted-foreground">{stat.label}</p>
-                            <p className="text-lg font-bold text-white">{stat.value}</p>
+                            <p className="text-lg font-bold text-ink">{stat.value}</p>
                           </div>
                         ))}
                       </div>
@@ -183,11 +184,11 @@ export default function DashboardPage() {
                         <Link
                           key={crew.slug}
                           href={`/crews/${crew.slug}`}
-                          className="flex items-center gap-2 px-3 py-2 rounded-lg bg-pharos-bg border border-pharos-border hover:border-opacity-60 transition-colors group"
+                          className="flex items-center gap-2 px-3 py-2 rounded-lg bg-bg-raised border border-[var(--ph-border)] hover:border-teal-strong transition-colors group"
                           style={{ ['--suite-color' as string]: suite.color }}
                         >
-                          <crew.icon className="w-4 h-4 text-muted-foreground group-hover:text-white transition-colors" style={{ color: undefined }} />
-                          <span className="text-sm text-muted-foreground group-hover:text-white transition-colors flex-1">{crew.name}</span>
+                          <crew.icon className="w-4 h-4 text-muted-foreground group-hover:text-ink transition-colors" style={{ color: undefined }} />
+                          <span className="text-sm text-muted-foreground group-hover:text-ink transition-colors flex-1">{crew.name}</span>
                           <ArrowRight className="w-3.5 h-3.5 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
                         </Link>
                       ))}
@@ -202,14 +203,14 @@ export default function DashboardPage() {
         {/* Recent Activity - Takes 1 column on xl */}
         <div className="space-y-4">
           <div className="flex items-center justify-between">
-            <h2 className="text-lg md:text-xl font-semibold text-white">Recent Activity</h2>
+            <h2 className="text-lg md:text-xl font-semibold text-ink">Recent Activity</h2>
             <Clock className="h-4 w-4 text-muted-foreground" />
           </div>
           <Card className="bg-pharos-card border-pharos-border">
             <CardContent className="p-0">
-              <div className="divide-y divide-pharos-border">
+              <div className="divide-y divide-[var(--ph-border)]">
                 {recentActivity.map((activity) => (
-                  <div key={activity.id} className="p-3 md:p-4 hover:bg-pharos-border/20 transition-colors">
+                  <div key={activity.id} className="p-3 md:p-4 hover:bg-[var(--ph-surface-sunk)] transition-colors">
                     <div className="flex gap-3">
                       <div className={`flex-shrink-0 mt-0.5 ${
                         activity.type === "success" ? "text-pass" :
@@ -219,7 +220,7 @@ export default function DashboardPage() {
                         <activity.icon className="h-4 w-4" />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <p className="text-sm text-white font-medium truncate">{activity.title}</p>
+                        <p className="text-sm text-ink font-medium truncate">{activity.title}</p>
                         <p className="text-xs text-muted-foreground mt-0.5 line-clamp-2">
                           {activity.description}
                         </p>
@@ -243,11 +244,11 @@ export default function DashboardPage() {
               <div className="space-y-3 text-sm">
                 <div className="flex justify-between">
                   <span className="text-muted-foreground">Revenue (FY)</span>
-                  <span className="text-white font-medium">$8.63B</span>
+                  <span className="text-ink font-medium">$8.63B</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-muted-foreground">Total Backlog</span>
-                  <span className="text-white font-medium">$31.4B</span>
+                  <span className="text-ink font-medium">$31.4B</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-muted-foreground">Book-to-Bill</span>

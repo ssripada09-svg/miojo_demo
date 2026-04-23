@@ -75,7 +75,7 @@ function ClearanceTooltip({
   const entry = payload[0];
   return (
     <div className="rounded-lg border border-pharos-border bg-pharos-card p-3 shadow-lg">
-      <p className="text-sm font-medium text-white mb-1">{entry.name}</p>
+      <p className="text-sm font-medium text-ink mb-1">{entry.name}</p>
       <p className="text-sm text-muted-foreground">
         {entry.value.toLocaleString()} personnel
       </p>
@@ -96,7 +96,7 @@ function RiskTooltip({
   if (!active || !payload || !payload.length) return null;
   return (
     <div className="rounded-lg border border-pharos-border bg-pharos-card p-3 shadow-lg">
-      <p className="text-sm font-medium text-white mb-1">{label}</p>
+      <p className="text-sm font-medium text-ink mb-1">{label}</p>
       <p className="text-sm text-muted-foreground">
         {payload[0].value} clearances at risk
       </p>
@@ -110,7 +110,7 @@ export default function TalentClearancePage() {
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-white flex items-center gap-3">
+          <h1 className="text-2xl font-bold text-ink flex items-center gap-3">
             <div className="p-2 rounded-lg bg-[#E68A3F]/10">
               <ShieldCheck className="h-6 w-6 text-pharos-gold" />
             </div>
@@ -177,7 +177,7 @@ export default function TalentClearancePage() {
             <div className="p-2 rounded-full bg-[#E68A3F]/10">
               <AlertTriangle className="h-5 w-5 text-pharos-gold" />
             </div>
-            <p className="text-sm font-medium text-white">
+            <p className="text-sm font-medium text-ink">
               A single lapsed TS/SCI clearance can create an{' '}
               <span className="text-pharos-gold font-bold">$80K-$150K event</span>{' '}
               before contract impact is counted.
@@ -260,7 +260,7 @@ export default function TalentClearancePage() {
       {/* Queue DataTable */}
       <Card className="bg-pharos-card border-pharos-border">
         <CardHeader>
-          <CardTitle className="text-white">Investigation &amp; Processing Queues</CardTitle>
+          <CardTitle className="text-ink">Investigation &amp; Processing Queues</CardTitle>
           <CardDescription>
             Active clearance investigations and processing pipelines
           </CardDescription>

@@ -109,7 +109,7 @@ function TimelineTooltip({
   const max = min + (range?.value ?? 0);
   return (
     <div className="rounded-lg border border-pharos-border bg-pharos-card p-3 shadow-lg">
-      <p className="text-sm font-medium text-white mb-1">{label}</p>
+      <p className="text-sm font-medium text-ink mb-1">{label}</p>
       <p className="text-sm text-muted-foreground">
         {min} &ndash; {max} weeks
       </p>
@@ -123,7 +123,7 @@ export default function HeadcountJustificationPage() {
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-white flex items-center gap-3">
+          <h1 className="text-2xl font-bold text-ink flex items-center gap-3">
             <div className="p-2 rounded-lg bg-pharos-teal/10">
               <Users className="h-6 w-6 text-pharos-teal" />
             </div>
@@ -189,7 +189,7 @@ export default function HeadcountJustificationPage() {
             <div className="p-2 rounded-full bg-pharos-teal/10">
               <AlertTriangle className="h-5 w-5 text-pharos-teal" />
             </div>
-            <p className="text-sm font-medium text-white">
+            <p className="text-sm font-medium text-ink">
               A well-documented staffing action can still take{' '}
               <span className="text-pharos-teal font-bold">16-32 weeks</span>{' '}
               if DCAA is triggered.
@@ -244,7 +244,7 @@ export default function HeadcountJustificationPage() {
       {/* Evidence Pillar Table */}
       <Card className="bg-pharos-card border-pharos-border">
         <CardHeader>
-          <CardTitle className="text-white">Evidence Pillars</CardTitle>
+          <CardTitle className="text-ink">Evidence Pillars</CardTitle>
           <CardDescription>
             Key documentation areas required for a successful headcount justification package
           </CardDescription>
@@ -262,7 +262,7 @@ export default function HeadcountJustificationPage() {
       {/* Review Chain Table */}
       <Card className="bg-pharos-card border-pharos-border">
         <CardHeader>
-          <CardTitle className="text-white">Review Chain</CardTitle>
+          <CardTitle className="text-ink">Review Chain</CardTitle>
           <CardDescription>
             Stakeholders involved in the headcount approval process
           </CardDescription>

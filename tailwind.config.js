@@ -1,6 +1,15 @@
 import tailwindcssAnimate from 'tailwindcss-animate'
 
-/** @type {import('tailwindcss').Config} */
+/** @type {import('tailwindcss').Config}
+ * Pharos Signal & System — cream shell (v72 / db85843 canonical).
+ *
+ * `pharos.*` tokens are REBOUND from dark hex to cream CSS variables so every
+ * `bg-pharos-card`, `bg-pharos-bg`, `border-pharos-border` usage across the
+ * existing CACI demo flips to cream automatically.
+ *
+ * `pharos.teal`, `pharos.gold`, `pharos.purple`, `pharos.blue` retain their hex
+ * values — they are already canonical.
+ */
 const config = {
   darkMode: ['class'],
   content: [
@@ -13,27 +22,65 @@ const config = {
     container: {
       center: true,
       padding: '2rem',
-      screens: {
-        '2xl': '1400px',
-      },
+      screens: { '2xl': '1400px' },
     },
     extend: {
       colors: {
+        // ---- pharos.* rebound to v72 cream shell ----
         pharos: {
-          bg: '#0B0F12',
-          card: '#14181C',
-          border: '#2E3338',
-          teal: '#1FB6B8',
-          gold: '#E68A3F',
-          purple: '#A78BFA',
-          blue: '#3B82F6',
+          bg:     'var(--ph-bg)',           // cream page background
+          card:   'var(--ph-surface)',      // white card
+          border: 'var(--ph-border-strong)',// hairline on cream
+          teal:   '#1FB6B8',
+          gold:   '#E68A3F',
+          purple: '#6D5BD0',                // Aegis — scoped to governance only
+          blue:   '#2563EB',
         },
-        pass: '#22C55E',
-        fail: '#EF4444',
-        warning: '#F59E0B',
-        border: 'hsl(var(--border))',
-        input: 'hsl(var(--input))',
-        ring: 'hsl(var(--ring))',
+
+        // ---- v72 shell tokens ----
+        bg:             'var(--ph-bg)',
+        'bg-raised':    'var(--ph-bg-raised)',
+        surface:        'var(--ph-surface)',
+        'surface-sunk': 'var(--ph-surface-sunk)',
+
+        ink: {
+          DEFAULT: 'var(--ph-ink)',
+          soft:    'var(--ph-ink-soft)',
+          muted:   'var(--ph-ink-muted)',
+          faint:   'var(--ph-ink-faint)',
+          ghost:   'var(--ph-ink-ghost)',
+          invert:  'var(--ph-ink-on-accent)',
+        },
+
+        teal: {
+          DEFAULT: 'var(--ph-teal)',
+          strong:  'var(--ph-teal-strong)',
+          deep:    'var(--ph-teal-deep)',
+          tint:    'var(--ph-teal-tint)',
+          glow:    'var(--ph-teal-glow)',
+          400:     'var(--ph-teal)',
+          500:     'var(--ph-teal-strong)',
+          600:     'var(--ph-teal-deep)',
+          700:     'var(--ph-teal-deep)',
+        },
+        gold: {
+          DEFAULT: 'var(--ph-gold)',
+          strong:  'var(--ph-gold-strong)',
+          deep:    'var(--ph-gold-deep)',
+          tint:    'var(--ph-gold-tint)',
+        },
+
+        // Semantic status
+        pass:    'var(--ph-success)',
+        fail:    'var(--ph-danger)',
+        warning: 'var(--ph-warn)',
+        success: 'var(--ph-success)',
+        danger:  'var(--ph-danger)',
+
+        // ---- shadcn HSL-bound tokens ----
+        border:     'hsl(var(--border))',
+        input:      'hsl(var(--input))',
+        ring:       'hsl(var(--ring))',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         primary: {
@@ -64,28 +111,57 @@ const config = {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
         },
+
+        hairline: 'var(--ph-hairline)',
       },
+
+      fontFamily: {
+        sans:  ['var(--font-inter)', 'Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+        serif: ['var(--font-fraunces)', 'Fraunces', 'Georgia', 'serif'],
+        mono:  ['var(--font-jetbrains-mono)', 'JetBrains Mono', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
+      },
+
       borderRadius: {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
+        xs: '2px',
+        xl: '20px',
+        pill: '999px',
       },
-      fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+
+      boxShadow: {
+        xs:  'var(--ph-shadow-xs)',
+        sm:  'var(--ph-shadow-sm)',
+        md:  'var(--ph-shadow-md)',
+        lg:  'var(--ph-shadow-lg)',
+        cta: 'var(--ph-shadow-cta)',
       },
+
+      backgroundImage: {
+        'grad-timeline': 'var(--ph-grad-timeline)',
+        'grad-display':  'var(--ph-grad-display)',
+      },
+
       keyframes: {
         'accordion-down': {
           from: { height: '0' },
-          to: { height: 'var(--radix-accordion-content-height)' },
+          to:   { height: 'var(--radix-accordion-content-height)' },
         },
         'accordion-up': {
           from: { height: 'var(--radix-accordion-content-height)' },
-          to: { height: '0' },
+          to:   { height: '0' },
         },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
-        'accordion-up': 'accordion-up 0.2s ease-out',
+        'accordion-up':   'accordion-up 0.2s ease-out',
+      },
+
+      maxWidth: {
+        container: '1280px',
+        content:   '1440px',
+        prose:     '640px',
       },
     },
   },

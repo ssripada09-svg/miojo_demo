@@ -13,11 +13,11 @@ export function Shell({ children }: ShellProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <div className="flex h-screen bg-pharos-bg overflow-hidden">
+    <div className="flex h-screen bg-bg overflow-hidden">
       {/* Mobile menu overlay */}
       {mobileMenuOpen && (
-        <div 
-          className="fixed inset-0 bg-black/50 z-40 lg:hidden"
+        <div
+          className="fixed inset-0 bg-ink/30 backdrop-blur-sm z-40 lg:hidden"
           onClick={() => setMobileMenuOpen(false)}
         />
       )}
@@ -25,7 +25,7 @@ export function Shell({ children }: ShellProps) {
       {/* Mobile menu button */}
       <button
         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        className="fixed top-4 left-4 z-50 lg:hidden p-2 rounded-lg bg-pharos-card border border-pharos-border text-white"
+        className="fixed top-4 left-4 z-50 lg:hidden p-2 rounded-lg bg-bg-raised border border-[var(--ph-border)] text-ink shadow-sm"
         aria-label="Toggle menu"
       >
         {mobileMenuOpen ? (

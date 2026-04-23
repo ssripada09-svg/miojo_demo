@@ -431,7 +431,7 @@ function AuditFilterButton({
       className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm transition-colors ${
         isActive 
           ? 'bg-pharos-purple/20 text-pharos-purple border border-pharos-purple/30'
-          : 'bg-pharos-bg text-muted-foreground border border-pharos-border hover:border-pharos-purple/30 hover:text-white'
+          : 'bg-[var(--ph-surface-sunk)] text-muted-foreground border border-pharos-border hover:border-pharos-purple/30 hover:text-ink'
       }`}
     >
       {label}
@@ -454,7 +454,7 @@ function CertificationCard({ cert }: { cert: Certification }) {
         <div className="flex items-start justify-between mb-3">
           <div className="flex items-center gap-2">
             <Shield className="h-5 w-5 text-pharos-purple" />
-            <span className="font-bold text-white">{cert.shortName}</span>
+            <span className="font-bold text-ink">{cert.shortName}</span>
           </div>
           <Badge variant="outline" className={getCertStatusColor(cert.status)}>
             {cert.status === 'compliant' ? 'Compliant' : cert.status === 'in_progress' ? 'In Progress' : 'Gap'}
@@ -483,11 +483,11 @@ function CertificationCard({ cert }: { cert: Certification }) {
         <div className="mt-3 grid grid-cols-2 gap-2 text-xs">
           <div>
             <span className="text-muted-foreground">Last Audit</span>
-            <p className="text-white">{formatDate(cert.lastAudit)}</p>
+            <p className="text-ink">{formatDate(cert.lastAudit)}</p>
           </div>
           <div>
             <span className="text-muted-foreground">Next Audit</span>
-            <p className="text-white">{formatDate(cert.nextAudit)}</p>
+            <p className="text-ink">{formatDate(cert.nextAudit)}</p>
           </div>
         </div>
         
@@ -581,7 +581,7 @@ export default function GovernancePage() {
       {/* Page Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-white flex items-center gap-3">
+          <h1 className="text-2xl font-bold text-ink flex items-center gap-3">
             <div className="p-2 rounded-lg bg-pharos-purple/10">
               <Shield className="h-6 w-6 text-pharos-purple" />
             </div>
@@ -618,11 +618,11 @@ export default function GovernancePage() {
             </div>
             <div className="hidden md:flex items-center gap-8">
               <div className="text-center">
-                <p className="text-3xl font-bold text-white">50</p>
+                <p className="text-3xl font-bold text-ink">50</p>
                 <p className="text-xs text-muted-foreground">Tools Governed</p>
               </div>
               <div className="text-center">
-                <p className="text-3xl font-bold text-white">247</p>
+                <p className="text-3xl font-bold text-ink">247</p>
                 <p className="text-xs text-muted-foreground">Data Flows</p>
               </div>
               <div className="text-center">
@@ -640,7 +640,7 @@ export default function GovernancePage() {
 
       {/* NIST AI RMF Functions */}
       <div>
-        <h2 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+        <h2 className="text-lg font-semibold text-ink mb-4 flex items-center gap-2">
           <Shield className="h-5 w-5 text-pharos-purple" />
           NIST AI RMF Functions
         </h2>
@@ -661,7 +661,7 @@ export default function GovernancePage() {
                 </div>
               </CardHeader>
               <CardContent>
-                <h3 className="font-bold text-white text-lg">{func.name}</h3>
+                <h3 className="font-bold text-ink text-lg">{func.name}</h3>
                 <p className="text-xs text-muted-foreground">{func.description}</p>
                 <div className="mt-3">
                   <div className="flex items-center justify-between text-sm">
@@ -695,7 +695,7 @@ export default function GovernancePage() {
           <CardHeader className="pb-3">
             <div className="flex items-center justify-between">
               <div>
-                <CardTitle className="text-white flex items-center gap-2">
+                <CardTitle className="text-ink flex items-center gap-2">
                   <Clock className="h-4 w-4 text-pharos-purple" />
                   Audit Trail
                 </CardTitle>
@@ -761,7 +761,7 @@ export default function GovernancePage() {
                 placeholder="Search audit entries..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 bg-pharos-bg border border-pharos-border rounded-lg text-sm text-white placeholder:text-muted-foreground focus:outline-none focus:border-pharos-purple/50"
+                className="w-full pl-10 pr-4 py-2 bg-[var(--ph-surface-sunk)] border border-pharos-border rounded-lg text-sm text-ink placeholder:text-muted-foreground focus:outline-none focus:border-pharos-purple/50"
               />
             </div>
           </CardHeader>
@@ -770,7 +770,7 @@ export default function GovernancePage() {
               {filteredAuditEntries.map((entry) => (
                 <div 
                   key={entry.id}
-                  className="flex items-start gap-3 p-3 rounded-lg bg-pharos-bg border border-pharos-border hover:border-pharos-purple/20 transition-colors"
+                  className="flex items-start gap-3 p-3 rounded-lg bg-[var(--ph-surface-sunk)] border border-pharos-border hover:border-pharos-purple/20 transition-colors"
                 >
                   <div className={`p-1.5 rounded-lg ${
                     entry.status === 'success' ? 'bg-pass/10 text-pass' :
@@ -783,7 +783,7 @@ export default function GovernancePage() {
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center justify-between gap-2">
                       <div className="flex items-center gap-2">
-                        <p className="text-sm font-medium text-white">{entry.action}</p>
+                        <p className="text-sm font-medium text-ink">{entry.action}</p>
                         {getStatusIcon(entry.status)}
                       </div>
                       <span className="text-xs text-muted-foreground whitespace-nowrap">
@@ -819,7 +819,7 @@ export default function GovernancePage() {
         {/* Policy Status Panel */}
         <Card className="bg-pharos-card border-pharos-border">
           <CardHeader className="pb-3">
-            <CardTitle className="text-white flex items-center gap-2">
+            <CardTitle className="text-ink flex items-center gap-2">
               <FileText className="h-4 w-4 text-pharos-purple" />
               Policy Status
             </CardTitle>
@@ -852,7 +852,7 @@ export default function GovernancePage() {
                   className={`px-2 py-1 rounded text-xs transition-colors ${
                     policyCategory === cat
                       ? 'bg-pharos-purple/20 text-pharos-purple'
-                      : 'bg-pharos-bg text-muted-foreground hover:text-white'
+                      : 'bg-[var(--ph-surface-sunk)] text-muted-foreground hover:text-ink'
                   }`}
                 >
                   {cat === 'all' ? 'All' : cat}
@@ -865,11 +865,11 @@ export default function GovernancePage() {
               {filteredPolicies.map((policy) => (
                 <div 
                   key={policy.id}
-                  className="p-2.5 rounded-lg bg-pharos-bg border border-pharos-border hover:border-pharos-purple/20 transition-colors"
+                  className="p-2.5 rounded-lg bg-[var(--ph-surface-sunk)] border border-pharos-border hover:border-pharos-purple/20 transition-colors"
                 >
                   <div className="flex items-start justify-between gap-2">
                     <div className="flex-1 min-w-0">
-                      <p className="text-xs font-medium text-white truncate">{policy.name}</p>
+                      <p className="text-xs font-medium text-ink truncate">{policy.name}</p>
                       <div className="flex items-center gap-2 mt-1">
                         <Badge 
                           variant="outline" 
@@ -902,7 +902,7 @@ export default function GovernancePage() {
 
       {/* Compliance Certifications Grid */}
       <div>
-        <h2 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+        <h2 className="text-lg font-semibold text-ink mb-4 flex items-center gap-2">
           <CheckCircle className="h-5 w-5 text-pharos-purple" />
           Compliance Certifications
         </h2>
@@ -915,7 +915,7 @@ export default function GovernancePage() {
 
       {/* Risk Summary */}
       <div>
-        <h2 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+        <h2 className="text-lg font-semibold text-ink mb-4 flex items-center gap-2">
           <AlertTriangle className="h-5 w-5 text-pharos-purple" />
           Risk Summary
         </h2>
@@ -923,7 +923,7 @@ export default function GovernancePage() {
           {/* Risk Counts */}
           <Card className="bg-pharos-card border-pharos-border">
             <CardContent className="pt-4">
-              <h3 className="text-sm font-medium text-white mb-3">Active Risks by Severity</h3>
+              <h3 className="text-sm font-medium text-ink mb-3">Active Risks by Severity</h3>
               <div className="space-y-2">
                 <div className="flex items-center justify-between p-2 rounded bg-fail/10">
                   <span className="text-xs text-fail font-medium">Critical</span>
@@ -949,11 +949,11 @@ export default function GovernancePage() {
           <Card className="lg:col-span-3 bg-pharos-card border-pharos-border">
             <CardContent className="pt-4">
               <div className="flex items-center justify-between mb-3">
-                <h3 className="text-sm font-medium text-white">Top Priority Risks</h3>
+                <h3 className="text-sm font-medium text-ink">Top Priority Risks</h3>
                 <Button 
                   variant="ghost" 
                   size="sm" 
-                  className="text-xs text-pharos-teal hover:text-white"
+                  className="text-xs text-pharos-teal hover:text-ink"
                   onClick={() => window.location.href = '/crews/integration-mapping'}
                 >
                   View Integration Mapping
@@ -964,7 +964,7 @@ export default function GovernancePage() {
                 {risks.slice(0, 3).map((risk) => (
                   <div 
                     key={risk.id}
-                    className="p-3 rounded-lg bg-pharos-bg border border-pharos-border"
+                    className="p-3 rounded-lg bg-[var(--ph-surface-sunk)] border border-pharos-border"
                   >
                     <div className="flex items-start justify-between gap-3">
                       <div className="flex-1">
@@ -972,7 +972,7 @@ export default function GovernancePage() {
                           <Badge variant="outline" className={`text-xs ${getSeverityColor(risk.severity)}`}>
                             {risk.severity.toUpperCase()}
                           </Badge>
-                          <span className="text-sm font-medium text-white">{risk.title}</span>
+                          <span className="text-sm font-medium text-ink">{risk.title}</span>
                         </div>
                         <p className="text-xs text-muted-foreground mt-1">{risk.description}</p>
                         <div className="flex items-center gap-4 mt-2">
@@ -1002,13 +1002,13 @@ export default function GovernancePage() {
               <div className="flex items-center gap-2">
                 <CheckCircle className="h-4 w-4 text-pass" />
                 <span className="text-sm text-muted-foreground">
-                  Last full audit: <span className="text-white font-medium">March 15, 2026</span>
+                  Last full audit: <span className="text-ink font-medium">March 15, 2026</span>
                 </span>
               </div>
               <div className="flex items-center gap-2">
                 <Clock className="h-4 w-4 text-pharos-purple" />
                 <span className="text-sm text-muted-foreground">
-                  Next scheduled: <span className="text-white font-medium">April 15, 2026</span>
+                  Next scheduled: <span className="text-ink font-medium">April 15, 2026</span>
                 </span>
               </div>
               <div className="flex items-center gap-2">
@@ -1047,7 +1047,7 @@ export default function GovernancePage() {
               <CheckCircle className="h-5 w-5 text-pass" />
             </div>
             <div>
-              <p className="text-sm font-medium text-white">Export Started</p>
+              <p className="text-sm font-medium text-ink">Export Started</p>
               <p className="text-xs text-muted-foreground">{exportToast}</p>
             </div>
           </div>

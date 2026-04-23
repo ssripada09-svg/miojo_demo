@@ -240,7 +240,7 @@ function CustomTooltip({ active, payload, label }: { active?: boolean; payload?:
   
   return (
     <div className="rounded-lg border border-pharos-border bg-pharos-card p-3 shadow-lg">
-      <p className="text-sm font-medium text-white mb-2">{label}</p>
+      <p className="text-sm font-medium text-ink mb-2">{label}</p>
       {payload.map((entry, index) => (
         <div key={index} className="flex items-center gap-2 text-sm">
           <div 
@@ -248,7 +248,7 @@ function CustomTooltip({ active, payload, label }: { active?: boolean; payload?:
             style={{ backgroundColor: entry.color }}
           />
           <span className="text-muted-foreground">{entry.name}:</span>
-          <span className="font-medium text-white">
+          <span className="font-medium text-ink">
             {formatCurrency(entry.value, { compact: true })}
           </span>
         </div>
@@ -348,7 +348,7 @@ export default function ToolOptimizationPage() {
       {/* Page Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-white flex items-center gap-3">
+          <h1 className="text-2xl font-bold text-ink flex items-center gap-3">
             <div className="p-2 rounded-lg bg-pharos-gold/10">
               <TrendingUp className="h-6 w-6 text-pharos-gold" />
             </div>
@@ -485,7 +485,7 @@ export default function ToolOptimizationPage() {
                   const data = payload[0].payload;
                   return (
                     <div className="rounded-lg border border-pharos-border bg-pharos-card p-3 shadow-lg">
-                      <p className="text-sm font-medium text-white">{data.name}</p>
+                      <p className="text-sm font-medium text-ink">{data.name}</p>
                       <p className="text-sm text-muted-foreground">
                         {formatCurrency(data.value, { compact: true })}
                       </p>
@@ -510,7 +510,7 @@ export default function ToolOptimizationPage() {
         {/* Optimization Recommendations */}
         <Card className="lg:col-span-2 bg-pharos-card border-pharos-border">
           <CardHeader>
-            <CardTitle className="text-white">Optimization Recommendations</CardTitle>
+            <CardTitle className="text-ink">Optimization Recommendations</CardTitle>
             <CardDescription>
               AI-identified opportunities for cost savings
             </CardDescription>
@@ -520,19 +520,19 @@ export default function ToolOptimizationPage() {
               {recommendations.slice(0, 5).map((rec) => (
                 <div 
                   key={rec.id} 
-                  className="p-4 rounded-lg bg-pharos-bg border border-pharos-border hover:border-pharos-gold/30 transition-colors cursor-pointer"
+                  className="p-4 rounded-lg bg-[var(--ph-surface-sunk)] border border-pharos-border hover:border-pharos-gold/30 transition-colors cursor-pointer"
                 >
                   <div className="flex items-start justify-between">
                     <div className="flex-1 pr-4">
                       <div className="flex items-center gap-2 flex-wrap">
-                        <h3 className="font-medium text-white">{rec.title}</h3>
+                        <h3 className="font-medium text-ink">{rec.title}</h3>
                         <PriorityBadge priority={rec.priority} />
                         <EffortBadge effort={rec.effort} />
                       </div>
                       <p className="text-sm text-muted-foreground mt-1">{rec.description}</p>
                       <div className="flex items-center gap-4 mt-2 text-xs">
                         <span className="text-muted-foreground">
-                          Category: <span className="text-white">{rec.category}</span>
+                          Category: <span className="text-ink">{rec.category}</span>
                         </span>
                       </div>
                     </div>
@@ -560,7 +560,7 @@ export default function ToolOptimizationPage() {
         {/* Renewal Calendar */}
         <Card className="bg-pharos-card border-pharos-border">
           <CardHeader>
-            <CardTitle className="text-white flex items-center gap-2">
+            <CardTitle className="text-ink flex items-center gap-2">
               <Calendar className="h-4 w-4" />
               Upcoming Renewals
             </CardTitle>
@@ -574,11 +574,11 @@ export default function ToolOptimizationPage() {
                 renewals.map((renewal, i) => (
                   <div 
                     key={i} 
-                    className="p-3 rounded-lg bg-pharos-bg border border-pharos-border hover:border-pharos-border/80 transition-colors"
+                    className="p-3 rounded-lg bg-[var(--ph-surface-sunk)] border border-pharos-border hover:border-pharos-border/80 transition-colors"
                   >
                     <div className="flex items-start justify-between">
                       <div className="flex-1">
-                        <p className="text-sm text-white font-medium">{renewal.tool}</p>
+                        <p className="text-sm text-ink font-medium">{renewal.tool}</p>
                         <div className="flex items-center gap-2 mt-1">
                           <Clock className="h-3 w-3 text-muted-foreground" />
                           <p className="text-xs text-muted-foreground">
@@ -590,7 +590,7 @@ export default function ToolOptimizationPage() {
                         </p>
                       </div>
                       <div className="text-right">
-                        <p className="text-sm font-medium text-white">
+                        <p className="text-sm font-medium text-ink">
                           {formatCurrency(renewal.amount, { compact: true })}
                         </p>
                         <div className="mt-1">
@@ -624,12 +624,12 @@ export default function ToolOptimizationPage() {
               <div className="flex items-center gap-2">
                 <Zap className="h-4 w-4 text-pharos-gold" />
                 <span className="text-muted-foreground">Quick Wins (Low Effort):</span>
-                <span className="text-white font-medium">{formatCurrency(quickWins, { compact: true })}</span>
+                <span className="text-ink font-medium">{formatCurrency(quickWins, { compact: true })}</span>
               </div>
               <div className="flex items-center gap-2">
                 <Calendar className="h-4 w-4 text-pharos-blue" />
                 <span className="text-muted-foreground">Renewals This Quarter:</span>
-                <span className="text-white font-medium">{renewals.length}</span>
+                <span className="text-ink font-medium">{renewals.length}</span>
               </div>
             </div>
             <button 
@@ -653,7 +653,7 @@ export default function ToolOptimizationPage() {
               <CheckCircle className="h-5 w-5 text-pass" />
             </div>
             <div>
-              <p className="text-sm font-medium text-white">Report Started</p>
+              <p className="text-sm font-medium text-ink">Report Started</p>
               <p className="text-xs text-muted-foreground">{exportToast}</p>
             </div>
           </div>

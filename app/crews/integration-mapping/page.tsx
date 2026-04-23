@@ -288,7 +288,7 @@ function SupernodeComponent({ data, selected }: NodeProps<Node<SupernodeData>>) 
           <Icon className="w-5 h-5" style={{ color }} />
         </div>
         <div>
-          <h3 className="text-sm font-semibold text-white">{data.label}</h3>
+          <h3 className="text-sm font-semibold text-ink">{data.label}</h3>
           <p className="text-xs text-muted-foreground">
             {cluster.tools.length} tools • {cluster.connectionCount} connections
           </p>
@@ -297,9 +297,9 @@ function SupernodeComponent({ data, selected }: NodeProps<Node<SupernodeData>>) 
 
       {/* Stats */}
       <div className="flex gap-2 mt-3">
-        <div className="flex items-center gap-1 px-2 py-1 rounded-md bg-pharos-bg text-xs">
+        <div className="flex items-center gap-1 px-2 py-1 rounded-md bg-[var(--ph-surface-sunk)] text-xs">
           <Activity className="w-3 h-3 text-pass" />
-          <span className="text-white">{cluster.healthScore}%</span>
+          <span className="text-ink">{cluster.healthScore}%</span>
         </div>
         {cluster.cuiFlows > 0 && (
           <div className="flex items-center gap-1 px-2 py-1 rounded-md bg-pharos-purple/10 text-xs">
@@ -315,8 +315,8 @@ function SupernodeComponent({ data, selected }: NodeProps<Node<SupernodeData>>) 
           <p className="text-xs text-muted-foreground mb-2">Tools:</p>
           <div className="space-y-1 max-h-32 overflow-y-auto">
             {cluster.tools.slice(0, 6).map((tool) => (
-              <div key={tool.id} className="flex items-center justify-between text-xs px-2 py-1 rounded bg-pharos-bg">
-                <span className="text-white truncate">{tool.name}</span>
+              <div key={tool.id} className="flex items-center justify-between text-xs px-2 py-1 rounded bg-[var(--ph-surface-sunk)]">
+                <span className="text-ink truncate">{tool.name}</span>
                 {tool.dataClassification === "CUI" && (
                   <Lock className="w-3 h-3 text-pharos-purple flex-shrink-0 ml-1" />
                 )}
@@ -525,7 +525,7 @@ export default function IntegrationMappingPage() {
       {/* Page Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-white flex items-center gap-3">
+          <h1 className="text-2xl font-bold text-ink flex items-center gap-3">
             <div className="p-2 rounded-lg bg-pharos-blue/10">
               <Network className="h-6 w-6 text-pharos-blue" />
             </div>
@@ -549,7 +549,7 @@ export default function IntegrationMappingPage() {
             <Network className="h-4 w-4 text-pharos-blue" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-white">{stats.totalIntegrations}</div>
+            <div className="text-2xl font-bold text-ink">{stats.totalIntegrations}</div>
             <p className="text-xs text-muted-foreground mt-1">Across {clusters.length} clusters</p>
           </CardContent>
         </Card>
@@ -600,7 +600,7 @@ export default function IntegrationMappingPage() {
           <CardHeader className="pb-2">
             <div className="flex items-center justify-between">
               <div>
-                <CardTitle className="text-white">Connection Diagram</CardTitle>
+                <CardTitle className="text-ink">Connection Diagram</CardTitle>
                 <CardDescription>Click clusters to expand and see individual tools</CardDescription>
               </div>
               <div className="flex items-center gap-4 text-xs">
@@ -649,11 +649,11 @@ export default function IntegrationMappingPage() {
         <Card className="bg-pharos-card border-pharos-border">
           <CardHeader className="pb-2">
             <div className="flex items-center justify-between">
-              <CardTitle className="text-white">Data Flows</CardTitle>
+              <CardTitle className="text-ink">Data Flows</CardTitle>
               <div className="flex items-center gap-2">
                 <Filter className="w-4 h-4 text-muted-foreground" />
                 <select
-                  className="bg-pharos-bg border border-pharos-border rounded px-2 py-1 text-xs text-white"
+                  className="bg-[var(--ph-surface-sunk)] border border-pharos-border rounded px-2 py-1 text-xs text-ink"
                   value={classificationFilter || ""}
                   onChange={(e) => setClassificationFilter(e.target.value || null)}
                 >
@@ -671,14 +671,14 @@ export default function IntegrationMappingPage() {
               {filteredIntegrations.map((flow) => (
                 <div
                   key={flow.id}
-                  className="p-3 rounded-lg bg-pharos-bg border border-pharos-border hover:border-pharos-blue/30 transition-colors"
+                  className="p-3 rounded-lg bg-[var(--ph-surface-sunk)] border border-pharos-border hover:border-pharos-blue/30 transition-colors"
                 >
                   <div className="flex items-center gap-2 mb-2">
-                    <span className="text-sm font-medium text-white truncate">
+                    <span className="text-sm font-medium text-ink truncate">
                       {flow.name.split("→")[0]?.trim() || flow.name}
                     </span>
                     <ArrowRight className="w-4 h-4 text-pharos-blue flex-shrink-0" />
-                    <span className="text-sm font-medium text-white truncate">
+                    <span className="text-sm font-medium text-ink truncate">
                       {flow.name.split("→")[1]?.trim() || "Target"}
                     </span>
                   </div>
@@ -714,7 +714,7 @@ export default function IntegrationMappingPage() {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               <Shield className="h-5 w-5 text-warning" />
-              <CardTitle className="text-white">Security Alerts</CardTitle>
+              <CardTitle className="text-ink">Security Alerts</CardTitle>
               {securityAlerts.length > 0 && (
                 <Badge className="bg-fail/20 text-fail border-0">{securityAlerts.length} Issues</Badge>
               )}
@@ -742,7 +742,7 @@ export default function IntegrationMappingPage() {
                   }`}
                 >
                   <div className="flex items-start justify-between mb-2">
-                    <h4 className="text-sm font-semibold text-white">{alert.title}</h4>
+                    <h4 className="text-sm font-semibold text-ink">{alert.title}</h4>
                     <SeverityBadge severity={alert.severity} />
                   </div>
                   <p className="text-xs text-muted-foreground mb-3">{alert.description}</p>
@@ -756,7 +756,7 @@ export default function IntegrationMappingPage() {
               {securityAlerts.length === 0 && (
                 <div className="col-span-2 text-center py-8">
                   <CheckCircle2 className="w-12 h-12 text-pass mx-auto mb-3" />
-                  <p className="text-white font-medium">All Clear</p>
+                  <p className="text-ink font-medium">All Clear</p>
                   <p className="text-sm text-muted-foreground">No security concerns detected</p>
                 </div>
               )}

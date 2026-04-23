@@ -80,7 +80,7 @@ function RevenueTooltip({ active, payload }: { active?: boolean; payload?: Array
   const name = payload[0].payload.competitor;
   return (
     <div className="rounded-lg border border-pharos-border bg-pharos-card p-3 shadow-lg">
-      <p className="text-sm font-medium text-white">{name}</p>
+      <p className="text-sm font-medium text-ink">{name}</p>
       {payload.map((entry, idx) => (
         <p key={idx} className="text-sm text-muted-foreground">
           <span style={{ color: entry.color }}>{entry.dataKey === 'revenue' ? 'Revenue' : 'Backlog'}</span>: ${entry.value}B
@@ -100,14 +100,14 @@ const competitorColumns: Column<CompetitorRow>[] = [
     className: 'min-w-[180px]',
     render: (value, row) => {
       const isCaci = String(value) === 'CACI';
-      return <span className={isCaci ? 'font-bold text-pharos-teal' : 'font-medium text-white'}>{String(value)}</span>;
+      return <span className={isCaci ? 'font-bold text-pharos-teal' : 'font-medium text-ink'}>{String(value)}</span>;
     },
   },
   {
     key: 'revenue',
     header: 'Revenue',
     sortable: true,
-    render: (value) => <span className="font-medium text-white">{String(value)}</span>,
+    render: (value) => <span className="font-medium text-ink">{String(value)}</span>,
   },
   {
     key: 'growth',
@@ -118,7 +118,7 @@ const competitorColumns: Column<CompetitorRow>[] = [
     key: 'backlog',
     header: 'Backlog',
     sortable: true,
-    render: (value) => <span className="text-white">{String(value)}</span>,
+    render: (value) => <span className="text-ink">{String(value)}</span>,
   },
   {
     key: 'b2b',
@@ -148,7 +148,7 @@ const vehicleColumns: Column<VehicleRow>[] = [
     header: 'Vehicle',
     sortable: true,
     className: 'min-w-[140px]',
-    render: (value) => <span className="font-medium text-white">{String(value)}</span>,
+    render: (value) => <span className="font-medium text-ink">{String(value)}</span>,
   },
   {
     key: 'ceiling',
@@ -177,7 +177,7 @@ export default function CompetitiveIntelligencePage() {
       {/* Page Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-white flex items-center gap-3">
+          <h1 className="text-2xl font-bold text-ink flex items-center gap-3">
             <div className="p-2 rounded-lg bg-pharos-teal/10">
               <Target className="h-6 w-6 text-pharos-teal" />
             </div>
@@ -239,7 +239,7 @@ export default function CompetitiveIntelligencePage() {
             <div className="p-3 rounded-lg bg-pharos-teal/10 shrink-0">
               <Target className="h-6 w-6 text-pharos-teal" />
             </div>
-            <p className="text-white text-lg font-medium">
+            <p className="text-ink text-lg font-medium">
               Booz Allen&apos;s <span className="text-pharos-teal font-bold">92% recompete win rate</span> is a structural moat &mdash; any takeover pursuit must be sharply differentiated.
             </p>
           </div>
@@ -280,7 +280,7 @@ export default function CompetitiveIntelligencePage() {
       {/* Competitor Table */}
       <Card className="bg-pharos-card border-pharos-border">
         <CardHeader>
-          <CardTitle className="text-white">Competitor Benchmarking</CardTitle>
+          <CardTitle className="text-ink">Competitor Benchmarking</CardTitle>
           <CardDescription>Revenue, growth, backlog and win rates across top federal IT contractors</CardDescription>
         </CardHeader>
         <CardContent>
@@ -297,7 +297,7 @@ export default function CompetitiveIntelligencePage() {
       {/* IDIQ / Vehicle Table */}
       <Card className="bg-pharos-card border-pharos-border">
         <CardHeader>
-          <CardTitle className="text-white">IDIQ / Vehicle Coverage</CardTitle>
+          <CardTitle className="text-ink">IDIQ / Vehicle Coverage</CardTitle>
           <CardDescription>Major contract vehicles and prime positioning</CardDescription>
         </CardHeader>
         <CardContent>

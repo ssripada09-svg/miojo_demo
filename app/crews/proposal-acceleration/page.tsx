@@ -135,7 +135,7 @@ function TimelineTooltip({
   if (!active || !payload || !payload.length) return null;
   return (
     <div className="rounded-lg border border-pharos-border bg-pharos-card p-3 shadow-lg">
-      <p className="text-sm font-medium text-white mb-1">{label}</p>
+      <p className="text-sm font-medium text-ink mb-1">{label}</p>
       {payload.map((entry) => (
         <p key={entry.dataKey} className="text-sm text-muted-foreground">
           <span style={{ color: entry.color }} className="font-medium">
@@ -156,13 +156,13 @@ const rfpColumns: Column<RFPRow>[] = [
     header: 'Opportunity',
     sortable: true,
     className: 'min-w-[200px]',
-    render: (value) => <span className="font-medium text-white">{String(value)}</span>,
+    render: (value) => <span className="font-medium text-ink">{String(value)}</span>,
   },
   {
     key: 'contractValue',
     header: 'Contract Value',
     sortable: true,
-    render: (value) => <span className="font-medium text-white">{String(value)}</span>,
+    render: (value) => <span className="font-medium text-ink">{String(value)}</span>,
   },
   {
     key: 'phase',
@@ -195,7 +195,7 @@ const rfpColumns: Column<RFPRow>[] = [
     sortable: true,
     render: (value) => {
       const days = Number(value);
-      const color = days <= 5 ? 'text-red-500 font-bold' : days <= 10 ? 'text-yellow-500 font-semibold' : 'text-white';
+      const color = days <= 5 ? 'text-red-500 font-bold' : days <= 10 ? 'text-yellow-500 font-semibold' : 'text-ink';
       return <span className={color}>{days}</span>;
     },
   },
@@ -221,7 +221,7 @@ const complianceColumns: Column<ComplianceRow>[] = [
     header: 'Category',
     sortable: true,
     className: 'min-w-[280px]',
-    render: (value) => <span className="font-medium text-white">{String(value)}</span>,
+    render: (value) => <span className="font-medium text-ink">{String(value)}</span>,
   },
   {
     key: 'mapped',
@@ -232,7 +232,7 @@ const complianceColumns: Column<ComplianceRow>[] = [
     key: 'compliant',
     header: 'Compliant',
     sortable: true,
-    render: (value) => <span className="text-white">{String(value)}</span>,
+    render: (value) => <span className="text-ink">{String(value)}</span>,
   },
   {
     key: 'gaps',
@@ -263,7 +263,7 @@ export default function ProposalAccelerationPage() {
       {/* Page Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-white flex items-center gap-3">
+          <h1 className="text-2xl font-bold text-ink flex items-center gap-3">
             <div className="p-2 rounded-lg bg-pharos-teal/10">
               <Rocket className="h-6 w-6 text-pharos-teal" />
             </div>
@@ -337,7 +337,7 @@ export default function ProposalAccelerationPage() {
             <div className="p-3 rounded-lg bg-pharos-teal/10 shrink-0">
               <Rocket className="h-6 w-6 text-pharos-teal" />
             </div>
-            <p className="text-white text-lg font-medium">
+            <p className="text-ink text-lg font-medium">
               AI compresses a{' '}
               <span className="text-pharos-teal font-bold">19-22 day</span>{' '}
               proposal cycle to{' '}
@@ -381,7 +381,7 @@ export default function ProposalAccelerationPage() {
       {/* RFP Tracker Table */}
       <Card className="bg-pharos-card border-pharos-border">
         <CardHeader>
-          <CardTitle className="text-white">Active RFP Tracker</CardTitle>
+          <CardTitle className="text-ink">Active RFP Tracker</CardTitle>
           <CardDescription className="text-muted-foreground">
             Real-time status of all active proposals in the pipeline
           </CardDescription>
@@ -400,7 +400,7 @@ export default function ProposalAccelerationPage() {
       {/* Compliance Panel */}
       <Card className="bg-pharos-card border-pharos-border">
         <CardHeader>
-          <CardTitle className="text-white flex items-center gap-2">
+          <CardTitle className="text-ink flex items-center gap-2">
             <AlertTriangle className="h-5 w-5 text-pharos-teal" />
             Compliance Matrix
           </CardTitle>

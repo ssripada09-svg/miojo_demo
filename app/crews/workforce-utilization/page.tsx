@@ -86,7 +86,7 @@ function DistributionTooltip({
   const entry = payload[0];
   return (
     <div className="rounded-lg border border-pharos-border bg-pharos-card p-3 shadow-lg">
-      <p className="text-sm font-medium text-white mb-1">{entry.name}</p>
+      <p className="text-sm font-medium text-ink mb-1">{entry.name}</p>
       <p className="text-sm text-muted-foreground">
         {entry.value.toLocaleString()} personnel ({entry.payload.percent}%)
       </p>
@@ -100,7 +100,7 @@ export default function WorkforceUtilizationPage() {
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-white flex items-center gap-3">
+          <h1 className="text-2xl font-bold text-ink flex items-center gap-3">
             <div className="p-2 rounded-lg bg-[#E68A3F]/10">
               <Activity className="h-6 w-6 text-pharos-gold" />
             </div>
@@ -167,7 +167,7 @@ export default function WorkforceUtilizationPage() {
             <div className="p-2 rounded-full bg-[#E68A3F]/10">
               <AlertTriangle className="h-5 w-5 text-pharos-gold" />
             </div>
-            <p className="text-sm font-medium text-white">
+            <p className="text-sm font-medium text-ink">
               A 1,000-person bench at $3,865/week burns roughly{' '}
               <span className="text-pharos-gold font-bold">$3.9M every week</span>{' '}
               before lost revenue.
@@ -213,7 +213,7 @@ export default function WorkforceUtilizationPage() {
       {/* Bench Cost by Level DataTable */}
       <Card className="bg-pharos-card border-pharos-border">
         <CardHeader>
-          <CardTitle className="text-white">Bench Cost by Level</CardTitle>
+          <CardTitle className="text-ink">Bench Cost by Level</CardTitle>
           <CardDescription>
             Fully burdened bench cost per employee by seniority level
           </CardDescription>
@@ -231,7 +231,7 @@ export default function WorkforceUtilizationPage() {
       {/* Bench Trigger Duration DataTable */}
       <Card className="bg-pharos-card border-pharos-border">
         <CardHeader>
-          <CardTitle className="text-white">Bench Trigger &amp; Duration</CardTitle>
+          <CardTitle className="text-ink">Bench Trigger &amp; Duration</CardTitle>
           <CardDescription>
             Common bench triggers, expected durations, and resolution paths
           </CardDescription>

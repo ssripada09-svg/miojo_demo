@@ -465,7 +465,7 @@ export default function OperatorAssistantPage() {
       {/* Page Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-white flex items-center gap-3">
+          <h1 className="text-2xl font-bold text-ink flex items-center gap-3">
             <div className="p-2 rounded-lg bg-pharos-purple/10">
               <MessageSquare className="h-6 w-6 text-pharos-purple" />
             </div>
@@ -491,7 +491,7 @@ export default function OperatorAssistantPage() {
             variant="outline"
             size="sm"
             onClick={() => handleQuickAction(action.command)}
-            className="bg-pharos-card border-pharos-border text-muted-foreground hover:text-white hover:border-pharos-purple/50 transition-colors"
+            className="bg-pharos-card border-pharos-border text-muted-foreground hover:text-ink hover:border-pharos-purple/50 transition-colors"
           >
             <Zap className="w-3 h-3 mr-1 text-pharos-gold" />
             {action.label}
@@ -505,7 +505,7 @@ export default function OperatorAssistantPage() {
         <Card className={`${sidebarCollapsed ? 'lg:col-span-4' : 'lg:col-span-3'} bg-pharos-card border-pharos-border flex flex-col h-[600px]`}>
           <CardHeader className="border-b border-pharos-border py-3">
             <div className="flex items-center justify-between">
-              <CardTitle className="text-white text-sm">Conversation</CardTitle>
+              <CardTitle className="text-ink text-sm">Conversation</CardTitle>
               <div className="flex items-center gap-2 text-xs text-muted-foreground">
                 <span>{messages.length} messages</span>
                 {messages.length > 0 && (
@@ -529,7 +529,7 @@ export default function OperatorAssistantPage() {
                 <div className="p-4 rounded-full bg-pharos-purple/10 mb-4">
                   <Bot className="w-8 h-8 text-pharos-purple" />
                 </div>
-                <h3 className="text-lg font-medium text-white mb-2">How can I help you today?</h3>
+                <h3 className="text-lg font-medium text-ink mb-2">How can I help you today?</h3>
                 <p className="text-muted-foreground text-sm max-w-md">
                   Ask me about tool inventory, costs, compliance, or user management. 
                   Try clicking a quick action button above or browse the command library.
@@ -548,15 +548,15 @@ export default function OperatorAssistantPage() {
                     : "bg-pharos-blue"
                 }`}>
                   {msg.role === "user" ? (
-                    <User className="w-4 h-4 text-white" />
+                    <User className="w-4 h-4 text-ink" />
                   ) : (
-                    <Bot className="w-4 h-4 text-white" />
+                    <Bot className="w-4 h-4 text-ink" />
                   )}
                 </div>
                 <div className={`max-w-[80%] p-3 rounded-lg ${
                   msg.role === "user"
-                    ? "bg-pharos-purple/20 text-white"
-                    : "bg-pharos-bg border border-pharos-border text-white"
+                    ? "bg-pharos-purple/20 text-ink"
+                    : "bg-[var(--ph-surface-sunk)] border border-pharos-border text-ink"
                 }`}>
                   <div className="text-sm whitespace-pre-wrap">{msg.content}</div>
                   <div className="text-xs text-muted-foreground mt-1">
@@ -570,9 +570,9 @@ export default function OperatorAssistantPage() {
             {isTyping && (
               <div className="flex gap-3">
                 <div className="w-8 h-8 rounded-full bg-pharos-blue flex items-center justify-center">
-                  <Bot className="w-4 h-4 text-white" />
+                  <Bot className="w-4 h-4 text-ink" />
                 </div>
-                <div className="bg-pharos-bg border border-pharos-border p-3 rounded-lg">
+                <div className="bg-[var(--ph-surface-sunk)] border border-pharos-border p-3 rounded-lg">
                   <div className="flex gap-1.5">
                     <span className="w-2 h-2 bg-muted-foreground rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
                     <span className="w-2 h-2 bg-muted-foreground rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
@@ -594,7 +594,7 @@ export default function OperatorAssistantPage() {
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
                 placeholder="Ask about tools, costs, users, or compliance..."
-                className="flex-1 px-4 py-2 bg-pharos-bg border border-pharos-border rounded-lg text-white placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-pharos-purple"
+                className="flex-1 px-4 py-2 bg-[var(--ph-surface-sunk)] border border-pharos-border rounded-lg text-ink placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-pharos-purple"
                 disabled={isTyping}
               />
               <Button 
@@ -628,7 +628,7 @@ export default function OperatorAssistantPage() {
             {/* Command Library */}
             <Card className="bg-pharos-card border-pharos-border">
               <CardHeader className="pb-2">
-                <CardTitle className="text-white text-sm flex items-center gap-2">
+                <CardTitle className="text-ink text-sm flex items-center gap-2">
                   <Bookmark className="w-4 h-4" />
                   Command Library
                 </CardTitle>
@@ -642,11 +642,11 @@ export default function OperatorAssistantPage() {
                     <div key={category.name}>
                       <button
                         onClick={() => toggleCategory(category.name)}
-                        className="w-full flex items-center justify-between p-2 hover:bg-pharos-bg rounded cursor-pointer transition-colors"
+                        className="w-full flex items-center justify-between p-2 hover:bg-[var(--ph-surface-sunk)] rounded cursor-pointer transition-colors"
                       >
                         <div className="flex items-center gap-2">
                           <Icon className="w-4 h-4 text-pharos-blue" />
-                          <span className="text-sm text-white">{category.name}</span>
+                          <span className="text-sm text-ink">{category.name}</span>
                         </div>
                         {isExpanded ? (
                           <ChevronDown className="w-4 h-4 text-muted-foreground" />
@@ -661,7 +661,7 @@ export default function OperatorAssistantPage() {
                             <button
                               key={i}
                               onClick={() => insertCommand(cmd)}
-                              className="w-full text-left p-2 text-xs text-muted-foreground hover:text-white hover:bg-pharos-bg rounded transition-colors"
+                              className="w-full text-left p-2 text-xs text-muted-foreground hover:text-ink hover:bg-[var(--ph-surface-sunk)] rounded transition-colors"
                             >
                               {cmd}
                             </button>
@@ -681,7 +681,7 @@ export default function OperatorAssistantPage() {
                   <div className="w-2 h-2 rounded-full bg-pass animate-pulse" />
                   <span className="text-muted-foreground">
                     Session audit active • 
-                    <span className="text-white ml-1">{auditCount} {auditCount === 1 ? 'entry' : 'entries'} logged</span>
+                    <span className="text-ink ml-1">{auditCount} {auditCount === 1 ? 'entry' : 'entries'} logged</span>
                   </span>
                 </div>
               </CardContent>
@@ -707,17 +707,17 @@ export default function OperatorAssistantPage() {
 
       {/* Confirmation Modal */}
       {confirmModal.isOpen && (
-        <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50">
+        <div className="fixed inset-0 bg-ink/20 flex items-center justify-center z-50">
           <Card className="bg-pharos-card border-pharos-border w-full max-w-md mx-4">
             <CardHeader className="border-b border-pharos-border">
-              <CardTitle className="text-white flex items-center gap-2">
+              <CardTitle className="text-ink flex items-center gap-2">
                 <AlertTriangle className="w-5 h-5 text-warning" />
                 Confirm Action
               </CardTitle>
             </CardHeader>
             <CardContent className="pt-4 space-y-4">
               <div>
-                <h4 className="text-sm font-medium text-white mb-1">Action</h4>
+                <h4 className="text-sm font-medium text-ink mb-1">Action</h4>
                 <p className="text-sm text-muted-foreground">{confirmModal.action}</p>
               </div>
               
