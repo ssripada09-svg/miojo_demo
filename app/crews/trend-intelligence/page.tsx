@@ -42,15 +42,15 @@ export default function TrendIntelligencePage() {
   return (
     <div className="max-w-[1280px] mx-auto">
       <CrewHeader
-        eyebrow="Crew 05 \u00b7 Trend Intelligence"
+        eyebrow="Crew 05 · Trend Intelligence"
         title="Trend Intelligence"
         italicWord="Intelligence"
-        subtitle="Foresight, opportunities, and signal \u2014 amplified."
+        subtitle="Foresight, opportunities, and signal — amplified."
         mission="Continuous radar across beauty, wellness, fashion, hospitality, and culture. Watches what would otherwise slip past, and ranks it against thesis fit and signal velocity."
         icon={Radar}
         accent="teal"
         pillar="Cross-pillar"
-        liveValue="9 trend clusters \u00b7 +34% w/w"
+        liveValue="9 trend clusters · +34% w/w"
       />
 
       <Section eyebrow="Radar status">
@@ -63,7 +63,7 @@ export default function TrendIntelligencePage() {
           <Section
             eyebrow="Signal velocity"
             title="Trend acceleration over seven weeks"
-            description="Four representative clusters. Longevity \u00d7 beauty just crossed the velocity threshold."
+            description="Four representative clusters. Longevity × beauty just crossed the velocity threshold."
           >
             <div className="rounded-2xl border border-[var(--ph-border)] bg-surface p-5 md:p-6" style={{ height: 320 }}>
               <ResponsiveContainer>
@@ -79,7 +79,7 @@ export default function TrendIntelligencePage() {
                       fontSize: 12,
                     }}
                   />
-                  <Line type="monotone" dataKey="longevity" stroke="var(--ph-teal-deep)" strokeWidth={2.5} dot={false} name="Longevity \u00d7 beauty" />
+                  <Line type="monotone" dataKey="longevity" stroke="var(--ph-teal-deep)" strokeWidth={2.5} dot={false} name="Longevity × beauty" />
                   <Line type="monotone" dataKey="texture" stroke="var(--ph-gold-strong)" strokeWidth={2.5} dot={false} name="Texture-first hair" />
                   <Line type="monotone" dataKey="chef" stroke="var(--ph-teal)" strokeWidth={2.5} dot={false} name="Chef-led fragrance" />
                   <Line type="monotone" dataKey="hospitality" stroke="var(--ph-ink)" strokeWidth={2.5} dot={false} name="Restored-home hospitality" />
@@ -87,7 +87,7 @@ export default function TrendIntelligencePage() {
               </ResponsiveContainer>
               <div className="flex flex-wrap gap-3 mt-4 text-xs">
                 {[
-                  { label: 'Longevity \u00d7 beauty', color: 'var(--ph-teal-deep)' },
+                  { label: 'Longevity × beauty', color: 'var(--ph-teal-deep)' },
                   { label: 'Texture-first hair', color: 'var(--ph-gold-strong)' },
                   { label: 'Chef-led fragrance', color: 'var(--ph-teal)' },
                   { label: 'Restored-home hospitality', color: 'var(--ph-ink)' },
@@ -105,7 +105,7 @@ export default function TrendIntelligencePage() {
         <div className="lg:col-span-2">
           <Section
             eyebrow="Confidence matrix"
-            title="Velocity \u00d7 fit"
+            title="Velocity × fit"
             description="Each cluster plotted by velocity (X) and Miojo-fit (Y). Bubble size scales with crew confidence."
           >
             <div className="rounded-2xl border border-[var(--ph-border)] bg-surface p-5 md:p-6" style={{ height: 320 }}>
@@ -214,7 +214,7 @@ export default function TrendIntelligencePage() {
       {/* CONCEPT FORECAST */}
       <Section
         eyebrow="Concept forecast"
-        title="Six concepts \u2014 scored against thesis fit"
+        title="Six concepts — scored against thesis fit"
         description="The crew runs these scorecards weekly. Green = greenlight; gold = refine; muted = hold."
       >
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">

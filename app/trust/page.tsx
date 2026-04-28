@@ -9,32 +9,32 @@ const APPROVALS = [
   { label: 'Mexico City venue contract', stage: 'Awaiting Ciarra', kind: 'Contract', logged: 'Today, 09:12' },
   { label: 'Banyan deal memo terms', stage: 'In review', kind: 'Investor', logged: 'Yesterday' },
   { label: 'Pass on Strand Studios advisory ask', stage: 'Logged', kind: 'Decision', logged: 'Apr 26' },
-  { label: 'Ren / Riot \u2014 Ulta intro', stage: 'Awaiting Ciarra', kind: 'Outreach', logged: 'Apr 27' },
+  { label: 'Ren / Riot — Ulta intro', stage: 'Awaiting Ciarra', kind: 'Outreach', logged: 'Apr 27' },
 ];
 
 const MEMORY_PILLARS = [
   {
     icon: BookOpen,
     title: 'Decisions',
-    body: 'Every recommendation, every choice, every pass \u2014 captured with the reasoning. Compounds into a reusable founder playbook.',
+    body: 'Every recommendation, every choice, every pass — captured with the reasoning. Compounds into a reusable founder playbook.',
     metric: '1,284 logged',
   },
   {
     icon: UserCheck,
     title: 'Relationships',
-    body: 'Partner, investor, retailer, and creator memory \u2014 last touch, what they care about, how Ciarra has framed them.',
+    body: 'Partner, investor, retailer, and creator memory — last touch, what they care about, how Ciarra has framed them.',
     metric: '462 partners',
   },
   {
     icon: FileText,
     title: 'Standards',
-    body: 'The qualitative bar \u2014 voice, taste, formulation principles, sourcing, presentation. The thing AI must never violate.',
+    body: 'The qualitative bar — voice, taste, formulation principles, sourcing, presentation. The thing AI must never violate.',
     metric: '78 standards',
   },
   {
     icon: GitBranch,
     title: 'Provenance',
-    body: 'Every recommendation traces back to its sources \u2014 panel evidence, member data, partner conversations, prior decisions.',
+    body: 'Every recommendation traces back to its sources — panel evidence, member data, partner conversations, prior decisions.',
     metric: '100% sourced',
   },
 ];
@@ -42,7 +42,7 @@ const MEMORY_PILLARS = [
 const AUTONOMY_LEVELS = [
   { level: 'L1', label: 'Observe', desc: 'Listen, log, summarize. No actions taken.', share: 22 },
   { level: 'L2', label: 'Recommend', desc: 'Suggest. Ciarra reads and decides. The default.', share: 48 },
-  { level: 'L3', label: 'Execute (with approval)', desc: 'Drafts, schedules, sends \u2014 only after Ciarra approves.', share: 24 },
+  { level: 'L3', label: 'Execute (with approval)', desc: 'Drafts, schedules, sends — only after Ciarra approves.', share: 24 },
   { level: 'L4', label: 'Autonomous (in policy)', desc: 'Narrowly scoped, pre-approved actions inside a policy budget.', share: 6 },
 ];
 
@@ -50,7 +50,7 @@ export default function TrustLayerPage() {
   return (
     <div className="max-w-[1280px] mx-auto">
       <CrewHeader
-        eyebrow="Foundation \u00b7 Trust Layer"
+        eyebrow="Foundation · Trust Layer"
         title="Trust Layer"
         italicWord="Trust"
         subtitle="Human-in-the-loop, by design."
@@ -84,8 +84,8 @@ export default function TrustLayerPage() {
 
       <Section
         eyebrow="Autonomy ladder"
-        title="L1 \u2192 L4. Ciarra picks the level for every workflow."
-        description="Most of the platform sits at L2 (recommend). L4 (autonomous) is reserved for narrow, pre-approved actions \u2014 like a policy budget for sponsor follow-ups."
+        title="L1 → L4. Ciarra picks the level for every workflow."
+        description="Most of the platform sits at L2 (recommend). L4 (autonomous) is reserved for narrow, pre-approved actions — like a policy budget for sponsor follow-ups."
       >
         <div className="rounded-2xl border border-[var(--ph-border)] bg-surface p-5 md:p-6">
           <div className="space-y-4">
@@ -118,7 +118,7 @@ export default function TrustLayerPage() {
 
       <Section
         eyebrow="Approvals queue"
-        title="What\u2019s on Ciarra\u2019s desk"
+        title="What’s on Ciarra’s desk"
         description="Every action that needs founder approval lives here, with full source memory attached."
       >
         <div className="rounded-2xl border border-[var(--ph-border)] bg-surface divide-y divide-[var(--ph-border)]">
@@ -132,7 +132,7 @@ export default function TrustLayerPage() {
                 <div className="min-w-0">
                   <p className="text-sm font-medium text-ink truncate">{a.label}</p>
                   <p className="text-xs text-ink-muted mt-0.5">
-                    <span className="ph-mono uppercase tracking-[0.14em]">{a.kind}</span> \u00b7 logged {a.logged}
+                    <span className="ph-mono uppercase tracking-[0.14em]">{a.kind}</span> · logged {a.logged}
                   </p>
                 </div>
               </div>

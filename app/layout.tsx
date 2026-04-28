@@ -25,7 +25,7 @@ const fraunces = Fraunces({
 })
 
 export const metadata: Metadata = {
-  title: "Miojo OS \u2014 Founder-Led Lifestyle Platform",
+  title: "Miojo OS — Founder-Led Lifestyle Platform",
   description:
     "AI as the operating layer for Ciarra Pardo's founder-led lifestyle platform across beauty, wellness, hospitality, community, and brand-building.",
 }

@@ -39,14 +39,14 @@ export default function MiOjoStudioPage() {
   return (
     <div className="max-w-[1280px] mx-auto">
       <CrewHeader
-        eyebrow="Crew 02 \u00b7 Mi Ojo Studio"
+        eyebrow="Crew 02 · Mi Ojo Studio"
         title="Mi Ojo Studio"
         italicWord="Ojo"
         subtitle="The creative & brand operating room."
         mission="An AI co-strategist for brand creation, narrative, launch readiness, and retail strategy. The cashflow engine that funds and de-risks the rest of Miojo."
         icon={Sparkles}
         accent="gold"
-        pillar="Mi Ojo \u00b7 Live"
+        pillar="Mi Ojo · Live"
         liveValue="12 active concepts"
       />
 
@@ -58,7 +58,7 @@ export default function MiOjoStudioPage() {
       {/* MISSION: NARRATIVE OPTIONS */}
       <Section
         eyebrow="Active mission"
-        title="Maison Vence \u2014 narrative direction"
+        title="Maison Vence — narrative direction"
         description="The crew tested three positioning angles across LA, NYC, and Mexico City Beauty Days panels. Recommendation flagged for Ciarra's review."
       >
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -111,7 +111,7 @@ export default function MiOjoStudioPage() {
           <Section
             eyebrow="Concept pipeline"
             title="Where each concept lives"
-            description="Twelve workstreams, four stages \u2014 from raw concept to launch-ready."
+            description="Twelve workstreams, four stages — from raw concept to launch-ready."
           >
             <div className="rounded-2xl border border-[var(--ph-border)] bg-surface p-5 md:p-6" style={{ height: 320 }}>
               <ResponsiveContainer>

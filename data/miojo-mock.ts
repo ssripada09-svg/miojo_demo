@@ -1,5 +1,5 @@
 /**
- * Miojo OS \u2014 mock data layer.
+ * Miojo OS — mock data layer.
  *
  * Drawn from Ciarra Pardo / Miojo source materials (Phase 1 brief, Phase 2 PRD,
  * pitch decks). Numbers and names are illustrative for an investor demo.
@@ -12,9 +12,9 @@
 export const HOME_KPIS = [
   { label: 'Investor Conversations', value: '14', sub: 'Active family-office tracks' },
   { label: 'Beauty Days Members', value: '11.4K', sub: 'Across 7 cities' },
-  { label: 'Activations \u2014 Next 30d', value: '8', sub: 'Events, launches, residencies' },
+  { label: 'Activations — Next 30d', value: '8', sub: 'Events, launches, residencies' },
   { label: 'Concepts In Pipeline', value: '12', sub: 'Brand & advisory workstreams' },
-  { label: 'Decisions Flagged', value: '5', sub: 'Awaiting Ciarra\u2019s approval' },
+  { label: 'Decisions Flagged', value: '5', sub: 'Awaiting Ciarra’s approval' },
 ];
 
 export const FOUNDER_BRIEF = {
@@ -30,14 +30,14 @@ export const FOUNDER_BRIEF = {
       'Sponsor activations depend on this. Studio crew flagged 9 days of slack remaining before sponsor outreach must move.',
   },
   topDecision: {
-    headline: 'Approve Mi Ojo \u2014 Maison Vence narrative direction',
+    headline: 'Approve Mi Ojo — Maison Vence narrative direction',
     detail:
-      'Three positioning options on the table. Studio crew recommends Option B (\u201cthe ritual is the brand\u201d) based on member panel resonance scores.',
+      'Three positioning options on the table. Studio crew recommends Option B (“the ritual is the brand”) based on member panel resonance scores.',
   },
   topCrossPillar: {
     headline: 'Beauty Days NYC sponsor could anchor a Peppers & Bellies pop-up',
     detail:
-      'Eaux Sauvages signaled interest in extended cultural programming \u2014 worth a 30-min call before Friday.',
+      'Eaux Sauvages signaled interest in extended cultural programming — worth a 30-min call before Friday.',
   },
 };
 
@@ -45,7 +45,7 @@ export const RECENT_ACTIVITY = [
   {
     id: 1,
     crew: 'Trend Intelligence',
-    title: 'Longevity \u00d7 beauty cluster crossed velocity threshold',
+    title: 'Longevity × beauty cluster crossed velocity threshold',
     detail: '14 signals in 9 days, +180% w/w. Three brands in our pipeline already operating in this space.',
     type: 'signal' as const,
     time: '38 min ago',
@@ -54,14 +54,14 @@ export const RECENT_ACTIVITY = [
     id: 2,
     crew: 'Beauty Days',
     title: 'Mexico City RSVP pace +24% vs LA at same milestone',
-    detail: '1,840 confirmed \u2192 412 pre-activated to year-round community.',
+    detail: '1,840 confirmed → 412 pre-activated to year-round community.',
     type: 'success' as const,
     time: '2 hr ago',
   },
   {
     id: 3,
     crew: 'Mi Ojo Studio',
-    title: 'Maison Vence \u2014 Sephora prestige window opens Q3',
+    title: 'Maison Vence — Sephora prestige window opens Q3',
     detail: 'Buyer relationship memory pulled. Recommended pitch frame attached.',
     type: 'recommend' as const,
     time: '4 hr ago',
@@ -69,7 +69,7 @@ export const RECENT_ACTIVITY = [
   {
     id: 4,
     crew: 'Experience Engine',
-    title: 'Peppers & Bellies \u2014 chef residency calendar at 87% sell-through',
+    title: 'Peppers & Bellies — chef residency calendar at 87% sell-through',
     detail: 'August fully booked. September wait-list 41 deep.',
     type: 'success' as const,
     time: '6 hr ago',
@@ -97,19 +97,19 @@ export const PROOF_STRIP = [
     eyebrow: 'The Fenty Lesson',
     stat: '$570M',
     statSuffix: 'Year-1 revenue',
-    body: 'Inclusive beauty wasn\u2019t a niche \u2014 it was the missing center. Ciarra co-founded and scaled Fenty Beauty to a $3B+ valuation; the same playbook now compounds across Miojo.',
+    body: 'Inclusive beauty wasn’t a niche — it was the missing center. Ciarra co-founded and scaled Fenty Beauty to a $3B+ valuation; the same playbook now compounds across Miojo.',
   },
   {
     eyebrow: 'Founder Capacity',
-    stat: '10\u00d7',
+    stat: '10×',
     statSuffix: 'Portfolio capacity',
-    body: 'Manual ops cap a tastemaker at 2\u20133 brands. Miojo OS lifts that ceiling \u2014 24/7 trend coverage, institutional memory, and consistent execution let the founder focus on judgement.',
+    body: 'Manual ops cap a tastemaker at 2–3 brands. Miojo OS lifts that ceiling — 24/7 trend coverage, institutional memory, and consistent execution let the founder focus on judgement.',
   },
   {
     eyebrow: 'The Bottleneck',
     stat: '24/7',
     statSuffix: 'Coverage, not theatre',
-    body: 'Ciarra\u2019s time is the bottleneck. Miojo agents observe, recommend, and execute inside her policy \u2014 she approves; the system delivers. Human-in-the-loop, every step.',
+    body: 'Ciarra’s time is the bottleneck. Miojo agents observe, recommend, and execute inside her policy — she approves; the system delivers. Human-in-the-loop, every step.',
   },
 ];
 
@@ -125,21 +125,21 @@ export const COMMAND_KPIS = [
 ];
 
 export const COMMAND_TIMELINE = [
-  { day: 'Apr 30', label: 'Cayman LP \u2014 deal memo due', kind: 'milestone', pillar: 'Founder' },
+  { day: 'Apr 30', label: 'Cayman LP — deal memo due', kind: 'milestone', pillar: 'Founder' },
   { day: 'May 4', label: 'Maison Vence narrative review', kind: 'decision', pillar: 'Mi Ojo' },
-  { day: 'May 10', label: 'Beauty Days \u2014 Mexico City', kind: 'activation', pillar: 'Beauty Days' },
-  { day: 'May 18', label: 'Peppers & Bellies \u2014 Chef Aarón residency opens', kind: 'activation', pillar: 'Peppers & Bellies' },
+  { day: 'May 10', label: 'Beauty Days — Mexico City', kind: 'activation', pillar: 'Beauty Days' },
+  { day: 'May 18', label: 'Peppers & Bellies — Chef Aarón residency opens', kind: 'activation', pillar: 'Peppers & Bellies' },
   { day: 'May 22', label: 'LAFW collections review board', kind: 'milestone', pillar: 'Mi Ojo' },
-  { day: 'Jun 6', label: 'Beauty Days \u2014 NYC', kind: 'activation', pillar: 'Beauty Days' },
-  { day: 'Jun 14', label: 'Residencies \u2014 Marrakesh site walk', kind: 'milestone', pillar: 'Residences' },
-  { day: 'Jun 27', label: 'Beauty Days \u2014 London', kind: 'activation', pillar: 'Beauty Days' },
-  { day: 'Jul 9', label: 'Maison Vence \u2014 Sephora prestige window', kind: 'milestone', pillar: 'Mi Ojo' },
-  { day: 'Jul 18', label: 'Beauty Days \u2014 Miami', kind: 'activation', pillar: 'Beauty Days' },
+  { day: 'Jun 6', label: 'Beauty Days — NYC', kind: 'activation', pillar: 'Beauty Days' },
+  { day: 'Jun 14', label: 'Residencies — Marrakesh site walk', kind: 'milestone', pillar: 'Residences' },
+  { day: 'Jun 27', label: 'Beauty Days — London', kind: 'activation', pillar: 'Beauty Days' },
+  { day: 'Jul 9', label: 'Maison Vence — Sephora prestige window', kind: 'milestone', pillar: 'Mi Ojo' },
+  { day: 'Jul 18', label: 'Beauty Days — Miami', kind: 'activation', pillar: 'Beauty Days' },
   { day: 'Aug 2', label: 'Pharos LP report', kind: 'decision', pillar: 'Founder' },
 ];
 
 export const COMMAND_INVESTOR_TRACKS = [
-  { partner: 'Banyan Family Office', archetype: 'Patient capital \u2022 Cayman', stage: 'Memo Requested', signal: 'High', last: 'Apr 26' },
+  { partner: 'Banyan Family Office', archetype: 'Patient capital • Cayman', stage: 'Memo Requested', signal: 'High', last: 'Apr 26' },
   { partner: 'Maison Lévêque', archetype: 'Multi-gen LVMH-adjacent', stage: 'Term Discussion', signal: 'High', last: 'Apr 24' },
   { partner: 'Ridgewood Capital', archetype: 'Strategic CPG', stage: 'Diligence Q&A', signal: 'Medium', last: 'Apr 22' },
   { partner: 'Halcyon Group', archetype: 'Wellness-hospitality LP', stage: 'Intro Call', signal: 'Medium', last: 'Apr 21' },
@@ -151,14 +151,14 @@ export const COMMAND_INVESTOR_TRACKS = [
 export const COMMAND_DECISIONS = [
   { label: 'Approve Maison Vence narrative direction', owner: 'Mi Ojo Studio', due: 'Today', priority: 'High' },
   { label: 'Countersign Mexico City venue contract', owner: 'Experience Engine', due: 'In 2 days', priority: 'High' },
-  { label: 'Greenlight LAFW \u00d7 Beauty Days NYC bridge', owner: 'Founder', due: 'In 3 days', priority: 'Medium' },
+  { label: 'Greenlight LAFW × Beauty Days NYC bridge', owner: 'Founder', due: 'In 3 days', priority: 'Medium' },
   { label: 'Confirm Banyan deal memo terms', owner: 'Founder', due: 'In 4 days', priority: 'High' },
   { label: 'Pass / advance: Strand Studios advisory ask', owner: 'Mi Ojo Studio', due: 'In 6 days', priority: 'Medium' },
 ];
 
 export const COMMAND_PILLAR_HEALTH = [
   { pillar: 'Mi Ojo', revenue: 38, share: 38, status: 'Strong', note: 'Three advisory engagements compounding into next quarter.' },
-  { pillar: 'Beauty Days', revenue: 26, share: 26, status: 'Accelerating', note: 'Sponsor pipeline 2.4\u00d7 vs Q1; member retention holding at 41%.' },
+  { pillar: 'Beauty Days', revenue: 26, share: 26, status: 'Accelerating', note: 'Sponsor pipeline 2.4× vs Q1; member retention holding at 41%.' },
   { pillar: 'Peppers & Bellies', revenue: 22, share: 22, status: 'Building', note: 'Chef residency demand outpacing capacity; menu IP forming.' },
   { pillar: 'Residences', revenue: 14, share: 14, status: 'Concept', note: 'Marrakesh + Tulum site walks in flight; capital partner conversations open.' },
 ];
@@ -180,13 +180,13 @@ export const STUDIO_CONCEPTS = [
   { name: 'Casa Lirio', stage: 'Concept', category: 'Latina-led skincare', founder: 'Luz Mariné', readiness: 28, retail: 'Target Beauty pilot Q1' },
   { name: 'Solène by Solène', stage: 'Production', category: 'Founder-led perfume', founder: 'Solène Iro', readiness: 88, retail: 'Nordstrom indie window' },
   { name: 'Ren / Riot', stage: 'Narrative', category: 'Texture-first hair', founder: 'Aja N. Walker', readiness: 71, retail: 'Sephora textured hair set' },
-  { name: 'Aurelya', stage: 'Concept', category: 'Longevity \u00d7 wellness', founder: 'Dr. Inès Auffray', readiness: 22, retail: 'D2C first \u2192 Ulta' },
+  { name: 'Aurelya', stage: 'Concept', category: 'Longevity × wellness', founder: 'Dr. Inès Auffray', readiness: 22, retail: 'D2C first → Ulta' },
   { name: 'Field & Bloom', stage: 'Concept', category: 'Pantry-inspired body care', founder: 'Mira Olu', readiness: 18, retail: 'Indie boutique pilot' },
   { name: 'Velvethold', stage: 'Production', category: 'Luxury hold tools', founder: 'Tomás Reig', readiness: 96, retail: 'Sephora Pro tools' },
   { name: 'Quanta Skin', stage: 'Narrative', category: 'Biotic skincare', founder: 'Dr. Yui Watanabe', readiness: 58, retail: 'Sephora prestige Q1' },
-  { name: 'Saint Cay', stage: 'Concept', category: 'Coastal scent', founder: 'Marisol DC', readiness: 34, retail: 'Indie boutique \u2192 Nordstrom' },
+  { name: 'Saint Cay', stage: 'Concept', category: 'Coastal scent', founder: 'Marisol DC', readiness: 34, retail: 'Indie boutique → Nordstrom' },
   { name: 'Plume Atelier', stage: 'Narrative', category: 'Inclusive lash & brow', founder: 'Olu Bahar', readiness: 66, retail: 'Ulta Q3' },
-  { name: 'Otra Cosa', stage: 'Production', category: 'Chef-led fragrance', founder: 'Aarón Serra', readiness: 84, retail: 'Hospitality \u2192 prestige' },
+  { name: 'Otra Cosa', stage: 'Production', category: 'Chef-led fragrance', founder: 'Aarón Serra', readiness: 84, retail: 'Hospitality → prestige' },
 ];
 
 export const STUDIO_AUDIENCE_RESONANCE = [
@@ -215,7 +215,7 @@ export const STUDIO_NARRATIVE_OPTIONS = [
   },
   {
     label: 'Option C',
-    headline: 'Maison Vence \u2014 a perfume for the in-between.',
+    headline: 'Maison Vence — a perfume for the in-between.',
     angle: 'Atmospheric, mood-led',
     score: 71,
     note: 'Editorial appeal but harder to translate into retail talking points.',
@@ -241,7 +241,7 @@ export const STUDIO_RECOMMENDATIONS = [
     impact: 'Opens 12 doors in textured-hair set',
   },
   {
-    title: 'Pause Field & Bloom until Q3 \u2014 narrative not differentiated yet',
+    title: 'Pause Field & Bloom until Q3 — narrative not differentiated yet',
     detail: 'Three of six positioning tests overlapped with Pantry / Apothecary peers. Studio recommends a re-brief with founder before continuing.',
     impact: 'Saves ~6 weeks of misallocated effort',
   },
@@ -254,7 +254,7 @@ export const STUDIO_RECOMMENDATIONS = [
 export const BEAUTY_DAYS_KPIS = [
   { label: 'Total Members', value: '11,420', sub: '+34% q/q' },
   { label: 'Cities Active', value: '7', sub: '3 more in 90d' },
-  { label: '30-day Retention', value: '41%', sub: 'IRL \u2192 digital' },
+  { label: '30-day Retention', value: '41%', sub: 'IRL → digital' },
   { label: 'Sponsor Re-engagement', value: '78%', sub: 'Returning post-event' },
 ];
 
@@ -289,7 +289,7 @@ export const BEAUTY_DAYS_GROWTH = [
 export const BEAUTY_DAYS_INTERESTS = [
   { cluster: 'Longevity & wellness', share: 22, note: 'Highest sponsor demand' },
   { cluster: 'Multi-gen beauty', share: 18, note: 'Cross-segment, low churn' },
-  { cluster: 'Textured hair', share: 16, note: 'High activation \u2192 retention' },
+  { cluster: 'Textured hair', share: 16, note: 'High activation → retention' },
   { cluster: 'Inclusive fragrance', share: 13, note: 'Driving Maison Vence demand' },
   { cluster: 'Clean / botanical skincare', share: 11, note: 'Strong in LA & MX-CDMX' },
   { cluster: 'Founder voice / cultural', share: 10, note: 'Highest re-RSVP rate' },
@@ -309,7 +309,7 @@ export const BEAUTY_DAYS_SPONSORS = [
 
 export const BEAUTY_DAYS_AMBASSADORS = [
   { name: 'Sasha Devereaux', city: 'New York', followers: 412000, lastActive: 'Today', vibe: 'Multi-gen beauty' },
-  { name: 'Camila R\u00edos', city: 'Mexico City', followers: 318000, lastActive: 'Today', vibe: 'Cultural fluency' },
+  { name: 'Camila Ríos', city: 'Mexico City', followers: 318000, lastActive: 'Today', vibe: 'Cultural fluency' },
   { name: 'Olu Bahar', city: 'Lagos', followers: 268000, lastActive: 'Yesterday', vibe: 'Texture & color' },
   { name: 'Ines Tavares', city: 'Lisbon', followers: 188000, lastActive: '2 days', vibe: 'Wellness-led' },
   { name: 'Marcus J. Lin', city: 'Los Angeles', followers: 224000, lastActive: 'Today', vibe: 'Founder POV' },
@@ -325,7 +325,7 @@ export const BEAUTY_DAYS_RECOMMENDATIONS = [
   },
   {
     title: 'Activate Lagos ambassadors 21 days before Aug event',
-    detail: '+58% growth at lower density than NYC at same maturity \u2014 ambassador-led waves consistently lift retention by ~9 pts.',
+    detail: '+58% growth at lower density than NYC at same maturity — ambassador-led waves consistently lift retention by ~9 pts.',
     impact: '+9 pt retention forecast',
   },
   {
@@ -347,24 +347,24 @@ export const EXPERIENCE_KPIS = [
 ];
 
 export const EXPERIENCE_RESIDENCIES = [
-  { id: 'RES-01', name: 'Chef Aar\u00f3n Serra \u00d7 Brooklyn', kind: 'Chef Residency', start: 'May 18', end: 'Jun 22', booked: 100, package: 'Editorial dining' },
+  { id: 'RES-01', name: 'Chef Aarón Serra × Brooklyn', kind: 'Chef Residency', start: 'May 18', end: 'Jun 22', booked: 100, package: 'Editorial dining' },
   { id: 'RES-02', name: 'Casa Lirio Wellness Stay', kind: 'Wellness Stay', start: 'Jun 4', end: 'Jun 14', booked: 92, package: 'Botanical retreat' },
-  { id: 'RES-03', name: 'Marrakesh Long Weekend', kind: 'Residency', start: 'Jun 14', end: 'Jun 17', booked: 88, package: 'Founders\u2019 retreat' },
-  { id: 'RES-04', name: 'Otra Cosa Tasting Series', kind: 'Editorial Series', start: 'Jul 1', end: 'Jul 8', booked: 96, package: 'Provisions \u00d7 fragrance' },
+  { id: 'RES-03', name: 'Marrakesh Long Weekend', kind: 'Residency', start: 'Jun 14', end: 'Jun 17', booked: 88, package: 'Founders’ retreat' },
+  { id: 'RES-04', name: 'Otra Cosa Tasting Series', kind: 'Editorial Series', start: 'Jul 1', end: 'Jul 8', booked: 96, package: 'Provisions × fragrance' },
   { id: 'RES-05', name: 'Saint Cay Coastal Stay', kind: 'Wellness Stay', start: 'Jul 11', end: 'Jul 21', booked: 81, package: 'Coastal ritual' },
   { id: 'RES-06', name: 'Tulum Restored Home', kind: 'Residency', start: 'Aug 2', end: 'Aug 12', booked: 79, package: 'Architectural retreat' },
   { id: 'RES-07', name: 'Velvethold Salon Days', kind: 'Editorial Series', start: 'Aug 14', end: 'Aug 18', booked: 100, package: 'Tools & textures' },
-  { id: 'RES-08', name: 'Field & Bloom Pantry Lab', kind: 'Chef Residency', start: 'Aug 22', end: 'Aug 30', booked: 74, package: 'Pantry \u2192 body' },
-  { id: 'RES-09', name: 'London Founders\u2019 Suite', kind: 'Residency', start: 'Sep 4', end: 'Sep 11', booked: 64, package: 'Founder retreat' },
-  { id: 'RES-10', name: 'Aurelya Longevity Clinic', kind: 'Wellness Stay', start: 'Sep 14', end: 'Sep 21', booked: 88, package: 'Longevity \u00d7 hospitality' },
-  { id: 'RES-11', name: 'Otra Cosa \u00d7 Mi Ojo Pop-up', kind: 'Editorial Series', start: 'Sep 26', end: 'Oct 2', booked: 92, package: 'Cross-pillar pop-up' },
+  { id: 'RES-08', name: 'Field & Bloom Pantry Lab', kind: 'Chef Residency', start: 'Aug 22', end: 'Aug 30', booked: 74, package: 'Pantry → body' },
+  { id: 'RES-09', name: 'London Founders’ Suite', kind: 'Residency', start: 'Sep 4', end: 'Sep 11', booked: 64, package: 'Founder retreat' },
+  { id: 'RES-10', name: 'Aurelya Longevity Clinic', kind: 'Wellness Stay', start: 'Sep 14', end: 'Sep 21', booked: 88, package: 'Longevity × hospitality' },
+  { id: 'RES-11', name: 'Otra Cosa × Mi Ojo Pop-up', kind: 'Editorial Series', start: 'Sep 26', end: 'Oct 2', booked: 92, package: 'Cross-pillar pop-up' },
   { id: 'RES-12', name: 'Marrakesh Re-open', kind: 'Residency', start: 'Oct 18', end: 'Oct 28', booked: 56, package: 'Architectural retreat' },
 ];
 
 export const EXPERIENCE_PACKAGE_MIX = [
   { package: 'Editorial dining', share: 28, growth: 18 },
   { package: 'Wellness stay', share: 24, growth: 32 },
-  { package: 'Founders\u2019 retreat', share: 18, growth: 9 },
+  { package: 'Founders’ retreat', share: 18, growth: 9 },
   { package: 'Coastal ritual', share: 12, growth: 14 },
   { package: 'Architectural retreat', share: 10, growth: 21 },
   { package: 'Cross-pillar pop-up', share: 8, growth: 41 },
@@ -401,7 +401,7 @@ export const EXPERIENCE_RECOMMENDATIONS = [
     impact: 'Multi-pillar story for press window',
   },
   {
-    title: 'Shift Field & Bloom to Q4 \u2014 demand softer than peers',
+    title: 'Shift Field & Bloom to Q4 — demand softer than peers',
     detail: '74% sell-through vs 88% peer average. Reframe as Pantry Lab editorial instead of full residency.',
     impact: 'Protect editorial cadence',
   },
@@ -413,13 +413,13 @@ export const EXPERIENCE_RECOMMENDATIONS = [
 
 export const TREND_KPIS = [
   { label: 'Active Trend Clusters', value: '9', sub: 'Across 6 verticals' },
-  { label: 'Signal Velocity \u2191', value: '+34%', sub: 'Week over week' },
+  { label: 'Signal Velocity ↑', value: '+34%', sub: 'Week over week' },
   { label: 'Opportunities Tracked', value: '46', sub: 'Brands / creators / chefs' },
   { label: 'Concept Forecasts Run', value: '14', sub: 'Last 14 days' },
 ];
 
 export const TREND_CLUSTERS = [
-  { name: 'Longevity \u00d7 beauty', velocity: 92, confidence: 88, fit: 95, vertical: 'Beauty' },
+  { name: 'Longevity × beauty', velocity: 92, confidence: 88, fit: 95, vertical: 'Beauty' },
   { name: 'Multi-gen color cosmetics', velocity: 71, confidence: 82, fit: 90, vertical: 'Beauty' },
   { name: 'Chef-led fragrance', velocity: 64, confidence: 74, fit: 92, vertical: 'Beauty / Hospitality' },
   { name: 'Restored-home hospitality', velocity: 52, confidence: 70, fit: 88, vertical: 'Hospitality' },
@@ -441,17 +441,17 @@ export const TREND_VELOCITY_SERIES = [
 ];
 
 export const TREND_OPPORTUNITIES = [
-  { name: 'Chef Aar\u00f3n Serra', kind: 'Chef', match: 92, vertical: 'Hospitality / Beauty', signal: 'Brooklyn residency opening; sourcing thesis fit' },
-  { name: 'Dr. In\u00e8s Auffray', kind: 'Founder', match: 88, vertical: 'Longevity', signal: 'Aurelya concept enters pre-clinical; advisory ask' },
+  { name: 'Chef Aarón Serra', kind: 'Chef', match: 92, vertical: 'Hospitality / Beauty', signal: 'Brooklyn residency opening; sourcing thesis fit' },
+  { name: 'Dr. Inès Auffray', kind: 'Founder', match: 88, vertical: 'Longevity', signal: 'Aurelya concept enters pre-clinical; advisory ask' },
   { name: 'Sephora Prestige Window Q3', kind: 'Retailer', match: 86, vertical: 'Beauty', signal: 'Two Mi Ojo concepts ready for slot' },
   { name: 'Olu Bahar', kind: 'Creator', match: 84, vertical: 'Beauty', signal: 'Founder-led texture-first audience; Lagos anchor' },
   { name: 'Halcyon Group', kind: 'Capital', match: 82, vertical: 'Wellness-hospitality', signal: 'LP fit with Residences thesis' },
-  { name: 'Ulta Textured-Hair Set', kind: 'Retailer', match: 80, vertical: 'Beauty', signal: 'Buyer relationship memory \u2014 active spring window' },
+  { name: 'Ulta Textured-Hair Set', kind: 'Retailer', match: 80, vertical: 'Beauty', signal: 'Buyer relationship memory — active spring window' },
   { name: 'Eaux Sauvages', kind: 'Brand', match: 78, vertical: 'Beauty / Hospitality', signal: 'Cross-pillar sponsor expansion intent' },
   { name: 'Marrakesh restored home (private)', kind: 'Property', match: 76, vertical: 'Hospitality', signal: 'Ownership window opens June; site walk scheduled' },
   { name: 'Tomás Reig (Velvethold)', kind: 'Founder', match: 74, vertical: 'Beauty', signal: 'Production-ready; Sephora Pro tools fit' },
   { name: 'ComplexCon culture programming', kind: 'Cultural', match: 72, vertical: 'Culture', signal: 'Programming overlap with Beauty Days NYC' },
-  { name: 'La Maison des Startups', kind: 'Capital / Network', match: 70, vertical: 'Beauty', signal: 'Studio partner intro \u2014 LVMH-adjacent' },
+  { name: 'La Maison des Startups', kind: 'Capital / Network', match: 70, vertical: 'Beauty', signal: 'Studio partner intro — LVMH-adjacent' },
   { name: 'Pattern (Tracee Ellis Ross) network', kind: 'Network', match: 68, vertical: 'Beauty', signal: 'Texture-first benchmark; Ulta playbook' },
 ];
 
@@ -467,7 +467,7 @@ export const TREND_CONCEPT_FORECASTS = [
 export const TREND_RECOMMENDATIONS = [
   {
     title: 'Move Aurelya from concept to advisory engagement',
-    detail: 'Longevity \u00d7 beauty cluster crossed velocity threshold. Founder Auffray\u2019s pre-clinical positioning is rare; first-mover slot is open for ~10 weeks.',
+    detail: 'Longevity × beauty cluster crossed velocity threshold. Founder Auffray’s pre-clinical positioning is rare; first-mover slot is open for ~10 weeks.',
     impact: 'Locks white-space anchor for Miojo',
   },
   {

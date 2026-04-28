@@ -34,7 +34,7 @@ export function Header() {
               ? 'bg-pharos-purple/10 border-pharos-purple/30 text-pharos-purple'
               : 'border-[var(--ph-border)] text-ink-muted hover:bg-[var(--ph-surface-sunk)] hover:text-ink'
           }`}
-          title="Trust Layer \u2014 human-in-the-loop & memory"
+          title="Trust Layer — human-in-the-loop & memory"
         >
           <Eye className="w-3.5 h-3.5" />
           <span className="hidden sm:inline ph-mono">Trust</span>

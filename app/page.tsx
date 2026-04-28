@@ -36,7 +36,7 @@ export default function HomePage() {
       <section className="relative overflow-hidden rounded-2xl border border-[var(--ph-border)] bg-bg-raised hero-with-glow px-6 py-10 md:px-12 md:py-16">
         <div className="flex items-center mb-6">
           <span className="ph-rule" />
-          <span className="ph-eyebrow">Miojo OS \u00b7 Founder Demo</span>
+          <span className="ph-eyebrow">Miojo OS · Founder Demo</span>
         </div>
 
         <h1 className="ph-h2 text-balance mb-5 max-w-4xl">
@@ -48,8 +48,8 @@ export default function HomePage() {
         </h1>
 
         <p className="ph-lede max-w-3xl mb-8">
-          One interlinked platform across beauty, wellness, hospitality, community, and brand-building \u2014
-          with AI as the operating layer that scales Ciarra\u2019s taste, memory, timing, and execution.
+          One interlinked platform across beauty, wellness, hospitality, community, and brand-building —
+          with AI as the operating layer that scales Ciarra’s taste, memory, timing, and execution.
         </p>
 
         <div className="flex flex-wrap items-center gap-3">
@@ -68,7 +68,7 @@ export default function HomePage() {
             Tour Beauty Days
           </Link>
           <span className="text-xs ph-mono text-ink-muted ml-2">
-            5 crews \u00b7 4 pillars \u00b7 1 platform
+            5 crews · 4 pillars · 1 platform
           </span>
         </div>
       </section>
@@ -148,7 +148,7 @@ export default function HomePage() {
         <div className="flex items-center justify-between flex-wrap gap-3 mb-5">
           <div className="flex items-center">
             <span className="ph-rule" />
-            <span className="ph-eyebrow">Founder Brief \u00b7 {FOUNDER_BRIEF.date}</span>
+            <span className="ph-eyebrow">Founder Brief · {FOUNDER_BRIEF.date}</span>
           </div>
           <Link
             href="/crews/founder-command"
@@ -294,10 +294,10 @@ export default function HomePage() {
             <span className="ph-eyebrow">What you get</span>
           </div>
           {[
-            { label: '24/7 Coverage', body: 'Operations while you sleep \u2014 no gaps, no holidays.' },
+            { label: '24/7 Coverage', body: 'Operations while you sleep — no gaps, no holidays.' },
             { label: 'Consistent Execution', body: 'Your playbook followed exactly. Same standard, every brand.' },
             { label: 'Institutional Memory', body: 'Every decision logged. Your expertise compounds, not disappears.' },
-            { label: 'Real-time Intel', body: 'Trends, competitors, opportunities \u2014 monitored, ranked, ready.' },
+            { label: 'Real-time Intel', body: 'Trends, competitors, opportunities — monitored, ranked, ready.' },
             { label: 'Your Standards, Always', body: 'Human-in-the-loop. You approve; agents execute inside policy.' },
           ].map((c) => (
             <Card key={c.label} className="bg-surface border-[var(--ph-border)]">

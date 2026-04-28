@@ -76,7 +76,7 @@ export const CREWS: CrewConfig[] = [
     shortName: 'Intel',
     description: 'Foresight, opportunities, signal',
     subtitle: 'Trend, forecasting & opportunity radar',
-    mission: 'Continuous radar across beauty, wellness, fashion, hospitality, and culture — Ciarra\u2019s foresight, amplified.',
+    mission: 'Continuous radar across beauty, wellness, fashion, hospitality, and culture — Ciarra’s foresight, amplified.',
     icon: Radar,
     accent: 'teal',
   },
@@ -93,7 +93,7 @@ export const PILLARS: PillarConfig[] = [
   {
     id: 'mi-ojo',
     name: 'Mi Ojo',
-    oneLiner: 'The strategic eye \u2014 brand creation, advisory, narrative.',
+    oneLiner: 'The strategic eye — brand creation, advisory, narrative.',
     role: 'Cashflow engine and authority layer.',
     maturity: 'Live',
     themes: ['Creative', 'Commerce'],
@@ -102,7 +102,7 @@ export const PILLARS: PillarConfig[] = [
   {
     id: 'beauty-days',
     name: 'Beauty Days',
-    oneLiner: 'Community-led beauty & wellness platform \u2014 IRL events into a year-round membership.',
+    oneLiner: 'Community-led beauty & wellness platform — IRL events into a year-round membership.',
     role: 'Audience and data wedge.',
     maturity: 'Launching',
     themes: ['Community', 'Wellness'],
@@ -111,7 +111,7 @@ export const PILLARS: PillarConfig[] = [
   {
     id: 'peppers-bellies',
     name: 'Peppers & Bellies',
-    oneLiner: 'Editorial hospitality \u2014 chef residencies, provisions, culinary storytelling.',
+    oneLiner: 'Editorial hospitality — chef residencies, provisions, culinary storytelling.',
     role: 'Cultural & sensory expression.',
     maturity: 'Early',
     themes: ['Hospitality', 'Culture'],
@@ -120,7 +120,7 @@ export const PILLARS: PillarConfig[] = [
   {
     id: 'residences',
     name: 'Residences',
-    oneLiner: 'Restored homes & wellness stays \u2014 the brand world made physical.',
+    oneLiner: 'Restored homes & wellness stays — the brand world made physical.',
     role: 'Long-duration asset and world-building anchor.',
     maturity: 'Concept',
     themes: ['Wellness', 'Hospitality'],

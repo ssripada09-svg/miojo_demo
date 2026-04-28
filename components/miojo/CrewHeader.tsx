@@ -82,7 +82,7 @@ export function CrewHeader({
               <span className="relative inline-flex rounded-full h-2 w-2 bg-pass" />
             </span>
             <span className="text-[11px] ph-mono uppercase tracking-[0.16em] text-ink-muted">
-              {liveLabel}{liveValue ? ` \u00b7 ${liveValue}` : ''}
+              {liveLabel}{liveValue ? ` · ${liveValue}` : ''}
             </span>
           </div>
           <Link

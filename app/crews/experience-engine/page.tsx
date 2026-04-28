@@ -45,10 +45,10 @@ export default function ExperienceEnginePage() {
   return (
     <div className="max-w-[1280px] mx-auto">
       <CrewHeader
-        eyebrow="Crew 04 \u00b7 Experience Engine"
+        eyebrow="Crew 04 · Experience Engine"
         title="Experience Engine"
         italicWord="Experience"
-        subtitle="Hospitality, wellness, and editorial commerce \u2014 in one operating surface."
+        subtitle="Hospitality, wellness, and editorial commerce — in one operating surface."
         mission="Manages the chef residencies, wellness stays, and culinary storytelling that translate the Miojo brand world into sensory experience. The slow-compounding asset layer."
         icon={MapPin}
         accent="gold"
@@ -64,7 +64,7 @@ export default function ExperienceEnginePage() {
       <Section
         eyebrow="Residency calendar"
         title="What's on, what's next"
-        description="Twelve residency and wellness slots across Brooklyn, Marrakesh, Tulum, London, and the coast \u2014 booked, in window, and forecast."
+        description="Twelve residency and wellness slots across Brooklyn, Marrakesh, Tulum, London, and the coast — booked, in window, and forecast."
       >
         <div className="rounded-2xl border border-[var(--ph-border)] bg-surface overflow-x-auto">
           <table className="w-full">
@@ -95,7 +95,7 @@ export default function ExperienceEnginePage() {
                     </span>
                   </td>
                   <td className="px-4 py-3 text-sm text-ink-muted whitespace-nowrap">
-                    {r.start} \u2013 {r.end}
+                    {r.start} – {r.end}
                   </td>
                   <td className="px-4 py-3 min-w-[140px]">
                     <div className="flex items-center gap-2">
@@ -215,7 +215,7 @@ export default function ExperienceEnginePage() {
                       <span className="text-ink-soft">{p.package}</span>
                     </span>
                     <span className="ph-mono text-xs text-ink-muted">
-                      {p.share}% \u00b7 <span className="text-pass">+{p.growth}%</span>
+                      {p.share}% · <span className="text-pass">+{p.growth}%</span>
                     </span>
                   </li>
                 ))}

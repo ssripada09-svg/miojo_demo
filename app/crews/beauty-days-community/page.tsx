@@ -40,15 +40,15 @@ export default function BeautyDaysPage() {
   return (
     <div className="max-w-[1280px] mx-auto">
       <CrewHeader
-        eyebrow="Crew 03 \u00b7 Beauty Days Community"
+        eyebrow="Crew 03 · Beauty Days Community"
         title="Beauty Days"
         italicWord="Days"
-        subtitle="The IRL-to-digital community OS \u2014 Miojo\u2019s scaling wedge."
+        subtitle="The IRL-to-digital community OS — Miojo’s scaling wedge."
         mission="Turns Beauty Days events into a recurring community, sponsor, and first-party data engine. Where audience capital becomes platform equity."
         icon={Users}
         accent="teal"
-        pillar="Beauty Days \u00b7 Launching"
-        liveValue="11.4K members \u00b7 7 cities"
+        pillar="Beauty Days · Launching"
+        liveValue="11.4K members · 7 cities"
       />
 
       {/* KPIs */}
@@ -100,7 +100,7 @@ export default function BeautyDaysPage() {
         <div className="lg:col-span-2">
           <Section
             eyebrow="The funnel"
-            title="RSVP \u2192 90-day active"
+            title="RSVP → 90-day active"
             description="What turns into recurring members."
           >
             <div className="rounded-2xl border border-[var(--ph-border)] bg-surface p-5 md:p-6">
@@ -110,7 +110,7 @@ export default function BeautyDaysPage() {
                     <div className="flex items-baseline justify-between mb-1.5">
                       <span className="text-sm font-medium text-ink">{f.stage}</span>
                       <span className="text-xs ph-mono text-ink-muted">
-                        {f.count.toLocaleString()} \u00b7 {f.share}%
+                        {f.count.toLocaleString()} · {f.share}%
                       </span>
                     </div>
                     <div className="h-2 rounded-full bg-[var(--ph-surface-sunk)] overflow-hidden">
@@ -126,7 +126,7 @@ export default function BeautyDaysPage() {
                 ))}
               </ul>
               <p className="text-xs text-ink-muted mt-5 leading-relaxed pt-4 border-t border-[var(--ph-border)]">
-                Beauty Days isn\u2019t a single event \u2014 it\u2019s the 90-day loop. The crew watches every step
+                Beauty Days isn’t a single event — it’s the 90-day loop. The crew watches every step
                 and recommends interventions before drop-off.
               </p>
             </div>
@@ -138,7 +138,7 @@ export default function BeautyDaysPage() {
       <Section
         eyebrow="City heat"
         title="Where the community lives"
-        description="Membership density and growth across active cities. Density is illustrative, scaled 0\u201392."
+        description="Membership density and growth across active cities. Density is illustrative, scaled 0–92."
       >
         <div className="rounded-2xl border border-[var(--ph-border)] bg-surface p-5 md:p-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -158,7 +158,7 @@ export default function BeautyDaysPage() {
                       <div>
                         <p className="text-sm font-semibold text-ink">{c.city}</p>
                         <p className="text-xs text-ink-muted mt-0.5">
-                          {c.members.toLocaleString()} members \u00b7 +{c.growth}% q/q
+                          {c.members.toLocaleString()} members · +{c.growth}% q/q
                         </p>
                       </div>
                     </div>
@@ -205,7 +205,7 @@ export default function BeautyDaysPage() {
           <Section
             eyebrow="Interest clusters"
             title="What the community comes for"
-            description="Member interest distribution \u2014 input for sponsor matching, programming, and concept testing."
+            description="Member interest distribution — input for sponsor matching, programming, and concept testing."
           >
             <div className="rounded-2xl border border-[var(--ph-border)] bg-surface p-5 md:p-6" style={{ minHeight: 320 }}>
               <ResponsiveContainer width="100%" height={300}>
@@ -289,7 +289,7 @@ export default function BeautyDaysPage() {
       <Section
         eyebrow="Ambassadors & creators"
         title="The voices activating the community"
-        description="Active creators by city \u2014 last touch, audience scale, voice signature."
+        description="Active creators by city — last touch, audience scale, voice signature."
       >
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
           {BEAUTY_DAYS_AMBASSADORS.map((a) => (

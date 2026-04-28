@@ -3,10 +3,10 @@
 import React from 'react';
 
 /**
- * Miojo Interlock Map \u2014 the home-page signature object.
+ * Miojo Interlock Map — the home-page signature object.
  *
  * One founder at the center. Four pillars positioned around overlapping
- * thematic rings (Creative \u00b7 Community \u00b7 Wellness \u00b7 Hospitality \u00b7 Commerce \u00b7
+ * thematic rings (Creative · Community · Wellness · Hospitality · Commerce ·
  * Culture). The map exists to make the platform thesis legible in <20 seconds:
  * everything is one engine, expressed in different surfaces.
  */
@@ -108,10 +108,10 @@ export function InterlockMap() {
 
         {/* Pillar nodes */}
         {[
-          { x: 200, y: 160, label: 'Mi Ojo', sub: 'Studio \u00b7 Live', fill: 'var(--ph-gold-strong)' },
-          { x: 600, y: 160, label: 'Beauty Days', sub: 'Community \u00b7 Launching', fill: 'var(--ph-teal)' },
-          { x: 200, y: 440, label: 'Peppers & Bellies', sub: 'Hospitality \u00b7 Early', fill: 'var(--ph-teal-deep)' },
-          { x: 600, y: 440, label: 'Residences', sub: 'Stays \u00b7 Concept', fill: 'var(--ph-ink)' },
+          { x: 200, y: 160, label: 'Mi Ojo', sub: 'Studio · Live', fill: 'var(--ph-gold-strong)' },
+          { x: 600, y: 160, label: 'Beauty Days', sub: 'Community · Launching', fill: 'var(--ph-teal)' },
+          { x: 200, y: 440, label: 'Peppers & Bellies', sub: 'Hospitality · Early', fill: 'var(--ph-teal-deep)' },
+          { x: 600, y: 440, label: 'Residences', sub: 'Stays · Concept', fill: 'var(--ph-ink)' },
         ].map((p) => (
           <g key={p.label}>
             <circle cx={p.x} cy={p.y} r="48" fill="var(--ph-surface)" stroke="var(--ph-border-strong)" strokeWidth="1" />

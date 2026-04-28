@@ -43,11 +43,11 @@ export default function FounderCommandPage() {
   return (
     <div className="max-w-[1280px] mx-auto">
       <CrewHeader
-        eyebrow="Crew 01 \u00b7 Founder Command"
+        eyebrow="Crew 01 · Founder Command"
         title="Founder Command"
         italicWord="Command"
         subtitle="The executive home for the Miojo platform."
-        mission="Cross-pillar intelligence \u2014 every morning brief, every priority decision, every investor relationship in one place. Built so Ciarra spends her time on judgement, not coordination."
+        mission="Cross-pillar intelligence — every morning brief, every priority decision, every investor relationship in one place. Built so Ciarra spends her time on judgement, not coordination."
         icon={Compass}
         accent="teal"
         pillar="Cross-pillar"
@@ -103,7 +103,7 @@ export default function FounderCommandPage() {
           <Section
             eyebrow="30 / 60 / 90 day horizon"
             title="The activation timeline"
-            description="Every milestone, decision, and activation \u2014 colored by kind, anchored to a pillar."
+            description="Every milestone, decision, and activation — colored by kind, anchored to a pillar."
           >
             <div className="rounded-2xl border border-[var(--ph-border)] bg-surface p-5 md:p-6">
               <ol className="space-y-4">
@@ -129,7 +129,7 @@ export default function FounderCommandPage() {
                         <span className="text-[10px] ph-mono uppercase tracking-[0.16em] text-ink-faint">
                           {item.kind}
                         </span>
-                        <span className="text-[10px] text-ink-faint">\u00b7</span>
+                        <span className="text-[10px] text-ink-faint">·</span>
                         <span className="text-[10px] ph-mono uppercase tracking-[0.16em] text-teal-deep">
                           {item.pillar}
                         </span>
@@ -203,7 +203,7 @@ export default function FounderCommandPage() {
       <Section
         eyebrow="Investor pipeline"
         title="Capital tracks"
-        description="Family-office and strategic conversations \u2014 ranked by signal, scored against thesis fit."
+        description="Family-office and strategic conversations — ranked by signal, scored against thesis fit."
       >
         <div className="rounded-2xl border border-[var(--ph-border)] bg-surface overflow-x-auto">
           <table className="w-full">
@@ -261,7 +261,7 @@ export default function FounderCommandPage() {
                   <div className="min-w-0">
                     <p className="text-sm font-medium text-ink">{d.label}</p>
                     <p className="text-xs text-ink-muted mt-0.5">
-                      <span className="ph-mono uppercase tracking-[0.16em]">{d.owner}</span> \u00b7 due {d.due}
+                      <span className="ph-mono uppercase tracking-[0.16em]">{d.owner}</span> · due {d.due}
                     </p>
                   </div>
                   <div className="flex items-center gap-3 flex-shrink-0">
