@@ -1,12 +1,22 @@
 /* ============================================================
-   Pharos Signal & System — ported from embed-mvp @ db85843
-   Cream shell + charcoal ink + teal/gold accents.
-   Aegis governance retains purple as a scoped accent only.
+   Miojo OS — visual system v2 (deck-native).
 
-   Fonts: Inter, JetBrains Mono, and Fraunces are loaded via
-   next/font/google in app/layout.tsx. CSS @import is not used
-   to avoid violating the rule that @import must precede all
-   non-@charset / non-@layer rules (including @tailwind).
+   Palette extracted from Ciarra Pardo's investor deck:
+     • warm cream page (#F2EBD8) + sand-cream raised cards (#E8DFC9)
+     • forest dark for headlines and inverted spreads (#1B2820)
+     • clay / brick red italic accent on cream (#9C2B28)
+     • terracotta fire for vibrant headlines (#C5462E)
+     • sage olive for eyebrows, hairlines, dotted connectors (#7B7E3C)
+     • peach blush for italic accents on dark forest (#D9A88E)
+
+   The legacy --ph-* token names are kept and rebound so the rest
+   of the codebase picks up the new palette without import churn.
+   Two new families are added:
+     --mj-forest-* (deep forest greens)
+     --mj-peach-*  (warm blush, used on dark surfaces)
+
+   Fonts (Inter, Fraunces, JetBrains Mono) remain loaded via
+   next/font/google in app/layout.tsx.
    ============================================================ */
 
 @tailwind base;
@@ -16,84 +26,112 @@
 @layer base {
   :root,
   [data-theme="light"] {
-    /* ---------- v72 shell tokens (hero/nav/footer) ---------- */
-    --ph-bg:             #F6F4EE;
-    --ph-bg-raised:      #FDFCF8;
-    --ph-surface:        #FFFFFF;
-    --ph-surface-sunk:   #EEEBE2;
+    /* ---------- shell tokens (cream bg, sand surfaces) ---------- */
+    --ph-bg:             #F2EBD8;   /* cream page (deck primary) */
+    --ph-bg-raised:      #F5EFDC;   /* slight lift for hero / nav */
+    --ph-surface:        #FBF7E8;   /* warmest, near-white cards */
+    --ph-surface-sunk:   #E8DFC9;   /* sand-cream secondary surface */
 
-    --ph-ink:            #0F0F0E;
-    --ph-ink-soft:       rgba(15,15,14,0.82);
-    --ph-ink-muted:      rgba(15,15,14,0.62);
-    --ph-ink-faint:      rgba(15,15,14,0.46);
-    --ph-ink-ghost:      rgba(15,15,14,0.26);
-    --ph-ink-on-accent:  #FFFFFF;
+    /* ---------- ink (forest, on cream) ---------- */
+    --ph-ink:            #1F2A1F;
+    --ph-ink-soft:       rgba(31,42,31,0.82);
+    --ph-ink-muted:      rgba(31,42,31,0.62);
+    --ph-ink-faint:      rgba(31,42,31,0.46);
+    --ph-ink-ghost:      rgba(31,42,31,0.26);
+    --ph-ink-on-accent:  #F2EBD8;
 
-    --ph-teal:           #1FB6B8;
-    --ph-teal-strong:    #17999B;
-    --ph-teal-deep:      #0F7A7C;
-    --ph-teal-tint:      rgba(31,182,184,0.10);
-    --ph-teal-glow:      rgba(31,182,184,0.28);
+    /* ---------- forest (deep green, used for inverted spreads) ---------- */
+    --mj-forest:         #1B2820;
+    --mj-forest-soft:    #243124;
+    --mj-forest-deep:    #131C13;
+    --mj-forest-tint:    rgba(27,40,32,0.10);
+    --mj-forest-glow:    rgba(27,40,32,0.18);
 
-    --ph-gold:           #E68A3F;
-    --ph-gold-strong:    #C87730;
-    --ph-gold-deep:      #A8601F;
-    --ph-gold-tint:      rgba(230,138,63,0.10);
+    /* ---------- legacy --ph-teal-* rebound to SAGE OLIVE ----------
+       used for: eyebrows, hairlines, dotted connectors, "system" accent. */
+    --ph-teal:           #828651;   /* sage olive */
+    --ph-teal-strong:    #6A6E2F;
+    --ph-teal-deep:      #545727;
+    --ph-teal-tint:      rgba(130,134,81,0.10);
+    --ph-teal-glow:      rgba(130,134,81,0.20);
 
-    --ph-success:        #15803D;
+    /* alias for clarity within Miojo code */
+    --mj-sage:           #828651;
+    --mj-sage-strong:    #6A6E2F;
+    --mj-sage-deep:      #545727;
+    --mj-sage-tint:      rgba(130,134,81,0.10);
+
+    /* ---------- legacy --ph-gold-* rebound to CLAY / TERRACOTTA ----------
+       used for: italic accents on cream, CTA emphasis, "Peppers & Beli"
+       and "Beli's Pantry" pillar identity. */
+    --ph-gold:           #C5462E;   /* terracotta / fire */
+    --ph-gold-strong:    #9C2B28;   /* brick / clay (deck italic on cream) */
+    --ph-gold-deep:      #7E2320;
+    --ph-gold-tint:      rgba(156,43,40,0.10);
+
+    /* alias for clarity within Miojo code */
+    --mj-clay:           #9C2B28;
+    --mj-clay-strong:    #7E2320;
+    --mj-fire:           #C5462E;
+    --mj-fire-tint:      rgba(197,70,46,0.10);
+
+    /* ---------- peach / blush (italic on dark forest) ---------- */
+    --mj-peach:          #D9A88E;
+    --mj-peach-strong:   #C9947A;
+    --mj-peach-tint:     rgba(217,168,142,0.20);
+
+    /* ---------- semantic status (warm equivalents) ---------- */
+    --ph-success:        #5C7A3F;
     --ph-warn:           #B45309;
-    --ph-danger:         #B91C1C;
+    --ph-danger:         #9C2B28;
 
-    --ph-border:         rgba(15,15,14,0.10);
-    --ph-border-strong:  rgba(15,15,14,0.18);
-    --ph-hairline:       rgba(15,15,14,0.06);
+    /* ---------- borders & hairlines (forest at low alpha) ---------- */
+    --ph-border:         rgba(31,42,31,0.12);
+    --ph-border-strong:  rgba(31,42,31,0.20);
+    --ph-hairline:       rgba(31,42,31,0.08);
+    --mj-hairline-sage:  rgba(123,126,60,0.40);
 
-    --ph-grad-timeline:  linear-gradient(90deg, var(--ph-teal) 0%, var(--ph-teal) 35%, var(--ph-gold) 65%, var(--ph-ink) 100%);
-    --ph-grad-display:   linear-gradient(92deg, var(--ph-teal-strong) 0%, var(--ph-teal-deep) 50%, var(--ph-gold-strong) 100%);
+    /* ---------- gradients (sage + clay washes) ---------- */
+    --ph-grad-timeline:  linear-gradient(90deg, var(--mj-sage) 0%, var(--mj-sage) 35%, var(--mj-clay) 65%, var(--ph-ink) 100%);
+    --ph-grad-display:   linear-gradient(92deg, var(--mj-sage-strong) 0%, var(--mj-sage-deep) 50%, var(--mj-clay) 100%);
 
-    --ph-shadow-xs:      0 1px 0 rgba(15,15,14,0.04);
-    --ph-shadow-sm:      0 1px 2px rgba(15,15,14,0.06);
-    --ph-shadow-md:      0 1px 2px rgba(15,15,14,0.04), 0 8px 24px rgba(15,15,14,0.08);
-    --ph-shadow-lg:      0 1px 2px rgba(15,15,14,0.05), 0 20px 60px rgba(15,15,14,0.12);
-    --ph-shadow-cta:     0 1px 0 rgba(168,96,31,0.5), 0 10px 28px rgba(230,138,63,0.32);
+    /* ---------- shadows ---------- */
+    --ph-shadow-xs:      0 1px 0 rgba(31,42,31,0.04);
+    --ph-shadow-sm:      0 1px 2px rgba(31,42,31,0.06);
+    --ph-shadow-md:      0 1px 2px rgba(31,42,31,0.05), 0 8px 24px rgba(31,42,31,0.10);
+    --ph-shadow-lg:      0 1px 2px rgba(31,42,31,0.06), 0 20px 60px rgba(31,42,31,0.14);
+    --ph-shadow-cta:     0 1px 0 rgba(126,35,32,0.5), 0 10px 28px rgba(156,43,40,0.32);
 
     --ph-ease-out:       cubic-bezier(0.16, 1, 0.3, 1);
     --ph-ease-in-out:    cubic-bezier(0.65, 0, 0.35, 1);
 
-    /* ---------- Aegis (CACI-scoped) ---------- */
-    --ph-purple:         #6D5BD0;
-    --ph-purple-strong:  #5D4CC0;
-    --ph-purple-tint:    rgba(109,91,208,0.10);
+    /* ---------- legacy purple kept but neutralised to sage-deep -----
+       (some components still reference pharos-purple/Trust accent;
+        we redirect it to sage-deep so cream-shell consistency holds). */
+    --ph-purple:         #545727;
+    --ph-purple-strong:  #3F4319;
+    --ph-purple-tint:    rgba(84,87,39,0.10);
 
-    /* ---------- Generic shadcn-style vars — rebound to cream ---------- */
-    /* HSL triples so hsl(var(--name)) resolves correctly */
-    --background:        44 27% 95%;   /* ~#F6F4EE */
-    --foreground:        60 4% 6%;     /* ~#0F0F0E */
-
-    --card:              0 0% 100%;    /* #FFFFFF */
-    --card-foreground:   60 4% 6%;
-
-    --popover:           0 0% 100%;
-    --popover-foreground: 60 4% 6%;
-
-    --primary:           181 58% 33%;  /* ~#17999B teal-strong */
-    --primary-foreground: 0 0% 100%;
-
-    --secondary:         44 27% 91%;   /* ~#EEEBE2 surface-sunk */
-    --secondary-foreground: 60 4% 6%;
-
-    --muted:             44 27% 91%;
-    --muted-foreground:  60 4% 38%;    /* ~rgba(15,15,14,0.62) ink-muted */
-
-    --accent:            25 76% 57%;   /* #E68A3F gold */
-    --accent-foreground: 0 0% 100%;
-
-    --destructive:       0 72% 42%;    /* #B91C1C */
-    --destructive-foreground: 0 0% 100%;
-
-    --border:            60 4% 90%;    /* thin hairline on cream */
-    --input:             60 4% 84%;
-    --ring:              181 71% 42%;  /* teal focus ring */
+    /* ---------- shadcn-style HSL vars (rebound to deck palette) ---------- */
+    --background:        46 41% 90%;   /* ~#F2EBD8 cream */
+    --foreground:        120 14% 14%;  /* ~#1F2A1F forest */
+    --card:              48 53% 95%;   /* ~#FBF7E8 */
+    --card-foreground:   120 14% 14%;
+    --popover:           48 53% 95%;
+    --popover-foreground:120 14% 14%;
+    --primary:           63 41% 30%;   /* ~#6A6E2F sage strong */
+    --primary-foreground: 46 41% 92%;
+    --secondary:         44 27% 84%;   /* ~#E8DFC9 sand-cream */
+    --secondary-foreground: 120 14% 14%;
+    --muted:             44 27% 84%;
+    --muted-foreground:  120 12% 32%;  /* forest-ink-muted */
+    --accent:            10 62% 40%;   /* ~#9C2B28 clay/brick */
+    --accent-foreground: 46 41% 92%;
+    --destructive:       10 62% 40%;
+    --destructive-foreground: 46 41% 92%;
+    --border:            120 10% 80%;
+    --input:             120 10% 70%;
+    --ring:              10 62% 40%;   /* clay focus ring */
 
     --radius: 0.5rem;
   }
@@ -114,23 +152,22 @@
 }
 
 *:focus-visible {
-  outline: 2px solid var(--ph-teal);
+  outline: 2px solid var(--mj-clay);
   outline-offset: 2px;
 }
 
-/* Scrollbar — cream */
 ::-webkit-scrollbar { width: 8px; height: 8px; }
 ::-webkit-scrollbar-track { background: var(--ph-bg-raised); }
 ::-webkit-scrollbar-thumb { background: var(--ph-border-strong); border-radius: 4px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--ph-ink-muted); }
 
 /* ============================================================
-   Typography helpers — v72 verbatim
+   Typography helpers
    ============================================================ */
 .ph-display {
   font-family: var(--font-inter), 'Inter', -apple-system, sans-serif;
   font-size: clamp(3rem, 6.2vw, 6.75rem);
-  font-weight: 560;
+  font-weight: 600;
   line-height: 1.0;
   letter-spacing: -0.028em;
   color: var(--ph-ink);
@@ -140,7 +177,7 @@
 .ph-h1 {
   font-family: var(--font-inter), 'Inter', -apple-system, sans-serif;
   font-size: clamp(2.75rem, 5.2vw, 4.75rem);
-  font-weight: 560;
+  font-weight: 700;
   line-height: 0.98;
   letter-spacing: -0.032em;
   color: var(--ph-ink);
@@ -148,7 +185,7 @@
 .ph-h2 {
   font-family: var(--font-inter), 'Inter', -apple-system, sans-serif;
   font-size: clamp(2rem, 3.6vw, 3.25rem);
-  font-weight: 560;
+  font-weight: 700;
   line-height: 1.04;
   letter-spacing: -0.028em;
   color: var(--ph-ink);
@@ -176,13 +213,19 @@
   line-height: 1.6;
   color: var(--ph-ink-muted);
 }
+/* Italic accent — clay/brick red on cream backgrounds (deck signature) */
 .ph-display-serif-italic {
   font-family: var(--font-fraunces), 'Fraunces', Georgia, serif;
   font-style: italic;
   font-weight: 400;
   font-variation-settings: 'opsz' 144, 'SOFT' 50;
-  color: var(--ph-teal-deep);
+  color: var(--mj-clay);
   letter-spacing: -0.025em;
+}
+/* On dark forest backgrounds, italic shifts to peach — opt-in modifier */
+.ph-display-serif-italic.on-dark,
+[data-on-dark] .ph-display-serif-italic {
+  color: var(--mj-peach);
 }
 .ph-stat {
   font-family: var(--font-fraunces), 'Fraunces', Georgia, serif;
@@ -194,13 +237,14 @@
   color: var(--ph-ink);
   font-feature-settings: 'tnum' 1, 'lnum' 1;
 }
+/* Eyebrow — sage olive on cream (deck signature) */
 .ph-eyebrow {
   font-family: var(--font-jetbrains-mono), 'JetBrains Mono', ui-monospace, monospace;
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--ph-teal-deep);
+  color: var(--mj-sage-deep);
 }
 .ph-eyebrow-num {
   font-family: var(--font-jetbrains-mono), 'JetBrains Mono', ui-monospace, monospace;
@@ -215,7 +259,7 @@
 }
 .ph-eyebrow-num::before {
   content: attr(data-num);
-  color: var(--ph-teal-deep);
+  color: var(--mj-sage-deep);
   font-weight: 600;
 }
 .ph-mono {
@@ -228,43 +272,53 @@
   display: inline-block;
   width: 2rem;
   height: 1px;
-  background: var(--ph-teal-deep);
+  background: var(--mj-sage-deep);
   vertical-align: middle;
   margin-right: 0.75rem;
 }
 
 /* ============================================================
-   Section backgrounds
+   Section backgrounds — warm sage + clay washes
    ============================================================ */
 .bg-pharos-hero,
 .hero-with-glow {
   background:
-    radial-gradient(ellipse 80% 60% at 50% 0%, var(--ph-teal-tint), transparent 55%),
-    radial-gradient(circle at 20% 80%, var(--ph-gold-tint), transparent 45%),
+    radial-gradient(ellipse 80% 60% at 50% 0%, var(--mj-sage-tint), transparent 55%),
+    radial-gradient(circle at 20% 80%, var(--mj-fire-tint), transparent 45%),
+    radial-gradient(circle at 85% 40%, var(--mj-peach-tint), transparent 50%),
     linear-gradient(180deg, var(--ph-bg-raised) 0%, var(--ph-bg) 100%);
 }
 
+/* Forest panel — for inverted spreads / dark accent surfaces */
+.bg-forest {
+  background: var(--mj-forest);
+  color: var(--ph-ink-on-accent);
+}
+.bg-forest .ph-eyebrow,
+.bg-forest .ph-rule { background: var(--mj-peach); color: var(--mj-peach); }
+.bg-forest .ph-rule { background: var(--mj-peach); }
+
 .pharos-divider {
   height: 1px;
-  background: linear-gradient(90deg, transparent 0%, var(--ph-teal) 20%, var(--ph-teal) 80%, transparent 100%);
-  opacity: 0.4;
+  background: linear-gradient(90deg, transparent 0%, var(--mj-sage) 20%, var(--mj-sage) 80%, transparent 100%);
+  opacity: 0.55;
 }
 
 .pharos-glow-teal {
-  box-shadow: 0 0 60px var(--ph-teal-glow), 0 0 120px rgba(31,182,184,0.08);
+  box-shadow: 0 0 60px var(--ph-teal-glow), 0 0 120px rgba(130,134,81,0.10);
 }
 
 /* ============================================================
-   Status utilities (preserved for status text)
+   Status utilities
    ============================================================ */
 .status-pass     { color: var(--ph-success); }
 .status-fail     { color: var(--ph-danger); }
 .status-warning  { color: var(--ph-warn); }
 
 /* Text utilities compatibility */
-.text-primary-teal { color: var(--ph-teal-deep); }
-.text-accent-gold  { color: var(--ph-gold-strong); }
-.text-accent-purple { color: var(--ph-purple); }
+.text-primary-teal { color: var(--mj-sage-deep); }
+.text-accent-gold  { color: var(--mj-clay); }
+.text-accent-purple { color: var(--mj-sage-deep); }
 
-/* Legacy surface compat — ensure cream if anything still references */
+/* Legacy surface compat */
 .bg-card-pharos { background-color: var(--ph-surface); }

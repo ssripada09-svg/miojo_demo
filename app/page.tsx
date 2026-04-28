@@ -65,7 +65,7 @@ export default function HomePage() {
             href="/crews/beauty-days-community"
             className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full border border-[var(--ph-border-strong)] text-ink text-sm font-medium hover:bg-[var(--ph-surface-sunk)] transition-colors"
           >
-            Tour Beauty Days
+            Tour BeautyDays
           </Link>
           <span className="text-xs ph-mono text-ink-muted ml-2">
             5 crews · 4 pillars · 1 platform
@@ -205,7 +205,11 @@ export default function HomePage() {
             >
               <div
                 className={`inline-flex items-center justify-center w-9 h-9 rounded-lg mb-3 ${
-                  crew.accent === 'gold' ? 'bg-gold-tint text-gold-deep' : 'bg-teal-tint text-teal-deep'
+                  crew.accent === 'clay'
+                    ? 'bg-clay-tint text-clay'
+                    : crew.accent === 'forest'
+                      ? 'bg-forest-tint text-forest'
+                      : 'bg-sage-tint text-sage-deep'
                 }`}
               >
                 <crew.icon className="w-4.5 h-4.5" />

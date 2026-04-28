@@ -12,8 +12,8 @@ One founder. Four pillars. Five crews. One platform.
 |------|------|
 | **Founder Command** | Cross-pillar executive surface \u2014 morning brief, decisions, investor tracks |
 | **Mi Ojo Studio** | Brand & narrative co-strategist \u2014 the cashflow engine |
-| **Beauty Days Community** | IRL-to-digital community OS \u2014 the scaling wedge |
-| **Experience Engine** | Peppers & Bellies + Residences \u2014 hospitality & wellness ops |
+| **BeautyDays Community** | IRL-to-digital community OS \u2014 the scaling wedge |
+| **Experience Engine** | Peppers & Beli + Residences \u2014 hospitality & wellness ops |
 | **Trend Intelligence** | Foresight, opportunities, signal radar |
 | **Trust Layer** | Human-in-the-loop & memory |
 

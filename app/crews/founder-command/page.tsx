@@ -27,16 +27,16 @@ import {
 } from '@/data/miojo-mock';
 
 const PILLAR_COLORS: Record<string, string> = {
-  'Mi Ojo': '#C87730',
-  'Beauty Days': '#1FB6B8',
-  'Peppers & Bellies': '#0F7A7C',
-  'Residences': '#0F0F0E',
+  'Mi Ojo': '#1B2820',           // forest — the engine
+  'Peppers & Beli': '#9C2B28',   // clay — the core
+  'BeautyDays': '#828651',       // sage — the amplifier
+  'Residences': '#545727',       // sage-deep — the home
 };
 
 const TIMELINE_KIND_COLOR: Record<string, string> = {
-  milestone: 'var(--ph-ink)',
-  decision: 'var(--ph-gold-strong)',
-  activation: 'var(--ph-teal)',
+  milestone: 'var(--mj-forest)',
+  decision: 'var(--mj-clay)',
+  activation: 'var(--mj-sage)',
 };
 
 export default function FounderCommandPage() {
@@ -49,7 +49,7 @@ export default function FounderCommandPage() {
         subtitle="The executive home for the Miojo platform."
         mission="Cross-pillar intelligence — every morning brief, every priority decision, every investor relationship in one place. Built so Ciarra spends her time on judgement, not coordination."
         icon={Compass}
-        accent="teal"
+        accent="forest"
         pillar="Cross-pillar"
         liveValue="14 active threads"
       />

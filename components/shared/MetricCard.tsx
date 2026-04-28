@@ -69,7 +69,7 @@ export function MetricCard({
     <div
       className={cn(
         'bg-card rounded-lg border border-border p-6 transition-all duration-300',
-        'hover:border-[rgba(31,182,184,0.45)] hover:shadow-md hover:-translate-y-0.5',
+        'hover:border-[rgba(130,134,81,0.50)] hover:shadow-md hover:-translate-y-0.5',
         className,
       )}
     >

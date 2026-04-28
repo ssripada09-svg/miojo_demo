@@ -25,12 +25,12 @@ export function Sidebar({ onNavigate }: SidebarProps) {
 
   const accentClass = (accent: string) => {
     switch (accent) {
-      case 'gold':
-        return 'text-gold-strong'
-      case 'ink':
-        return 'text-ink'
+      case 'clay':
+        return 'text-clay'
+      case 'forest':
+        return 'text-forest'
       default:
-        return 'text-teal-deep'
+        return 'text-sage-deep'
     }
   }
 
@@ -47,7 +47,7 @@ export function Sidebar({ onNavigate }: SidebarProps) {
           <div className="flex items-center justify-center flex-shrink-0">
             <span
               className="font-serif italic text-3xl leading-none"
-              style={{ color: 'var(--ph-teal-deep)' }}
+              style={{ color: 'var(--mj-clay)' }}
             >
               m
             </span>
@@ -130,7 +130,7 @@ export function Sidebar({ onNavigate }: SidebarProps) {
           className={cn(
             "flex items-center gap-3 px-3 py-2 rounded-lg text-sm transition-colors",
             pathname === "/trust"
-              ? "bg-pharos-purple/10 text-pharos-purple font-medium"
+              ? "bg-forest-tint text-forest font-medium"
               : "text-ink-muted hover:bg-[var(--ph-surface-sunk)] hover:text-ink"
           )}
           title={collapsed ? TRUST_LAYER.name : undefined}

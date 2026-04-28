@@ -26,15 +26,41 @@ const config = {
     },
     extend: {
       colors: {
-        // ---- pharos.* rebound to v72 cream shell ----
+        // ---- pharos.* rebound to Miojo deck palette (cream + forest + clay + sage) ----
         pharos: {
           bg:     'var(--ph-bg)',           // cream page background
-          card:   'var(--ph-surface)',      // white card
+          card:   'var(--ph-surface)',      // sand-cream card
           border: 'var(--ph-border-strong)',// hairline on cream
-          teal:   '#1FB6B8',
-          gold:   '#E68A3F',
-          purple: '#6D5BD0',                // Aegis — scoped to governance only
-          blue:   '#2563EB',
+          teal:   '#828651',                // sage (was Pharos teal)
+          gold:   '#9C2B28',                // clay / brick (was Pharos gold)
+          purple: '#545727',                // sage-deep (legacy Trust accent)
+          blue:   '#1B2820',                // forest (legacy)
+        },
+
+        // ---- Miojo deck palette aliases (use these in new code) ----
+        forest: {
+          DEFAULT: 'var(--mj-forest)',
+          soft:    'var(--mj-forest-soft)',
+          deep:    'var(--mj-forest-deep)',
+          tint:    'var(--mj-forest-tint)',
+          glow:    'var(--mj-forest-glow)',
+        },
+        clay: {
+          DEFAULT: 'var(--mj-clay)',
+          strong:  'var(--mj-clay-strong)',
+          fire:    'var(--mj-fire)',
+          tint:    'var(--mj-fire-tint)',
+        },
+        sage: {
+          DEFAULT: 'var(--mj-sage)',
+          strong:  'var(--mj-sage-strong)',
+          deep:    'var(--mj-sage-deep)',
+          tint:    'var(--mj-sage-tint)',
+        },
+        peach: {
+          DEFAULT: 'var(--mj-peach)',
+          strong:  'var(--mj-peach-strong)',
+          tint:    'var(--mj-peach-tint)',
         },
 
         // ---- v72 shell tokens ----

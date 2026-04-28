@@ -48,7 +48,7 @@ export default function TrendIntelligencePage() {
         subtitle="Foresight, opportunities, and signal — amplified."
         mission="Continuous radar across beauty, wellness, fashion, hospitality, and culture. Watches what would otherwise slip past, and ranks it against thesis fit and signal velocity."
         icon={Radar}
-        accent="teal"
+        accent="sage"
         pillar="Cross-pillar"
         liveValue="9 trend clusters · +34% w/w"
       />

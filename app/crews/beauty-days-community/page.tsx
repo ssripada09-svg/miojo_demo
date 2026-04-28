@@ -40,14 +40,14 @@ export default function BeautyDaysPage() {
   return (
     <div className="max-w-[1280px] mx-auto">
       <CrewHeader
-        eyebrow="Crew 03 · Beauty Days Community"
-        title="Beauty Days"
+        eyebrow="Crew 03 · BeautyDays Community"
+        title="BeautyDays"
         italicWord="Days"
         subtitle="The IRL-to-digital community OS — Miojo’s scaling wedge."
-        mission="Turns Beauty Days events into a recurring community, sponsor, and first-party data engine. Where audience capital becomes platform equity."
+        mission="Turns BeautyDays events into a recurring community, sponsor, and first-party data engine. Where audience capital becomes platform equity."
         icon={Users}
-        accent="teal"
-        pillar="Beauty Days · Launching"
+        accent="sage"
+        pillar="BeautyDays · Launching"
         liveValue="11.4K members · 7 cities"
       />
 
@@ -126,7 +126,7 @@ export default function BeautyDaysPage() {
                 ))}
               </ul>
               <p className="text-xs text-ink-muted mt-5 leading-relaxed pt-4 border-t border-[var(--ph-border)]">
-                Beauty Days isn’t a single event — it’s the 90-day loop. The crew watches every step
+                BeautyDays isn’t a single event — it’s the 90-day loop. The crew watches every step
                 and recommends interventions before drop-off.
               </p>
             </div>
@@ -149,7 +149,7 @@ export default function BeautyDaysPage() {
                   key={c.city}
                   className="rounded-xl border border-[var(--ph-border)] p-4 transition-all hover:-translate-y-0.5 hover:shadow-md"
                   style={{
-                    background: `linear-gradient(135deg, rgba(31,182,184,${0.04 + intensity * 0.16}) 0%, var(--ph-surface) 100%)`,
+                    background: `linear-gradient(135deg, rgba(130,134,81,${0.06 + intensity * 0.20}) 0%, var(--ph-surface) 100%)`,
                   }}
                 >
                   <div className="flex items-start justify-between gap-3">

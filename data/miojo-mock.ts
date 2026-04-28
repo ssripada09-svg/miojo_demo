@@ -11,7 +11,7 @@
 
 export const HOME_KPIS = [
   { label: 'Investor Conversations', value: '14', sub: 'Active family-office tracks' },
-  { label: 'Beauty Days Members', value: '11.4K', sub: 'Across 7 cities' },
+  { label: 'BeautyDays Members', value: '11.4K', sub: 'Across 7 cities' },
   { label: 'Activations — Next 30d', value: '8', sub: 'Events, launches, residencies' },
   { label: 'Concepts In Pipeline', value: '12', sub: 'Brand & advisory workstreams' },
   { label: 'Decisions Flagged', value: '5', sub: 'Awaiting Ciarra’s approval' },
@@ -22,7 +22,7 @@ export const FOUNDER_BRIEF = {
   topOpportunity: {
     headline: 'Cayman family office requesting deal memo by Thursday',
     detail:
-      'A patient-capital LP archetype, prefers minority equity + royalty. Memory says they passed on Glossier in 2017 and have asked twice about Beauty Days economics.',
+      'A patient-capital LP archetype, prefers minority equity + royalty. Memory says they passed on Glossier in 2017 and have asked twice about BeautyDays economics.',
   },
   topRisk: {
     headline: 'Mexico City Beauty Day venue contract not countersigned',
@@ -35,7 +35,7 @@ export const FOUNDER_BRIEF = {
       'Three positioning options on the table. Studio crew recommends Option B (“the ritual is the brand”) based on member panel resonance scores.',
   },
   topCrossPillar: {
-    headline: 'Beauty Days NYC sponsor could anchor a Peppers & Bellies pop-up',
+    headline: 'BeautyDays NYC sponsor could anchor a Peppers & Beli pop-up',
     detail:
       'Eaux Sauvages signaled interest in extended cultural programming — worth a 30-min call before Friday.',
   },
@@ -52,7 +52,7 @@ export const RECENT_ACTIVITY = [
   },
   {
     id: 2,
-    crew: 'Beauty Days',
+    crew: 'BeautyDays',
     title: 'Mexico City RSVP pace +24% vs LA at same milestone',
     detail: '1,840 confirmed → 412 pre-activated to year-round community.',
     type: 'success' as const,
@@ -69,7 +69,7 @@ export const RECENT_ACTIVITY = [
   {
     id: 4,
     crew: 'Experience Engine',
-    title: 'Peppers & Bellies — chef residency calendar at 87% sell-through',
+    title: 'Peppers & Beli — chef residency calendar at 87% sell-through',
     detail: 'August fully booked. September wait-list 41 deep.',
     type: 'success' as const,
     time: '6 hr ago',
@@ -86,7 +86,7 @@ export const RECENT_ACTIVITY = [
     id: 6,
     crew: 'Trend Intelligence',
     title: 'Watchlist: Chef Aarón Serra opening Brooklyn residency',
-    detail: 'Pattern match against Peppers & Bellies sourcing thesis. 92% fit score.',
+    detail: 'Pattern match against Peppers & Beli sourcing thesis. 92% fit score.',
     type: 'signal' as const,
     time: 'Yesterday',
   },
@@ -127,14 +127,14 @@ export const COMMAND_KPIS = [
 export const COMMAND_TIMELINE = [
   { day: 'Apr 30', label: 'Cayman LP — deal memo due', kind: 'milestone', pillar: 'Founder' },
   { day: 'May 4', label: 'Maison Vence narrative review', kind: 'decision', pillar: 'Mi Ojo' },
-  { day: 'May 10', label: 'Beauty Days — Mexico City', kind: 'activation', pillar: 'Beauty Days' },
-  { day: 'May 18', label: 'Peppers & Bellies — Chef Aarón residency opens', kind: 'activation', pillar: 'Peppers & Bellies' },
+  { day: 'May 10', label: 'BeautyDays — Mexico City', kind: 'activation', pillar: 'BeautyDays' },
+  { day: 'May 18', label: 'Peppers & Beli — Chef Aarón residency opens', kind: 'activation', pillar: 'Peppers & Beli' },
   { day: 'May 22', label: 'LAFW collections review board', kind: 'milestone', pillar: 'Mi Ojo' },
-  { day: 'Jun 6', label: 'Beauty Days — NYC', kind: 'activation', pillar: 'Beauty Days' },
+  { day: 'Jun 6', label: 'BeautyDays — NYC', kind: 'activation', pillar: 'BeautyDays' },
   { day: 'Jun 14', label: 'Residencies — Marrakesh site walk', kind: 'milestone', pillar: 'Residences' },
-  { day: 'Jun 27', label: 'Beauty Days — London', kind: 'activation', pillar: 'Beauty Days' },
+  { day: 'Jun 27', label: 'BeautyDays — London', kind: 'activation', pillar: 'BeautyDays' },
   { day: 'Jul 9', label: 'Maison Vence — Sephora prestige window', kind: 'milestone', pillar: 'Mi Ojo' },
-  { day: 'Jul 18', label: 'Beauty Days — Miami', kind: 'activation', pillar: 'Beauty Days' },
+  { day: 'Jul 18', label: 'BeautyDays — Miami', kind: 'activation', pillar: 'BeautyDays' },
   { day: 'Aug 2', label: 'Pharos LP report', kind: 'decision', pillar: 'Founder' },
 ];
 
@@ -151,15 +151,15 @@ export const COMMAND_INVESTOR_TRACKS = [
 export const COMMAND_DECISIONS = [
   { label: 'Approve Maison Vence narrative direction', owner: 'Mi Ojo Studio', due: 'Today', priority: 'High' },
   { label: 'Countersign Mexico City venue contract', owner: 'Experience Engine', due: 'In 2 days', priority: 'High' },
-  { label: 'Greenlight LAFW × Beauty Days NYC bridge', owner: 'Founder', due: 'In 3 days', priority: 'Medium' },
+  { label: 'Greenlight LAFW × BeautyDays NYC bridge', owner: 'Founder', due: 'In 3 days', priority: 'Medium' },
   { label: 'Confirm Banyan deal memo terms', owner: 'Founder', due: 'In 4 days', priority: 'High' },
   { label: 'Pass / advance: Strand Studios advisory ask', owner: 'Mi Ojo Studio', due: 'In 6 days', priority: 'Medium' },
 ];
 
 export const COMMAND_PILLAR_HEALTH = [
   { pillar: 'Mi Ojo', revenue: 38, share: 38, status: 'Strong', note: 'Three advisory engagements compounding into next quarter.' },
-  { pillar: 'Beauty Days', revenue: 26, share: 26, status: 'Accelerating', note: 'Sponsor pipeline 2.4× vs Q1; member retention holding at 41%.' },
-  { pillar: 'Peppers & Bellies', revenue: 22, share: 22, status: 'Building', note: 'Chef residency demand outpacing capacity; menu IP forming.' },
+  { pillar: 'BeautyDays', revenue: 26, share: 26, status: 'Accelerating', note: 'Sponsor pipeline 2.4× vs Q1; member retention holding at 41%.' },
+  { pillar: 'Peppers & Beli', revenue: 22, share: 22, status: 'Building', note: 'Chef residency demand outpacing capacity; menu IP forming.' },
   { pillar: 'Residences', revenue: 14, share: 14, status: 'Concept', note: 'Marrakesh + Tulum site walks in flight; capital partner conversations open.' },
 ];
 
@@ -211,7 +211,7 @@ export const STUDIO_NARRATIVE_OPTIONS = [
     headline: 'The ritual is the brand.',
     angle: 'Ritual-led, sensory-first',
     score: 88,
-    note: 'Recommended. Highest resonance across LA, NYC, Mexico City panels; pairs with Peppers & Bellies storytelling.',
+    note: 'Recommended. Highest resonance across LA, NYC, Mexico City panels; pairs with Peppers & Beli storytelling.',
   },
   {
     label: 'Option C',
@@ -293,7 +293,7 @@ export const BEAUTY_DAYS_INTERESTS = [
   { cluster: 'Inclusive fragrance', share: 13, note: 'Driving Maison Vence demand' },
   { cluster: 'Clean / botanical skincare', share: 11, note: 'Strong in LA & MX-CDMX' },
   { cluster: 'Founder voice / cultural', share: 10, note: 'Highest re-RSVP rate' },
-  { cluster: 'Wellness-hospitality', share: 7, note: 'Bridges Peppers & Bellies' },
+  { cluster: 'Wellness-hospitality', share: 7, note: 'Bridges Peppers & Beli' },
   { cluster: 'Beauty technology', share: 3, note: 'Niche but high creator overlap' },
 ];
 
@@ -319,7 +319,7 @@ export const BEAUTY_DAYS_AMBASSADORS = [
 
 export const BEAUTY_DAYS_RECOMMENDATIONS = [
   {
-    title: 'Bridge Eaux Sauvages into Peppers & Bellies NYC pop-up',
+    title: 'Bridge Eaux Sauvages into Peppers & Beli NYC pop-up',
     detail: 'Sponsor signaled extended cultural programming intent. Cross-pillar deal could unlock six-figure incremental sponsorship + chef collab content.',
     impact: 'Cross-pillar spend expansion',
   },
@@ -336,7 +336,7 @@ export const BEAUTY_DAYS_RECOMMENDATIONS = [
 ];
 
 // ============================================================
-// EXPERIENCE ENGINE (Peppers & Bellies + Residences)
+// EXPERIENCE ENGINE (Peppers & Beli + Residences)
 // ============================================================
 
 export const EXPERIENCE_KPIS = [
@@ -382,7 +382,7 @@ export const EXPERIENCE_BOOKING_PACE = [
 
 export const EXPERIENCE_GUEST_SEGMENTS = [
   { segment: 'Founders & operators', share: 31 },
-  { segment: 'Beauty Days members', share: 24 },
+  { segment: 'BeautyDays members', share: 24 },
   { segment: 'Editorial / press', share: 14 },
   { segment: 'Family-office principals', share: 12 },
   { segment: 'Creators & ambassadors', share: 11 },
@@ -391,8 +391,8 @@ export const EXPERIENCE_GUEST_SEGMENTS = [
 
 export const EXPERIENCE_RECOMMENDATIONS = [
   {
-    title: 'Open September wait-list to Beauty Days NYC members',
-    detail: 'Highest cross-pillar conversion has historically come from Beauty Days members. Pre-release before public list keeps retention loop intact.',
+    title: 'Open September wait-list to BeautyDays NYC members',
+    detail: 'Highest cross-pillar conversion has historically come from BeautyDays members. Pre-release before public list keeps retention loop intact.',
     impact: '~190 incremental bookings forecast',
   },
   {
@@ -450,7 +450,7 @@ export const TREND_OPPORTUNITIES = [
   { name: 'Eaux Sauvages', kind: 'Brand', match: 78, vertical: 'Beauty / Hospitality', signal: 'Cross-pillar sponsor expansion intent' },
   { name: 'Marrakesh restored home (private)', kind: 'Property', match: 76, vertical: 'Hospitality', signal: 'Ownership window opens June; site walk scheduled' },
   { name: 'Tomás Reig (Velvethold)', kind: 'Founder', match: 74, vertical: 'Beauty', signal: 'Production-ready; Sephora Pro tools fit' },
-  { name: 'ComplexCon culture programming', kind: 'Cultural', match: 72, vertical: 'Culture', signal: 'Programming overlap with Beauty Days NYC' },
+  { name: 'ComplexCon culture programming', kind: 'Cultural', match: 72, vertical: 'Culture', signal: 'Programming overlap with BeautyDays NYC' },
   { name: 'La Maison des Startups', kind: 'Capital / Network', match: 70, vertical: 'Beauty', signal: 'Studio partner intro — LVMH-adjacent' },
   { name: 'Pattern (Tracee Ellis Ross) network', kind: 'Network', match: 68, vertical: 'Beauty', signal: 'Texture-first benchmark; Ulta playbook' },
 ];

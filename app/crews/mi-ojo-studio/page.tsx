@@ -30,9 +30,9 @@ import {
 
 const STAGE_COLORS: Record<string, string> = {
   Concept: 'var(--ph-ink-muted)',
-  Narrative: 'var(--ph-teal)',
-  Production: 'var(--ph-gold-strong)',
-  'Launch-Ready': 'var(--ph-success)',
+  Narrative: 'var(--mj-sage)',
+  Production: 'var(--mj-clay)',
+  'Launch-Ready': 'var(--mj-forest)',
 };
 
 export default function MiOjoStudioPage() {
@@ -45,7 +45,7 @@ export default function MiOjoStudioPage() {
         subtitle="The creative & brand operating room."
         mission="An AI co-strategist for brand creation, narrative, launch readiness, and retail strategy. The cashflow engine that funds and de-risks the rest of Miojo."
         icon={Sparkles}
-        accent="gold"
+        accent="forest"
         pillar="Mi Ojo · Live"
         liveValue="12 active concepts"
       />
@@ -59,7 +59,7 @@ export default function MiOjoStudioPage() {
       <Section
         eyebrow="Active mission"
         title="Maison Vence — narrative direction"
-        description="The crew tested three positioning angles across LA, NYC, and Mexico City Beauty Days panels. Recommendation flagged for Ciarra's review."
+        description="The crew tested three positioning angles across LA, NYC, and Mexico City BeautyDays panels. Recommendation flagged for Ciarra's review."
       >
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {STUDIO_NARRATIVE_OPTIONS.map((opt) => {

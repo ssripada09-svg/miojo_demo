@@ -8,7 +8,7 @@ const SECTION_LABELS: Record<string, string> = {
   '/': 'Founder Home',
   '/crews/founder-command': 'Founder Command',
   '/crews/mi-ojo-studio': 'Mi Ojo Studio',
-  '/crews/beauty-days-community': 'Beauty Days Community',
+  '/crews/beauty-days-community': 'BeautyDays Community',
   '/crews/experience-engine': 'Experience Engine',
   '/crews/trend-intelligence': 'Trend Intelligence',
   '/trust': 'Trust Layer',
@@ -31,7 +31,7 @@ export function Header() {
           href="/trust"
           className={`flex items-center gap-2 px-3 py-1.5 rounded-lg border transition-all text-xs ${
             isOnTrust
-              ? 'bg-pharos-purple/10 border-pharos-purple/30 text-pharos-purple'
+              ? 'bg-forest-tint border-forest/30 text-forest'
               : 'border-[var(--ph-border)] text-ink-muted hover:bg-[var(--ph-surface-sunk)] hover:text-ink'
           }`}
           title="Trust Layer — human-in-the-loop & memory"
@@ -41,7 +41,7 @@ export function Header() {
         </Link>
 
         <div className="hidden md:flex items-center gap-2 text-xs text-ink-muted">
-          <Sparkles className="w-3.5 h-3.5 text-gold-strong" />
+          <Sparkles className="w-3.5 h-3.5 text-clay" />
           <span className="ph-mono">Founder Demo</span>
         </div>
 
@@ -49,8 +49,8 @@ export function Header() {
           <div
             className="w-8 h-8 rounded-full flex items-center justify-center ring-1"
             style={{
-              background: 'linear-gradient(135deg, var(--ph-teal-strong), var(--ph-teal-deep))',
-              borderColor: 'var(--ph-teal-glow)',
+              background: 'linear-gradient(135deg, var(--mj-forest-soft), var(--mj-forest))',
+              borderColor: 'var(--mj-forest-glow)',
             }}
           >
             <span className="text-white text-xs font-medium">CP</span>

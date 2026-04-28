@@ -51,8 +51,8 @@ export default function ExperienceEnginePage() {
         subtitle="Hospitality, wellness, and editorial commerce — in one operating surface."
         mission="Manages the chef residencies, wellness stays, and culinary storytelling that translate the Miojo brand world into sensory experience. The slow-compounding asset layer."
         icon={MapPin}
-        accent="gold"
-        pillar="Peppers & Bellies + Residences"
+        accent="clay"
+        pillar="Peppers & Beli + Residences"
         liveValue="11 / 12 slots booked"
       />
 
@@ -229,7 +229,7 @@ export default function ExperienceEnginePage() {
       <Section
         eyebrow="Guest segments"
         title="Who Miojo is hosting"
-        description="Segment mix across the year. Founder + Beauty Days member overlap is the strongest cross-pillar signal."
+        description="Segment mix across the year. Founder + BeautyDays member overlap is the strongest cross-pillar signal."
       >
         <div className="rounded-2xl border border-[var(--ph-border)] bg-surface p-5 md:p-6">
           <div className="space-y-3">

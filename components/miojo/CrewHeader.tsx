@@ -11,7 +11,7 @@ interface CrewHeaderProps {
   subtitle: string;
   mission: string;
   icon: LucideIcon;
-  accent: 'teal' | 'gold' | 'ink';
+  accent: 'sage' | 'clay' | 'forest';
   pillar?: string;
   liveLabel?: string;
   liveValue?: string;
@@ -30,11 +30,11 @@ export function CrewHeader({
   liveValue,
 }: CrewHeaderProps) {
   const tint =
-    accent === 'gold'
-      ? { bg: 'bg-gold-tint', fg: 'text-gold-deep' }
-      : accent === 'ink'
-        ? { bg: 'bg-[var(--ph-surface-sunk)]', fg: 'text-ink' }
-        : { bg: 'bg-teal-tint', fg: 'text-teal-deep' };
+    accent === 'clay'
+      ? { bg: 'bg-clay-tint', fg: 'text-clay' }
+      : accent === 'forest'
+        ? { bg: 'bg-forest-tint', fg: 'text-forest' }
+        : { bg: 'bg-sage-tint', fg: 'text-sage-deep' };
 
   // Render title with optional italic word substituted in.
   const renderTitle = () => {

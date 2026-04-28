@@ -56,7 +56,7 @@ export default function TrustLayerPage() {
         subtitle="Human-in-the-loop, by design."
         mission="Miojo OS only feels like leverage if Ciarra trusts it. The Trust Layer is where every decision is logged, every action is reversible, and the founder always remains the standard."
         icon={Eye}
-        accent="ink"
+        accent="forest"
         liveLabel="Memory active"
       />
 
@@ -68,7 +68,7 @@ export default function TrustLayerPage() {
           {MEMORY_PILLARS.map((p) => (
             <div key={p.title} className="rounded-2xl border border-[var(--ph-border)] bg-surface p-5 md:p-6">
               <div className="flex items-center gap-3 mb-3">
-                <div className="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-pharos-purple/10 text-pharos-purple">
+                <div className="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-forest-tint text-forest">
                   <p.icon className="w-4 h-4" />
                 </div>
                 <p className="text-base font-semibold text-ink">{p.title}</p>
@@ -91,7 +91,7 @@ export default function TrustLayerPage() {
           <div className="space-y-4">
             {AUTONOMY_LEVELS.map((l) => (
               <div key={l.level} className="flex items-start gap-4">
-                <span className="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-pharos-purple/10 text-pharos-purple text-sm font-semibold ph-mono">
+                <span className="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-forest-tint text-forest text-sm font-semibold ph-mono">
                   {l.level}
                 </span>
                 <div className="flex-1">
@@ -105,7 +105,7 @@ export default function TrustLayerPage() {
                       className="h-full rounded-full"
                       style={{
                         width: `${l.share}%`,
-                        background: 'var(--ph-purple)',
+                        background: 'var(--mj-forest)',
                       }}
                     />
                   </div>
@@ -128,7 +128,7 @@ export default function TrustLayerPage() {
               className="px-5 py-4 flex items-center justify-between gap-3 hover:bg-[var(--ph-surface-sunk)] transition-colors"
             >
               <div className="flex items-center gap-3 min-w-0">
-                <ShieldCheck className="w-4 h-4 text-pharos-purple flex-shrink-0" />
+                <ShieldCheck className="w-4 h-4 text-forest flex-shrink-0" />
                 <div className="min-w-0">
                   <p className="text-sm font-medium text-ink truncate">{a.label}</p>
                   <p className="text-xs text-ink-muted mt-0.5">
@@ -139,7 +139,7 @@ export default function TrustLayerPage() {
               <span
                 className={`text-[10px] ph-mono uppercase tracking-[0.16em] px-2 py-1 rounded-full whitespace-nowrap ${
                   a.stage === 'Awaiting Ciarra'
-                    ? 'bg-pharos-purple/10 text-pharos-purple'
+                    ? 'bg-forest-tint text-forest'
                     : a.stage === 'In review'
                       ? 'bg-gold-tint text-gold-deep'
                       : 'bg-[var(--ph-surface-sunk)] text-ink-muted'
@@ -153,7 +153,7 @@ export default function TrustLayerPage() {
       </Section>
 
       <div className="rounded-2xl border border-[var(--ph-border)] bg-bg-raised p-6 md:p-8 text-center">
-        <p className="ph-eyebrow inline-block mb-3" style={{ color: 'var(--ph-purple)' }}>
+        <p className="ph-eyebrow inline-block mb-3" style={{ color: 'var(--mj-clay)' }}>
           The principle
         </p>
         <p className="text-lg md:text-xl text-ink max-w-2xl mx-auto leading-relaxed">
