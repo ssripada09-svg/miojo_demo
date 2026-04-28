@@ -24,6 +24,12 @@
 .DS_Store
 *.pem
 
+# Google Drive icon-overlay stubs (zero-byte, sync artifact)
+Icon?
+Icon
+**/Icon
+**/Icon?
+
 # debug
 npm-debug.log*
 yarn-debug.log*

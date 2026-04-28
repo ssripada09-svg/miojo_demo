@@ -17,7 +17,6 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 })
 
-// Fraunces: variable font; enable italic for the signature v72 accent.
 const fraunces = Fraunces({
   subsets: ["latin"],
   style: ["normal", "italic"],
@@ -26,8 +25,9 @@ const fraunces = Fraunces({
 })
 
 export const metadata: Metadata = {
-  title: "Pharos Helm | AI Workforce Command Center",
-  description: "Enterprise AI governance and tool management platform",
+  title: "Miojo OS \u2014 Founder-Led Lifestyle Platform",
+  description:
+    "AI as the operating layer for Ciarra Pardo's founder-led lifestyle platform across beauty, wellness, hospitality, community, and brand-building.",
 }
 
 export default function RootLayout({

@@ -1,5 +1,5 @@
 /**
- * Formatting utilities for the CACI demo application
+ * Formatting utilities for Miojo OS.
  */
 
 // Currency formatting

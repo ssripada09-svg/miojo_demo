@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import { AlertTriangle, Check, Clock, Shield, ShieldCheck } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 type BadgeVariant = 'success' | 'warning' | 'error' | 'info' | 'neutral' | 'primary';
@@ -15,12 +14,12 @@ interface StatusBadgeProps {
 }
 
 const variantStyles: Record<BadgeVariant, string> = {
-  success: 'border-green-500/20 bg-green-500/10 text-green-500',
-  warning: 'border-yellow-500/20 bg-yellow-500/10 text-yellow-500',
-  error: 'border-red-500/20 bg-red-500/10 text-red-500',
-  info: 'border-blue-500/20 bg-blue-500/10 text-blue-500',
-  neutral: 'border-border bg-muted text-muted-foreground',
-  primary: 'border-primary/20 bg-primary/10 text-primary',
+  success: 'border-pass/25 bg-pass/10 text-pass',
+  warning: 'border-warning/25 bg-warning/10 text-warning',
+  error: 'border-fail/25 bg-fail/10 text-fail',
+  info: 'border-teal/25 bg-teal-tint text-teal-deep',
+  neutral: 'border-[var(--ph-border)] bg-[var(--ph-surface-sunk)] text-ink-muted',
+  primary: 'border-teal/25 bg-teal-tint text-teal-deep',
 };
 
 const sizeStyles = {
@@ -35,29 +34,6 @@ export function StatusBadge({ variant = 'neutral', children, className, icon, si
       {icon}
       {children}
     </span>
-  );
-}
-
-interface ComplianceBadgeProps {
-  certification: string;
-  status?: 'authorized' | 'in_process' | 'not_applicable' | 'unknown';
-  className?: string;
-}
-
-export function ComplianceBadge({ certification, status = 'authorized', className }: ComplianceBadgeProps) {
-  const config =
-    status === 'authorized'
-      ? { variant: 'success' as const, icon: <ShieldCheck className="h-3 w-3" /> }
-      : status === 'in_process'
-        ? { variant: 'warning' as const, icon: <Clock className="h-3 w-3" /> }
-        : status === 'not_applicable'
-          ? { variant: 'neutral' as const, icon: null }
-          : { variant: 'neutral' as const, icon: <AlertTriangle className="h-3 w-3" /> };
-
-  return (
-    <StatusBadge variant={config.variant} icon={config.icon} className={className}>
-      {certification}
-    </StatusBadge>
   );
 }
 
@@ -82,27 +58,6 @@ interface RiskBadgeProps {
 export function RiskBadge({ score, className }: RiskBadgeProps) {
   const config = score <= 25 ? { variant: 'success' as const, label: 'Low Risk' } : score <= 50 ? { variant: 'info' as const, label: 'Moderate' } : score <= 75 ? { variant: 'warning' as const, label: 'Elevated' } : { variant: 'error' as const, label: 'High Risk' };
   return <StatusBadge variant={config.variant} className={className}>{config.label}</StatusBadge>;
-}
-
-interface FedRAMPBadgeProps {
-  status: 'authorized' | 'in_process' | 'ready' | 'not_applicable' | 'unknown';
-  level?: 'high' | 'moderate' | 'low' | 'tailored';
-  className?: string;
-}
-
-export function FedRAMPBadge({ status, level, className }: FedRAMPBadgeProps) {
-  const config =
-    status === 'authorized'
-      ? { variant: 'success' as const, icon: <Shield className="h-3 w-3" />, label: level ? `FedRAMP ${level.charAt(0).toUpperCase() + level.slice(1)}` : 'FedRAMP' }
-      : status === 'in_process'
-        ? { variant: 'warning' as const, icon: <Clock className="h-3 w-3" />, label: 'In Process' }
-        : status === 'ready'
-          ? { variant: 'info' as const, icon: <Check className="h-3 w-3" />, label: 'FedRAMP Ready' }
-          : status === 'not_applicable'
-            ? { variant: 'neutral' as const, icon: null, label: 'N/A' }
-            : { variant: 'neutral' as const, icon: <AlertTriangle className="h-3 w-3" />, label: 'Unknown' };
-
-  return <StatusBadge variant={config.variant} icon={config.icon} className={className}>{config.label}</StatusBadge>;
 }
 
 interface HealthBadgeProps {

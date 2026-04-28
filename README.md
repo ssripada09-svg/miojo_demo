@@ -1,140 +1,82 @@
-# Pharos Helm - CACI Demo
+# Miojo OS \u2014 Founder Demo
 
-> AI Workforce Command Center for Enterprise Tool Governance
+> The operating environment for a founder-led lifestyle platform.
 
-This is a demonstration application built for the CACI/Deploy360 partnership, showcasing the Pharos platform's capabilities for enterprise AI tool governance and optimization.
+A premium investor demo of **Miojo OS** \u2014 the AI-assisted operating layer for Ciarra Pardo's interlinked platform across beauty, wellness, hospitality, community, and brand-building.
 
-![Pharos Helm](https://img.shields.io/badge/Pharos-Helm-1FB6B8?style=for-the-badge)
-![Next.js 16](https://img.shields.io/badge/Next.js-16-black?style=for-the-badge&logo=next.js)
-![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=for-the-badge&logo=typescript)
+## What this is
 
-## 🎯 Demo Overview
+One founder. Four pillars. Five crews. One platform.
 
-This demo showcases four AI Crews working together to manage enterprise tool portfolios:
+| Crew | Role |
+|------|------|
+| **Founder Command** | Cross-pillar executive surface \u2014 morning brief, decisions, investor tracks |
+| **Mi Ojo Studio** | Brand & narrative co-strategist \u2014 the cashflow engine |
+| **Beauty Days Community** | IRL-to-digital community OS \u2014 the scaling wedge |
+| **Experience Engine** | Peppers & Bellies + Residences \u2014 hospitality & wellness ops |
+| **Trend Intelligence** | Foresight, opportunities, signal radar |
+| **Trust Layer** | Human-in-the-loop & memory |
 
-| Crew | Purpose |
-|------|---------|
-| **License Intelligence** | Tool inventory, compliance mapping, FedRAMP coverage |
-| **Tool Optimization** | Usage analysis, spend optimization, savings identification |
-| **Operator Assistant** | Natural language interface for tool management |
-| **Integration Mapping** | API connections, data flows, CUI-sensitive pathways |
+The demo is built so an investor can walk through it in 10\u201315 minutes and immediately understand: how each crew looks and feels, what each crew is doing for Miojo, why the outputs matter, and why AI makes the founder platform more powerful without replacing the founder.
 
-### Key Metrics (Demo Data)
-- **50 Tools** managed across 6 categories
-- **$2.4M** monthly spend
-- **$720K** identified annual savings (30%)
-- **94%** NIST AI RMF compliance score
+## Stack
 
-## 🚀 Quick Start
+- **Next.js 16** (App Router), **React 19**, **TypeScript 5**
+- **Tailwind CSS 3.4** with the Pharos V9 cream-shell design system
+- **Recharts** for data visualization
+- **Inter / Fraunces / JetBrains Mono** via `next/font/google`
 
-### Prerequisites
-- Node.js 18+ (recommended: 22.x)
-- npm or pnpm
-
-### Installation
+## Run locally
 
 ```bash
-# Clone or navigate to the project
-cd caci-demo/app
-
-# Install dependencies
 npm install
-
-# Start development server
-npm run dev
+npm run dev   # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to view the demo.
-
-### Build for Production
+## Build
 
 ```bash
 npm run build
-npm run start
+npm start
 ```
 
-## 📁 Project Structure
+## Project structure
 
 ```
-app/
-├── app/                    # Next.js App Router pages
-│   ├── page.tsx           # Dashboard home
-│   ├── governance/        # Aegis Governance dashboard
-│   └── crews/             # AI Crew pages
-│       ├── license-intelligence/
-│       ├── tool-optimization/
-│       ├── operator-assistant/
-│       └── integration-mapping/
-├── components/
-│   ├── navigation/        # Shell, Sidebar, Header
-│   ├── shared/            # Reusable components
-│   └── ui/                # Base UI primitives
-├── data/                  # Mock JSON data
-├── lib/                   # Utilities and data functions
-└── types/                 # TypeScript definitions
+app/                    Next.js App Router pages
+\u251c\u2500 page.tsx            Home \u2014 Miojo OS dashboard + Interlock Map
+\u251c\u2500 trust/              Trust Layer \u2014 human-in-the-loop & memory
+\u2514\u2500 crews/
+   \u251c\u2500 founder-command/
+   \u251c\u2500 mi-ojo-studio/
+   \u251c\u2500 beauty-days-community/
+   \u251c\u2500 experience-engine/
+   \u2514\u2500 trend-intelligence/
+
+components/
+\u251c\u2500 miojo/              Crew header, sections, Interlock Map
+\u251c\u2500 navigation/         Shell, Sidebar, Header
+\u251c\u2500 shared/             MetricCard, DataTable, ChartContainer, etc.
+\u2514\u2500 ui/                 shadcn-style primitives
+
+lib/miojo.ts            Crew + pillar config
+data/miojo-mock.ts      Centralized mock data
 ```
 
-## 🎨 Design System
+## Design system
 
-Built with Pharos brand colors:
-- **Teal** (#1FB6B8) - Primary accent
-- **Gold** (#E68A3F) - Secondary/warnings
-- **Purple** (#A78BFA) - Tertiary/AI features
-- **Dark theme** with card-based layouts
+Built on the Pharos V9 cream-shell editorial system:
 
-## 🔒 No Authentication Required
+- Cream backgrounds (`#F6F4EE`), white raised cards
+- Charcoal ink text, teal as system accent, gold for CTA emphasis
+- Editorial hairline + JetBrains Mono eyebrow openers on every section
+- Fraunces italic accent reserved for signature phrases
+- Left-aligned editorial rhythm \u2014 not centered deck text
 
-This is a static demo - no login credentials needed. All data is simulated.
+## Repo origin
 
-## 📦 Tech Stack
+This build was bootstrapped from the [Pharos / CACI demo](https://github.com/ssripada09-svg/caci-demo) and transformed end-to-end into the Miojo OS narrative. The original CACI demo repo was not modified \u2014 this app lives in [`ssripada09-svg/miojo_demo`](https://github.com/ssripada09-svg/miojo_demo) on the `miojo-phase2` branch.
 
-- **Framework:** Next.js 16.2 (App Router)
-- **Language:** TypeScript 5
-- **Styling:** Tailwind CSS 3.4
-- **Charts:** Recharts
-- **Flow Diagrams:** React Flow (@xyflow/react)
-- **State:** Zustand
-- **UI Components:** Custom + shadcn/ui patterns
+## License
 
-## 🚢 Deployment
-
-### Vercel (Recommended)
-
-```bash
-# Deploy to Vercel
-npx vercel --prod
-```
-
-Or connect your GitHub repo to Vercel for automatic deployments.
-
-### Other Platforms
-
-The app builds to static output compatible with any static hosting:
-- Netlify
-- AWS S3 + CloudFront
-- Azure Static Web Apps
-
-## 📋 Environment Variables
-
-**None required** - This demo runs entirely with bundled mock data.
-
-## 🧪 Development
-
-```bash
-# Run linter
-npm run lint
-
-# Type check
-npx tsc --noEmit
-
-# Build
-npm run build
-```
-
-## 📄 License
-
-Proprietary - Pharos / Stoic Capital
-
----
-
-*Built for the April 2026 CACI/Deploy360 demo*
+Proprietary \u2014 Pharos / Stoic Capital

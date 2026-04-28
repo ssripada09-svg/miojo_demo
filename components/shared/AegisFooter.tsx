@@ -1,22 +1,27 @@
 'use client';
 
-import { Shield } from 'lucide-react';
+import { Eye } from 'lucide-react';
 
-interface AegisFooterProps {
+interface TrustFooterProps {
   className?: string;
 }
 
-export function AegisFooter({ className = '' }: AegisFooterProps) {
+/**
+ * TrustFooter \u2014 the Miojo human-in-the-loop reminder. Replaces the legacy
+ * AegisFooter export so all existing imports continue to work.
+ */
+export function AegisFooter({ className = '' }: TrustFooterProps) {
   return (
     <div className={`mt-6 pt-4 border-t border-[var(--ph-border)] ${className}`}>
       <div className="flex items-center justify-center gap-2 text-xs text-ink-muted">
-        <Shield className="h-3.5 w-3.5 text-pharos-purple" />
-        <span className="ph-mono">AEGIS GOVERNANCE ACTIVE</span>
-        <span className="text-ink-ghost">·</span>
-        <span>All actions logged</span>
+        <Eye className="h-3.5 w-3.5 text-teal-deep" />
+        <span className="ph-mono">HUMAN IN THE LOOP</span>
+        <span className="text-ink-ghost">\u00b7</span>
+        <span>Ciarra approves \u2014 agents execute. Every decision logged.</span>
       </div>
     </div>
   );
 }
 
+export const TrustFooter = AegisFooter;
 export default AegisFooter;

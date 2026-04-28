@@ -6,12 +6,10 @@ export type { Column } from './DataTable';
 export { MetricCard, MetricCardGrid } from './MetricCard';
 
 // Status Badges
-export { 
-  StatusBadge, 
-  ComplianceBadge, 
-  UtilizationBadge, 
-  RiskBadge, 
-  FedRAMPBadge,
+export {
+  StatusBadge,
+  UtilizationBadge,
+  RiskBadge,
   HealthBadge,
 } from './StatusBadge';
 
@@ -47,5 +45,5 @@ export {
   ComingSoon,
 } from './EmptyState';
 
-// Aegis Footer
-export { AegisFooter } from './AegisFooter';
+// Trust Footer (file kept as AegisFooter.tsx for backward-compat imports)
+export { AegisFooter, TrustFooter } from './AegisFooter';
