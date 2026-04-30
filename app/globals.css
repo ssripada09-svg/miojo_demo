@@ -1,5 +1,5 @@
 /* ============================================================
-   Miojo OS — visual system v2 (deck-native).
+   Mi Ojo OS — visual system v2 (deck-native).
 
    Palette extracted from Ciarra Pardo's investor deck:
      • warm cream page (#F2EBD8) + sand-cream raised cards (#E8DFC9)
@@ -55,7 +55,7 @@
     --ph-teal-tint:      rgba(130,134,81,0.10);
     --ph-teal-glow:      rgba(130,134,81,0.20);
 
-    /* alias for clarity within Miojo code */
+    /* alias for clarity within Mi Ojo code */
     --mj-sage:           #828651;
     --mj-sage-strong:    #6A6E2F;
     --mj-sage-deep:      #545727;
@@ -69,7 +69,7 @@
     --ph-gold-deep:      #7E2320;
     --ph-gold-tint:      rgba(156,43,40,0.10);
 
-    /* alias for clarity within Miojo code */
+    /* alias for clarity within Mi Ojo code */
     --mj-clay:           #9C2B28;
     --mj-clay-strong:    #7E2320;
     --mj-fire:           #C5462E;

@@ -1,5 +1,5 @@
 /**
- * Formatting utilities for Miojo OS.
+ * Formatting utilities for Mi Ojo OS.
  */
 
 // Currency formatting

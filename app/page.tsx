@@ -36,7 +36,7 @@ export default function HomePage() {
       <section className="relative overflow-hidden rounded-2xl border border-[var(--ph-border)] bg-bg-raised hero-with-glow px-6 py-10 md:px-12 md:py-16">
         <div className="flex items-center mb-6">
           <span className="ph-rule" />
-          <span className="ph-eyebrow">Miojo OS · Founder Demo</span>
+          <span className="ph-eyebrow">Mi Ojo OS · Founder Demo</span>
         </div>
 
         <h1 className="ph-h2 text-balance mb-5 max-w-4xl">
@@ -68,7 +68,7 @@ export default function HomePage() {
             Tour BeautyDays
           </Link>
           <span className="text-xs ph-mono text-ink-muted ml-2">
-            5 crews · 4 pillars · 1 platform
+            6 crews · 4 pillars · 1 platform
           </span>
         </div>
       </section>
@@ -102,7 +102,7 @@ export default function HomePage() {
           </div>
           <h2 className="ph-h3 mb-2">One engine, many expressions.</h2>
           <p className="text-sm text-ink-muted max-w-xl mb-4">
-            Four pillars, one founder, six themes that weave them together. Miojo OS is the platform layer
+            Four pillars, one founder, six themes that weave them together. Mi Ojo OS is the platform layer
             that lets a single tastemaker run all of it without losing the standard.
           </p>
           <InterlockMap />
@@ -194,9 +194,9 @@ export default function HomePage() {
       <section>
         <div className="flex items-center mb-5">
           <span className="ph-rule" />
-          <span className="ph-eyebrow">The five crews</span>
+          <span className="ph-eyebrow">The six crews</span>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
           {CREWS.map((crew) => (
             <Link
               key={crew.slug}
@@ -209,7 +209,9 @@ export default function HomePage() {
                     ? 'bg-clay-tint text-clay'
                     : crew.accent === 'forest'
                       ? 'bg-forest-tint text-forest'
-                      : 'bg-sage-tint text-sage-deep'
+                      : crew.accent === 'peach'
+                        ? 'bg-peach-tint text-clay-strong'
+                        : 'bg-sage-tint text-sage-deep'
                 }`}
               >
                 <crew.icon className="w-4.5 h-4.5" />

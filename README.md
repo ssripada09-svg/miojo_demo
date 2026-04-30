@@ -1,8 +1,8 @@
-# Miojo OS \u2014 Founder Demo
+# Mi Ojo OS \u2014 Founder Demo
 
 > The operating environment for a founder-led lifestyle platform.
 
-A premium investor demo of **Miojo OS** \u2014 the AI-assisted operating layer for Ciarra Pardo's interlinked platform across beauty, wellness, hospitality, community, and brand-building.
+A premium investor demo of **Mi Ojo OS** \u2014 the AI-assisted operating layer for Ciarra Pardo's interlinked platform across beauty, wellness, hospitality, community, and brand-building.
 
 ## What this is
 
@@ -17,7 +17,7 @@ One founder. Four pillars. Five crews. One platform.
 | **Trend Intelligence** | Foresight, opportunities, signal radar |
 | **Trust Layer** | Human-in-the-loop & memory |
 
-The demo is built so an investor can walk through it in 10\u201315 minutes and immediately understand: how each crew looks and feels, what each crew is doing for Miojo, why the outputs matter, and why AI makes the founder platform more powerful without replacing the founder.
+The demo is built so an investor can walk through it in 10\u201315 minutes and immediately understand: how each crew looks and feels, what each crew is doing for Mi Ojo, why the outputs matter, and why AI makes the founder platform more powerful without replacing the founder.
 
 ## Stack
 
@@ -44,7 +44,7 @@ npm start
 
 ```
 app/                    Next.js App Router pages
-\u251c\u2500 page.tsx            Home \u2014 Miojo OS dashboard + Interlock Map
+\u251c\u2500 page.tsx            Home \u2014 Mi Ojo OS dashboard + Interlock Map
 \u251c\u2500 trust/              Trust Layer \u2014 human-in-the-loop & memory
 \u2514\u2500 crews/
    \u251c\u2500 founder-command/
@@ -75,7 +75,7 @@ Built on the Pharos V9 cream-shell editorial system:
 
 ## Repo origin
 
-This build was bootstrapped from the [Pharos / CACI demo](https://github.com/ssripada09-svg/caci-demo) and transformed end-to-end into the Miojo OS narrative. The original CACI demo repo was not modified \u2014 this app lives in [`ssripada09-svg/miojo_demo`](https://github.com/ssripada09-svg/miojo_demo) on the `miojo-phase2` branch.
+This build was bootstrapped from the [Pharos / CACI demo](https://github.com/ssripada09-svg/caci-demo) and transformed end-to-end into the Mi Ojo OS narrative. The original CACI demo repo was not modified \u2014 this app lives in [`ssripada09-svg/miojo_demo`](https://github.com/ssripada09-svg/miojo_demo) on the `miojo-phase2` branch.
 
 ## License
 

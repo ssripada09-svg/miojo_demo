@@ -29,6 +29,8 @@ export function Sidebar({ onNavigate }: SidebarProps) {
         return 'text-clay'
       case 'forest':
         return 'text-forest'
+      case 'peach':
+        return 'text-clay-strong'
       default:
         return 'text-sage-deep'
     }
@@ -54,7 +56,7 @@ export function Sidebar({ onNavigate }: SidebarProps) {
           </div>
           {!collapsed && (
             <div className="flex flex-col min-w-0">
-              <span className="font-semibold text-ink text-sm uppercase tracking-[0.18em] truncate">Miojo</span>
+              <span className="font-semibold text-ink text-sm uppercase tracking-[0.18em] truncate">Mi Ojo</span>
               <span className="text-[10px] text-ink-muted uppercase tracking-[0.2em] truncate">OS · Founder Demo</span>
             </div>
           )}

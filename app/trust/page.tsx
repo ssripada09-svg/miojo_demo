@@ -54,7 +54,7 @@ export default function TrustLayerPage() {
         title="Trust Layer"
         italicWord="Trust"
         subtitle="Human-in-the-loop, by design."
-        mission="Miojo OS only feels like leverage if Ciarra trusts it. The Trust Layer is where every decision is logged, every action is reversible, and the founder always remains the standard."
+        mission="Mi Ojo OS only feels like leverage if Ciarra trusts it. The Trust Layer is where every decision is logged, every action is reversible, and the founder always remains the standard."
         icon={Eye}
         accent="forest"
         liveLabel="Memory active"

@@ -7,7 +7,7 @@ interface TrustFooterProps {
 }
 
 /**
- * TrustFooter — the Miojo human-in-the-loop reminder. Replaces the legacy
+ * TrustFooter — the Mi Ojo human-in-the-loop reminder. Replaces the legacy
  * AegisFooter export so all existing imports continue to work.
  */
 export function AegisFooter({ className = '' }: TrustFooterProps) {

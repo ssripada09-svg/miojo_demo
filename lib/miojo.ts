@@ -5,6 +5,7 @@ import {
   MapPin,
   Radar,
   Eye,
+  ConciergeBell,
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
@@ -16,7 +17,7 @@ export interface CrewConfig {
   subtitle: string;
   mission: string;
   icon: LucideIcon;
-  accent: 'sage' | 'clay' | 'forest';
+  accent: 'sage' | 'clay' | 'forest' | 'peach';
 }
 
 export interface PillarConfig {
@@ -79,6 +80,16 @@ export const CREWS: CrewConfig[] = [
     mission: 'Continuous radar across beauty, wellness, fashion, hospitality, and culture — Ciarra’s foresight, amplified.',
     icon: Radar,
     accent: 'sage',
+  },
+  {
+    slug: 'concierge-engine',
+    name: 'Concierge Engine',
+    shortName: 'Concierge',
+    description: 'Memory & relationship layer',
+    subtitle: 'Guest memory & relationship engine',
+    mission: 'The relationship layer of Mi Ojo OS — guest memory, occasion detection, and AI-drafted invitations that human concierges refine. Where one booking compounds into repeat behavior, higher spend, and cross-pillar loyalty.',
+    icon: ConciergeBell,
+    accent: 'peach',
   },
 ];
 

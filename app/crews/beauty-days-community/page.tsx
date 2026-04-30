@@ -43,7 +43,7 @@ export default function BeautyDaysPage() {
         eyebrow="Crew 03 · BeautyDays Community"
         title="BeautyDays"
         italicWord="Days"
-        subtitle="The IRL-to-digital community OS — Miojo’s scaling wedge."
+        subtitle="The IRL-to-digital community OS — Mi Ojo’s scaling wedge."
         mission="Turns BeautyDays events into a recurring community, sponsor, and first-party data engine. Where audience capital becomes platform equity."
         icon={Users}
         accent="sage"

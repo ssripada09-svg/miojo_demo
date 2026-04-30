@@ -46,7 +46,7 @@ export default function FounderCommandPage() {
         eyebrow="Crew 01 · Founder Command"
         title="Founder Command"
         italicWord="Command"
-        subtitle="The executive home for the Miojo platform."
+        subtitle="The executive home for the Mi Ojo platform."
         mission="Cross-pillar intelligence — every morning brief, every priority decision, every investor relationship in one place. Built so Ciarra spends her time on judgement, not coordination."
         icon={Compass}
         accent="forest"

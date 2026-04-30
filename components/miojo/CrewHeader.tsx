@@ -11,7 +11,7 @@ interface CrewHeaderProps {
   subtitle: string;
   mission: string;
   icon: LucideIcon;
-  accent: 'sage' | 'clay' | 'forest';
+  accent: 'sage' | 'clay' | 'forest' | 'peach';
   pillar?: string;
   liveLabel?: string;
   liveValue?: string;
@@ -34,7 +34,9 @@ export function CrewHeader({
       ? { bg: 'bg-clay-tint', fg: 'text-clay' }
       : accent === 'forest'
         ? { bg: 'bg-forest-tint', fg: 'text-forest' }
-        : { bg: 'bg-sage-tint', fg: 'text-sage-deep' };
+        : accent === 'peach'
+          ? { bg: 'bg-peach-tint', fg: 'text-clay-strong' }
+          : { bg: 'bg-sage-tint', fg: 'text-sage-deep' };
 
   // Render title with optional italic word substituted in.
   const renderTitle = () => {

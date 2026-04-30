@@ -1,7 +1,7 @@
 /**
- * Miojo OS — mock data layer.
+ * Mi Ojo OS — mock data layer.
  *
- * Drawn from Ciarra Pardo / Miojo source materials (Phase 1 brief, Phase 2 PRD,
+ * Drawn from Ciarra Pardo / Mi Ojo source materials (Phase 1 brief, Phase 2 PRD,
  * pitch decks). Numbers and names are illustrative for an investor demo.
  */
 
@@ -97,19 +97,19 @@ export const PROOF_STRIP = [
     eyebrow: 'The Fenty Lesson',
     stat: '$570M',
     statSuffix: 'Year-1 revenue',
-    body: 'Inclusive beauty wasn’t a niche — it was the missing center. Ciarra co-founded and scaled Fenty Beauty to a $3B+ valuation; the same playbook now compounds across Miojo.',
+    body: 'Inclusive beauty wasn’t a niche — it was the missing center. Ciarra co-founded and scaled Fenty Beauty to a $3B+ valuation; the same playbook now compounds across Mi Ojo.',
   },
   {
     eyebrow: 'Founder Capacity',
     stat: '10×',
     statSuffix: 'Portfolio capacity',
-    body: 'Manual ops cap a tastemaker at 2–3 brands. Miojo OS lifts that ceiling — 24/7 trend coverage, institutional memory, and consistent execution let the founder focus on judgement.',
+    body: 'Manual ops cap a tastemaker at 2–3 brands. Mi Ojo OS lifts that ceiling — 24/7 trend coverage, institutional memory, and consistent execution let the founder focus on judgement.',
   },
   {
     eyebrow: 'The Bottleneck',
     stat: '24/7',
     statSuffix: 'Coverage, not theatre',
-    body: 'Ciarra’s time is the bottleneck. Miojo agents observe, recommend, and execute inside her policy — she approves; the system delivers. Human-in-the-loop, every step.',
+    body: 'Ciarra’s time is the bottleneck. Mi Ojo agents observe, recommend, and execute inside her policy — she approves; the system delivers. Human-in-the-loop, every step.',
   },
 ];
 
@@ -167,7 +167,7 @@ export const COMMAND_PILLAR_HEALTH = [
 // MI OJO STUDIO
 // ============================================================
 
-export const MIOJO_STUDIO_KPIS = [
+export const MI_OJO_STUDIO_KPIS = [
   { label: 'Active Concepts', value: '12', sub: 'Across stages' },
   { label: 'Launch-Ready', value: '3', sub: 'In production phase' },
   { label: 'Retail Doors Targeted', value: '47', sub: 'Sephora / Ulta / Target / Nordstrom' },
@@ -468,7 +468,7 @@ export const TREND_RECOMMENDATIONS = [
   {
     title: 'Move Aurelya from concept to advisory engagement',
     detail: 'Longevity × beauty cluster crossed velocity threshold. Founder Auffray’s pre-clinical positioning is rare; first-mover slot is open for ~10 weeks.',
-    impact: 'Locks white-space anchor for Miojo',
+    impact: 'Locks white-space anchor for Mi Ojo',
   },
   {
     title: 'Schedule Marrakesh site walk before June 14',
@@ -480,4 +480,591 @@ export const TREND_RECOMMENDATIONS = [
     detail: 'LVMH-adjacent network signal compounding. Match with Studio crew on shared concepts (Maison Vence, Otra Cosa).',
     impact: 'Strategic studio partnership pathway',
   },
+];
+
+// ============================================================
+// CONCIERGE ENGINE — guest memory & relationship layer
+// ============================================================
+
+export const CONCIERGE_PULSE = {
+  activeMembers: 412,
+  highFitGuests: 96,
+  pendingApprovals: 11,
+  arrivalsNext7: 18,
+  conciergeRevenueDelta: '+ $214K',
+  lastSync: '4 min ago',
+  operator: 'Carla M., Lead RM',
+};
+
+export const CONCIERGE_KPIS = [
+  { label: 'Cross-Pillar Conversion', value: '54%', sub: 'Members touching 2+ pillars / yr' },
+  { label: 'Repeat Booking Rate', value: '63%', sub: 'Within 12 months' },
+  { label: 'Ancillary $ / Booking', value: '$1,240', sub: 'Above stated package' },
+  { label: 'Concierge-Attributed', value: '38%', sub: 'Of pillar revenue' },
+  { label: 'Referral Rate', value: '41%', sub: 'Member-to-guest' },
+  { label: 'Itinerary Acceptance', value: '78%', sub: 'On AI-drafted journeys' },
+];
+
+// 14 high-fit guests — names, archetypes, memory, next-best action.
+export interface ConciergeMember {
+  id: string;
+  name: string;
+  initials: string;
+  archetype: string;
+  tier: 'Founders Circle' | 'House' | 'Resident' | 'New';
+  household?: string;
+  lastTouch: string;            // human-readable "X days ago" / event
+  lastTouchPillar: string;      // 'Peppers & Beli' | 'Residences' | 'BeautyDays' | 'Studio'
+  occasion?: string;            // birthday / anniversary / opening night
+  memorySnapshot: string;       // 1-2 sentence narrative
+  preferences: string[];        // tag chips
+  stated: string[];
+  observed: string[];
+  predicted: string[];
+  nextBest: string;
+  health: number;               // 0-100 engagement score
+  flags?: ('Founder Watch' | 'At Risk' | 'High LTV' | 'Press' | 'Investor')[];
+  ltv: string;                  // illustrative
+}
+
+export const CONCIERGE_MEMBERS: ConciergeMember[] = [
+  {
+    id: 'M-0142',
+    name: 'Beatriz Calderón',
+    initials: 'BC',
+    archetype: 'Cultural Patron',
+    tier: 'Founders Circle',
+    household: '+ Daniel Calderón',
+    lastTouch: '3 nights ago',
+    lastTouchPillar: 'Peppers & Beli',
+    occasion: 'Anniversary in 9 days',
+    memorySnapshot: 'Anniversary diners — booked the corner four-top three years running. Daniel proposed at the bar.',
+    preferences: ['Off-menu', 'Sparkling natural', 'No press', 'Vinyl wall'],
+    stated: ['Anniversary date Sep 4', 'Allergy: stone fruit (Daniel)'],
+    observed: ['Always orders the heritage tasting', 'Prefers 9:30 PM seating', 'Tips bartender by name'],
+    predicted: ['Will accept a private chef’s residency invite', 'Likely Residences candidate by Q3'],
+    nextBest: 'Hold corner four-top + sparkling, send anniversary note from Ciarra',
+    health: 92,
+    flags: ['High LTV', 'Founder Watch'],
+    ltv: '$84K LTV',
+  },
+  {
+    id: 'M-0156',
+    name: 'Ines Tavares',
+    initials: 'IT',
+    archetype: 'Editorial Voice',
+    tier: 'House',
+    lastTouch: 'BeautyDays LA',
+    lastTouchPillar: 'BeautyDays',
+    memorySnapshot: 'Lisbon-based editor; covered our LA gathering for Vogue Iberia. Quiet ally of the brand.',
+    preferences: ['Quiet rooms', 'Late checkout', 'Espresso, no sugar'],
+    stated: ['Press contact', 'Travels with daughter (12)'],
+    observed: ['Always RSVPs same-day', 'Asks for staff recommendations'],
+    predicted: ['Strong fit for Marrakesh founders’ retreat'],
+    nextBest: 'Pre-release Marrakesh stay 24 hr before public list',
+    health: 78,
+    flags: ['Press'],
+    ltv: '$18K LTV',
+  },
+  {
+    id: 'M-0203',
+    name: 'Marcus J. Lin',
+    initials: 'ML',
+    archetype: 'Founder POV',
+    tier: 'Founders Circle',
+    lastTouch: 'Studio dinner · LA',
+    lastTouchPillar: 'Studio',
+    memorySnapshot: 'Sold his last brand to LVMH. Brought four close friends to Studio dinner; all converted to BeautyDays passes.',
+    preferences: ['Bourbon flight', 'Quiet table', 'No phones'],
+    stated: ['Investor contact', 'Lives between LA & NYC'],
+    observed: ['Brings his network', 'Never cancels last minute'],
+    predicted: ['Likely Mi Ojo Fellowship judge', 'High Residences fit'],
+    nextBest: 'Invite to Mi Ojo Fellowship judging panel',
+    health: 95,
+    flags: ['High LTV', 'Investor'],
+    ltv: '$112K LTV',
+  },
+  {
+    id: 'M-0217',
+    name: 'Sasha Devereaux',
+    initials: 'SD',
+    archetype: 'Multi-gen Beauty',
+    tier: 'House',
+    household: '+ mother, Renée',
+    lastTouch: 'BeautyDays NYC',
+    lastTouchPillar: 'BeautyDays',
+    memorySnapshot: 'Brings her mother to every NYC BeautyDays. Mother prefers calmer programming.',
+    preferences: ['Mother-friendly', 'Hair texture lab', 'Wellness wing AM'],
+    stated: ['Two-pass household'],
+    observed: ['Mother always books wellness wing first', 'Sasha books late dinner'],
+    predicted: ['Wellness Stay candidate for Renée'],
+    nextBest: 'Bundle Renée into Aurelya longevity clinic stay',
+    health: 84,
+    flags: [],
+    ltv: '$22K LTV',
+  },
+  {
+    id: 'M-0231',
+    name: 'Olu Bahar',
+    initials: 'OB',
+    archetype: 'Creator Anchor',
+    tier: 'House',
+    lastTouch: 'Lagos pre-launch',
+    lastTouchPillar: 'BeautyDays',
+    memorySnapshot: 'Lagos community anchor; her audience is the city. Asked once how to bring Mi Ojo to Lagos.',
+    preferences: ['Local press', 'No alcohol', 'Vegetarian'],
+    stated: ['Vegetarian', 'No alcohol'],
+    observed: ['Creates content at every event', 'Always introduces our team to her network'],
+    predicted: ['Lagos BeautyDays anchor 2027'],
+    nextBest: 'Invite to Lagos BeautyDays advisory call',
+    health: 88,
+    flags: ['Founder Watch', 'High LTV'],
+    ltv: '$31K LTV',
+  },
+  {
+    id: 'M-0244',
+    name: 'Chef Aarón Serra',
+    initials: 'AS',
+    archetype: 'Chef Resident',
+    tier: 'Founders Circle',
+    lastTouch: 'Brooklyn residency setup',
+    lastTouchPillar: 'Peppers & Beli',
+    memorySnapshot: 'Brooklyn residency opening May 18. Sourcing thesis aligns with Sweetwater farm.',
+    preferences: ['Heritage corn', 'Farm visits', 'Late-night kitchen'],
+    stated: ['Vegan dietary requests honored, but never personally'],
+    observed: ['Stays after service', 'Knows every farmer by name'],
+    predicted: ['Long-tail Beli’s Pantry collab — chef-led salsa line'],
+    nextBest: 'Set Sweetwater farm walkthrough Sat AM',
+    health: 96,
+    flags: ['High LTV', 'Founder Watch'],
+    ltv: '$54K LTV',
+  },
+  {
+    id: 'M-0258',
+    name: 'Cécile Vence',
+    initials: 'CV',
+    archetype: 'Founder · Beauty',
+    tier: 'House',
+    lastTouch: 'Maison Vence narrative review',
+    lastTouchPillar: 'Studio',
+    memorySnapshot: 'Founder of Maison Vence (Mi Ojo concept). Wants to cross-promote with Peppers & Beli for press window.',
+    preferences: ['Late dinner', 'Press-friendly settings', 'Saint Cay coast'],
+    stated: ['Press window: Sephora prestige Q3'],
+    observed: ['Takes founder feedback to heart', 'Refers other founders'],
+    predicted: ['Strong Saint Cay coastal stay candidate'],
+    nextBest: 'Pair Maison Vence drop with Peppers & Beli pop-up',
+    health: 86,
+    flags: ['High LTV'],
+    ltv: '$40K LTV',
+  },
+  {
+    id: 'M-0269',
+    name: 'Dr. Inès Auffray',
+    initials: 'IA',
+    archetype: 'Founder · Longevity',
+    tier: 'House',
+    lastTouch: 'Aurelya advisory call',
+    lastTouchPillar: 'Studio',
+    memorySnapshot: 'Pre-clinical longevity founder. Quiet, technical, demands rigor — books table 7 every visit.',
+    preferences: ['No press', 'Off-menu vegetable plate', 'Table 7'],
+    stated: ['Allergy: shellfish'],
+    observed: ['Brings clinical advisor', 'Never on social'],
+    predicted: ['Aurelya × Wellness Stay collab Q4'],
+    nextBest: 'Schedule Aurelya × Wellness Stay co-design session',
+    health: 82,
+    flags: ['Founder Watch'],
+    ltv: '$28K LTV',
+  },
+  {
+    id: 'M-0277',
+    name: 'Banyan Family Office',
+    initials: 'BF',
+    archetype: 'Patient Capital LP',
+    tier: 'Founders Circle',
+    lastTouch: 'Cayman intro · April',
+    lastTouchPillar: 'Studio',
+    occasion: 'Memo due Thursday',
+    memorySnapshot: 'Patient-capital LP. Passed on Glossier ’17, asked twice about BeautyDays economics. Two principals + two analysts.',
+    preferences: ['Private dining room', 'No photography', 'Late seating'],
+    stated: ['Cayman-based', 'Min check $1M'],
+    observed: ['Asks deeply about retention loops', 'Brings analysts to dinners'],
+    predicted: ['Most likely lead in current round'],
+    nextBest: 'Comp private dining room + walk through deal memo',
+    health: 90,
+    flags: ['Investor', 'High LTV'],
+    ltv: '$1.5M+ exposure',
+  },
+  {
+    id: 'M-0281',
+    name: 'Halcyon Group',
+    initials: 'HG',
+    archetype: 'Wellness LP',
+    tier: 'House',
+    lastTouch: 'Marrakesh site walk · invite',
+    lastTouchPillar: 'Residences',
+    memorySnapshot: 'Wellness-hospitality LP. Hottest fit for Residences thesis but slow-moving culturally.',
+    preferences: ['Daytime visits', 'Tea, not coffee', 'Architectural detail'],
+    stated: ['Prefers in-property tours'],
+    observed: ['Detail-oriented; asks about supply chain'],
+    predicted: ['Residences anchor LP candidate'],
+    nextBest: 'Lead Marrakesh property tour with Ciarra',
+    health: 70,
+    flags: ['Investor'],
+    ltv: '$800K+ exposure',
+  },
+  {
+    id: 'M-0292',
+    name: 'Camila Ríos',
+    initials: 'CR',
+    archetype: 'Cultural Anchor',
+    tier: 'House',
+    lastTouch: 'Mexico City pre-launch',
+    lastTouchPillar: 'BeautyDays',
+    memorySnapshot: 'Mexico City community lead. Personally invited 200+ to upcoming BeautyDays Mexico City.',
+    preferences: ['Spanish-first communication', 'Family seating', 'Daytime ops'],
+    stated: ['Family-first scheduling'],
+    observed: ['Brings community organisers', 'Always early'],
+    predicted: ['Mexico City BeautyDays anchor 2027'],
+    nextBest: 'Pre-release Peppers & Beli pop-up dates to her list',
+    health: 87,
+    flags: ['Founder Watch'],
+    ltv: '$24K LTV',
+  },
+  {
+    id: 'M-0301',
+    name: 'Ridgewood Capital',
+    initials: 'RC',
+    archetype: 'Strategic CPG',
+    tier: 'House',
+    lastTouch: 'Diligence Q&A',
+    lastTouchPillar: 'Studio',
+    memorySnapshot: 'CPG strategic. Most interested in Beli’s Pantry retail roadmap; less so in BeautyDays.',
+    preferences: ['Working dinners', 'Numbers in advance'],
+    stated: ['Min check $750K'],
+    observed: ['Drills on unit economics', 'Brings their head of M&A'],
+    predicted: ['Likely co-investor, not lead'],
+    nextBest: 'Send pantry retail expansion forecast before Friday',
+    health: 64,
+    flags: ['Investor', 'At Risk'],
+    ltv: '$600K+ exposure',
+  },
+  {
+    id: 'M-0319',
+    name: 'Tomás Reig',
+    initials: 'TR',
+    archetype: 'Founder · Beauty',
+    tier: 'House',
+    lastTouch: 'Sephora prep meeting',
+    lastTouchPillar: 'Studio',
+    memorySnapshot: 'Velvethold founder. Sephora Pro tools fit. Quiet, but everyone in his network watches what he does.',
+    preferences: ['Hospitality stays', 'Loves Brooklyn residency'],
+    stated: ['Travels with operations partner'],
+    observed: ['Books Brooklyn each trip'],
+    predicted: ['Velvethold × BeautyDays activation collaboration'],
+    nextBest: 'Hold the Brooklyn corner suite for next visit',
+    health: 81,
+    flags: [],
+    ltv: '$26K LTV',
+  },
+  {
+    id: 'M-0327',
+    name: 'Renée DeWitt',
+    initials: 'RD',
+    archetype: 'Resident',
+    tier: 'Resident',
+    household: 'Tulum residency 2026',
+    lastTouch: 'Tulum welcome dinner',
+    lastTouchPillar: 'Residences',
+    memorySnapshot: 'Multi-night Tulum resident. Quiet weekday mornings, 7 PM dinners, requested no service in room.',
+    preferences: ['Privacy', 'Mineral water', 'Sunset hour'],
+    stated: ['Privacy-first stay'],
+    observed: ['Walks the property at sunset', 'No social media'],
+    predicted: ['Multi-property loyalty candidate'],
+    nextBest: 'Personal note + Marrakesh pre-release',
+    health: 76,
+    flags: [],
+    ltv: '$48K LTV',
+  },
+];
+
+// 5 archetypes
+export const CONCIERGE_ARCHETYPES = [
+  { name: 'Cultural Patron', share: 28, ltv: '$72K', notes: 'Anniversary diners, multi-pillar loyalists' },
+  { name: 'Founder Network', share: 22, ltv: '$48K', notes: 'Founders + their guests; brings the network' },
+  { name: 'Editorial Voice', share: 14, ltv: '$22K', notes: 'Press, editors, cultural critics' },
+  { name: 'Resident', share: 18, ltv: '$54K', notes: 'Multi-night Residences guests' },
+  { name: 'Investor', share: 10, ltv: '$1.2M+', notes: 'LPs, family offices, strategic principals' },
+  { name: 'Cultural Anchor', share: 8, ltv: '$24K', notes: 'City community leads who bring others' },
+];
+
+// Concierge intelligence queue — AI-drafted, human-approved
+export interface ConciergeRec {
+  id: string;
+  member: string;
+  memberInitials: string;
+  title: string;
+  type: 'Invitation' | 'Cross-Pillar' | 'Upgrade' | 'Re-Engagement' | 'Itinerary';
+  confidence: number;       // 0-100
+  rationale: string;        // plain-language
+  status: 'AI Draft' | 'Pending Review' | 'Edited by Concierge' | 'Sent' | 'Booked';
+  pillar: string;
+  draftedAt: string;
+}
+
+export const CONCIERGE_QUEUE: ConciergeRec[] = [
+  {
+    id: 'Q-091',
+    member: 'Beatriz Calderón',
+    memberInitials: 'BC',
+    title: 'Anniversary corner four-top + handwritten note from Ciarra',
+    type: 'Invitation',
+    confidence: 96,
+    rationale: 'Anniversary in 9 days. Three-year pattern of corner four-top with sparkling natural. Daniel proposed here — emotional anchor.',
+    status: 'Pending Review',
+    pillar: 'Peppers & Beli',
+    draftedAt: '12 min ago',
+  },
+  {
+    id: 'Q-088',
+    member: 'Sasha Devereaux',
+    memberInitials: 'SD',
+    title: 'Bundle mother Renée into Aurelya longevity clinic stay',
+    type: 'Cross-Pillar',
+    confidence: 88,
+    rationale: 'Renée prefers calm AM wellness wing. Aurelya stay programs match her stated rhythms. Sasha funds.',
+    status: 'AI Draft',
+    pillar: 'Residences',
+    draftedAt: '38 min ago',
+  },
+  {
+    id: 'Q-085',
+    member: 'Marcus J. Lin',
+    memberInitials: 'ML',
+    title: 'Mi Ojo Fellowship judging panel — formal invite',
+    type: 'Invitation',
+    confidence: 94,
+    rationale: 'Sold his last brand to LVMH. Brings his network; Studio dinners convert at 100%.',
+    status: 'Edited by Concierge',
+    pillar: 'Studio',
+    draftedAt: '1 hr ago',
+  },
+  {
+    id: 'Q-083',
+    member: 'Banyan Family Office',
+    memberInitials: 'BF',
+    title: 'Comp private dining + walk-through of deal memo',
+    type: 'Upgrade',
+    confidence: 92,
+    rationale: 'Memo due Thursday. Patient-capital LP, asked twice about BeautyDays economics. Investor signal: high.',
+    status: 'Sent',
+    pillar: 'Founder',
+    draftedAt: '3 hr ago',
+  },
+  {
+    id: 'Q-080',
+    member: 'Halcyon Group',
+    memberInitials: 'HG',
+    title: 'Marrakesh property tour led by Ciarra (Jun 14)',
+    type: 'Itinerary',
+    confidence: 84,
+    rationale: 'Wellness-hospitality LP fit. Detail-oriented buyer; needs in-property time before commitment.',
+    status: 'AI Draft',
+    pillar: 'Residences',
+    draftedAt: '4 hr ago',
+  },
+  {
+    id: 'Q-078',
+    member: 'Olu Bahar',
+    memberInitials: 'OB',
+    title: 'Lagos BeautyDays advisory call — co-curate the lineup',
+    type: 'Invitation',
+    confidence: 91,
+    rationale: 'Lagos audience is hers. Already volunteered city anchor energy. Vegetarian, no alcohol — note for hosting.',
+    status: 'Pending Review',
+    pillar: 'BeautyDays',
+    draftedAt: '6 hr ago',
+  },
+  {
+    id: 'Q-076',
+    member: 'Ridgewood Capital',
+    memberInitials: 'RC',
+    title: 'Send pantry retail expansion forecast before Friday',
+    type: 'Re-Engagement',
+    confidence: 70,
+    rationale: 'Engagement health declined to 64. Last touch went quiet. They drill on unit economics — give them the model.',
+    status: 'AI Draft',
+    pillar: 'Studio',
+    draftedAt: '7 hr ago',
+  },
+  {
+    id: 'Q-074',
+    member: 'Renée DeWitt',
+    memberInitials: 'RD',
+    title: 'Personal note + Marrakesh pre-release access',
+    type: 'Cross-Pillar',
+    confidence: 79,
+    rationale: 'Tulum resident. Privacy-first. Marrakesh restored-home matches her sunset rhythm.',
+    status: 'Pending Review',
+    pillar: 'Residences',
+    draftedAt: '9 hr ago',
+  },
+  {
+    id: 'Q-072',
+    member: 'Camila Ríos',
+    memberInitials: 'CR',
+    title: 'Pre-release Peppers & Beli Mexico City pop-up dates',
+    type: 'Cross-Pillar',
+    confidence: 86,
+    rationale: 'Mexico City community lead. Spanish-first comms. Pre-release converts her network at ~3× public list.',
+    status: 'Booked',
+    pillar: 'Peppers & Beli',
+    draftedAt: 'Yesterday',
+  },
+  {
+    id: 'Q-070',
+    member: 'Cécile Vence',
+    memberInitials: 'CV',
+    title: 'Pair Maison Vence drop with Peppers & Beli pop-up',
+    type: 'Cross-Pillar',
+    confidence: 88,
+    rationale: 'Sephora prestige window Q3. Cross-pillar story = press leverage. Studio + Peppers narrative aligned.',
+    status: 'Edited by Concierge',
+    pillar: 'Studio',
+    draftedAt: 'Yesterday',
+  },
+];
+
+// 3 high-value itineraries (the proposed-journey product)
+export interface ItineraryItem {
+  time: string;
+  title: string;
+  pillar: string;
+  detail: string;
+  value?: string;
+}
+
+export interface Itinerary {
+  id: string;
+  guest: string;
+  guestInitials: string;
+  occasion: string;
+  status: 'AI Proposed' | 'RM Refined' | 'Sent' | 'Accepted';
+  total: string;
+  items: ItineraryItem[];
+}
+
+export const CONCIERGE_ITINERARIES: Itinerary[] = [
+  {
+    id: 'IT-014',
+    guest: 'Beatriz & Daniel Calderón',
+    guestInitials: 'BC',
+    occasion: 'Anniversary · 4 nights',
+    status: 'RM Refined',
+    total: '$11,820',
+    items: [
+      { time: 'Day 1 · 16:00', title: 'Private transfer + welcome', pillar: 'Concierge', detail: 'Driver Carla, sparkling natural in vehicle, no signage', value: '$320' },
+      { time: 'Day 1 · 21:30', title: 'Anniversary corner four-top', pillar: 'Peppers & Beli', detail: 'Heritage tasting + sparkling natural; handwritten note from Ciarra', value: '$1,180' },
+      { time: 'Day 2 · 09:00', title: 'BeautyDays wellness wing AM', pillar: 'BeautyDays', detail: 'Breathwork + IV bar private session', value: '$680' },
+      { time: 'Day 2 · 19:00', title: 'Sweetwater farm walk + supper', pillar: 'Peppers & Beli', detail: 'Chef Aarón hosts at the farm', value: '$1,920' },
+      { time: 'Day 3 · 11:00', title: 'Coastal residency · Saint Cay overnight', pillar: 'Residences', detail: 'Private terrace, sunset ritual, no service in room', value: '$3,400' },
+      { time: 'Day 4 · 17:00', title: 'Founder send-off cocktail', pillar: 'Studio', detail: 'Optional — small Studio gathering, no press', value: '$420' },
+    ],
+  },
+  {
+    id: 'IT-018',
+    guest: 'Marcus J. Lin + 2 guests',
+    guestInitials: 'ML',
+    occasion: 'Studio dinner + LA weekend',
+    status: 'Sent',
+    total: '$14,640',
+    items: [
+      { time: 'Fri · 20:00', title: 'Mi Ojo Studio dinner', pillar: 'Studio', detail: 'Bourbon flight, no phones, table for 6', value: '$2,400' },
+      { time: 'Sat · 11:00', title: 'BeautyDays VIP lounge', pillar: 'BeautyDays', detail: 'Founder track day pass × 3', value: '$1,200' },
+      { time: 'Sat · 19:30', title: 'Peppers & Beli chef’s table', pillar: 'Peppers & Beli', detail: 'Heritage 9-course; Marcus brings 4 close friends (will convert)', value: '$3,940' },
+      { time: 'Sun · 09:00', title: 'Mi Ojo Fellowship judging brief', pillar: 'Studio', detail: 'Private table with the Fellowship director', value: '$0 (host)' },
+      { time: 'Sun · 18:00', title: 'Tulum residency stretch (optional)', pillar: 'Residences', detail: 'Hold for review — Marcus has flagged interest', value: '$7,100' },
+    ],
+  },
+  {
+    id: 'IT-021',
+    guest: 'Halcyon Group · 3 principals',
+    guestInitials: 'HG',
+    occasion: 'Marrakesh property tour',
+    status: 'AI Proposed',
+    total: '$22,300',
+    items: [
+      { time: 'Day 1 · 14:00', title: 'Property arrival + architectural walk', pillar: 'Residences', detail: 'Lead by Ciarra; supply-chain talking points pre-loaded', value: '$0 (host)' },
+      { time: 'Day 1 · 19:30', title: 'Heritage dinner — Beli + heirloom corn', pillar: 'Peppers & Beli', detail: 'Sweetwater sourcing storytelling embedded', value: '$2,800' },
+      { time: 'Day 2 · 09:00', title: 'Wellness ritual — sound + breathwork', pillar: 'BeautyDays', detail: 'On-property practitioner', value: '$1,200' },
+      { time: 'Day 2 · 12:00', title: 'Unit economics walk-through', pillar: 'Studio', detail: 'CFO + Ciarra; data room pre-shared', value: '$0 (host)' },
+      { time: 'Day 2 · 18:00', title: 'Founders’ retreat overnight', pillar: 'Residences', detail: 'Architectural suite × 3 principals', value: '$18,300' },
+    ],
+  },
+];
+
+// Cross-pillar conversion flow
+export const CROSS_PILLAR_TRANSITIONS = [
+  { from: 'Peppers & Beli', to: 'Residences', count: 64, share: 28 },
+  { from: 'Residences', to: 'BeautyDays', count: 41, share: 18 },
+  { from: 'Studio dinner', to: 'BeautyDays', count: 56, share: 24 },
+  { from: 'BeautyDays', to: 'Peppers & Beli', count: 38, share: 16 },
+  { from: 'Studio', to: 'Membership', count: 30, share: 13 },
+];
+
+export const CROSS_PILLAR_FLOW = {
+  pillars: ['Studio', 'Peppers & Beli', 'BeautyDays', 'Residences', 'Membership'] as const,
+  flows: [
+    { from: 'Studio', to: 'Peppers & Beli', value: 56 },
+    { from: 'Studio', to: 'BeautyDays', value: 30 },
+    { from: 'Peppers & Beli', to: 'Residences', value: 64 },
+    { from: 'Peppers & Beli', to: 'BeautyDays', value: 38 },
+    { from: 'BeautyDays', to: 'Residences', value: 41 },
+    { from: 'Residences', to: 'Membership', value: 28 },
+    { from: 'BeautyDays', to: 'Membership', value: 22 },
+  ],
+};
+
+// At-risk re-engagement queue
+export const CONCIERGE_AT_RISK = [
+  {
+    name: 'Ridgewood Capital',
+    initials: 'RC',
+    health: 64,
+    delta: -18,
+    lastTouch: 'Apr 22 · diligence Q&A',
+    suggested: 'Send pantry retail expansion forecast + working-dinner invite',
+  },
+  {
+    name: 'Levant Holdings',
+    initials: 'LH',
+    health: 52,
+    delta: -22,
+    lastTouch: 'Apr 16 · intro call',
+    suggested: 'Founder follow-up note from Ciarra — prefer voice memo',
+  },
+  {
+    name: 'Halo & Hush',
+    initials: 'HH',
+    health: 47,
+    delta: -14,
+    lastTouch: 'BeautyDays London · pending',
+    suggested: 'Pivot sponsor placement to Paris BeautyDays — better fit',
+  },
+  {
+    name: 'Sienna Park',
+    initials: 'SP',
+    health: 58,
+    delta: -9,
+    lastTouch: 'Paris pre-launch · 18 days',
+    suggested: 'Personal note from Camila + early Paris dates',
+  },
+];
+
+// Occasion detection (AI-flagged)
+export const CONCIERGE_OCCASIONS = [
+  { member: 'Beatriz Calderón', occasion: 'Anniversary', date: 'in 9 days', source: 'Stated + 3-year pattern' },
+  { member: 'Marcus J. Lin', occasion: 'Birthday', date: 'in 18 days', source: 'Stated' },
+  { member: 'Cécile Vence', occasion: 'Maison Vence Sephora launch', date: 'in 32 days', source: 'Inferred from Studio calendar' },
+  { member: 'Renée DeWitt', occasion: 'Tulum return window', date: 'in 28 days', source: 'Pattern detection' },
+  { member: 'Ines Tavares', occasion: 'Daughter’s 13th birthday', date: 'in 44 days', source: 'Stated' },
 ];

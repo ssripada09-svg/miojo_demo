@@ -106,7 +106,7 @@ export default function TrendIntelligencePage() {
           <Section
             eyebrow="Confidence matrix"
             title="Velocity × fit"
-            description="Each cluster plotted by velocity (X) and Miojo-fit (Y). Bubble size scales with crew confidence."
+            description="Each cluster plotted by velocity (X) and Mi Ojo-fit (Y). Bubble size scales with crew confidence."
           >
             <div className="rounded-2xl border border-[var(--ph-border)] bg-surface p-5 md:p-6" style={{ height: 320 }}>
               <ResponsiveContainer>

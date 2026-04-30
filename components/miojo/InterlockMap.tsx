@@ -3,7 +3,7 @@
 import React from 'react';
 
 /**
- * Miojo Interlock Map — the home-page signature object.
+ * Mi Ojo Interlock Map — the home-page signature object.
  *
  * Mirrors the deck's "Four ventures, one creative engine" diagram:
  * Mi Ojo at the center as the dark forest engine; the four ventures

@@ -20,7 +20,7 @@ import { CrewHeader } from '@/components/miojo/CrewHeader';
 import { Section, KpiRow, RecsList } from '@/components/miojo/Section';
 import { TrustFooter } from '@/components/shared/AegisFooter';
 import {
-  MIOJO_STUDIO_KPIS,
+  MI_OJO_STUDIO_KPIS,
   STUDIO_CONCEPTS,
   STUDIO_AUDIENCE_RESONANCE,
   STUDIO_NARRATIVE_OPTIONS,
@@ -43,7 +43,7 @@ export default function MiOjoStudioPage() {
         title="Mi Ojo Studio"
         italicWord="Ojo"
         subtitle="The creative & brand operating room."
-        mission="An AI co-strategist for brand creation, narrative, launch readiness, and retail strategy. The cashflow engine that funds and de-risks the rest of Miojo."
+        mission="An AI co-strategist for brand creation, narrative, launch readiness, and retail strategy. The cashflow engine that funds and de-risks the rest of Mi Ojo."
         icon={Sparkles}
         accent="forest"
         pillar="Mi Ojo · Live"
@@ -52,7 +52,7 @@ export default function MiOjoStudioPage() {
 
       {/* KPIs */}
       <Section eyebrow="Studio at a glance">
-        <KpiRow kpis={MIOJO_STUDIO_KPIS} columns={4} />
+        <KpiRow kpis={MI_OJO_STUDIO_KPIS} columns={4} />
       </Section>
 
       {/* MISSION: NARRATIVE OPTIONS */}

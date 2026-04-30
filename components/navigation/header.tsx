@@ -10,13 +10,14 @@ const SECTION_LABELS: Record<string, string> = {
   '/crews/mi-ojo-studio': 'Mi Ojo Studio',
   '/crews/beauty-days-community': 'BeautyDays Community',
   '/crews/experience-engine': 'Experience Engine',
+  '/crews/concierge-engine': 'Concierge Engine',
   '/crews/trend-intelligence': 'Trend Intelligence',
   '/trust': 'Trust Layer',
 };
 
 export function Header() {
   const pathname = usePathname();
-  const sectionLabel = SECTION_LABELS[pathname] || 'Miojo OS';
+  const sectionLabel = SECTION_LABELS[pathname] || 'Mi Ojo OS';
   const isOnTrust = pathname === '/trust';
 
   return (
