@@ -71,9 +71,9 @@ export default function ResidencyEnginePage() {
   return (
     <div className="max-w-[1280px] mx-auto">
       <CrewHeader
-        eyebrow="Crew 07 · Residency Engine"
-        title="Residency Engine"
-        italicWord="Residency"
+        eyebrow="Crew 07 · Peppers and Beli Engine"
+        title="Peppers and Beli Engine"
+        italicWord="Beli"
         subtitle="The culinary IP layer of Peppers and Beli."
         mission="Where chefs, menus, residencies, storytelling, and guest demand become one premium, bookable cultural program. Peppers and Beli is not a restaurant — it is a chef-table platform."
         icon={ChefHat}

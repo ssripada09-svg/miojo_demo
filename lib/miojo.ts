@@ -94,8 +94,8 @@ export const CREWS: CrewConfig[] = [
   },
   {
     slug: 'residency-engine',
-    name: 'Residency Engine',
-    shortName: 'Residency',
+    name: 'Peppers and Beli Engine',
+    shortName: 'Beli',
     description: 'Culinary IP & chef-table platform',
     subtitle: 'Chef talent, menus, residencies & cultural signal',
     mission: 'The culinary IP layer of Peppers and Beli — chef talent, menu narrative, residency programming, demand heat, and prestige compounding. Where a restaurant becomes a living cultural stage.',
