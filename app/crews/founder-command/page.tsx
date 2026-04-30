@@ -28,7 +28,7 @@ import {
 
 const PILLAR_COLORS: Record<string, string> = {
   'Mi Ojo': '#1B2820',           // forest — the engine
-  'Peppers & Beli': '#9C2B28',   // clay — the core
+  'Peppers and Beli': '#9C2B28',   // clay — the core
   'BeautyDays': '#828651',       // sage — the amplifier
   'Residences': '#545727',       // sage-deep — the home
 };

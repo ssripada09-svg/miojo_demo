@@ -11,6 +11,7 @@ const SECTION_LABELS: Record<string, string> = {
   '/crews/beauty-days-community': 'BeautyDays Community',
   '/crews/experience-engine': 'Experience Engine',
   '/crews/concierge-engine': 'Concierge Engine',
+  '/crews/residency-engine': 'Residency Engine',
   '/crews/trend-intelligence': 'Trend Intelligence',
   '/trust': 'Trust Layer',
 };

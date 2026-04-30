@@ -115,7 +115,7 @@ export function InterlockMap() {
         {/* Pillar nodes — deck-matched ring colors */}
         {[
           {
-            x: 200, y: 160, label: 'Peppers & Beli',
+            x: 200, y: 160, label: 'Peppers and Beli',
             sub: 'CORE · LAUNCHING',
             ringColor: 'var(--mj-clay)',
           },

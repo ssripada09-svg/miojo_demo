@@ -68,7 +68,7 @@ export default function HomePage() {
             Tour BeautyDays
           </Link>
           <span className="text-xs ph-mono text-ink-muted ml-2">
-            6 crews · 4 pillars · 1 platform
+            7 crews · 4 pillars · 1 platform
           </span>
         </div>
       </section>
@@ -194,9 +194,9 @@ export default function HomePage() {
       <section>
         <div className="flex items-center mb-5">
           <span className="ph-rule" />
-          <span className="ph-eyebrow">The six crews</span>
+          <span className="ph-eyebrow">The seven crews</span>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
           {CREWS.map((crew) => (
             <Link
               key={crew.slug}

@@ -6,6 +6,7 @@ import {
   Radar,
   Eye,
   ConciergeBell,
+  ChefHat,
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
@@ -66,7 +67,7 @@ export const CREWS: CrewConfig[] = [
     name: 'Experience Engine',
     shortName: 'Experience',
     description: 'Hospitality & wellness ops',
-    subtitle: 'Peppers & Beli + Residences',
+    subtitle: 'Peppers and Beli + Residences',
     mission: 'Operating layer for the heritage restaurant, farm-to-table sourcing, chef residencies, and wellness stays — the sensory expression of the brand world.',
     icon: MapPin,
     accent: 'clay',
@@ -91,6 +92,16 @@ export const CREWS: CrewConfig[] = [
     icon: ConciergeBell,
     accent: 'peach',
   },
+  {
+    slug: 'residency-engine',
+    name: 'Residency Engine',
+    shortName: 'Residency',
+    description: 'Culinary IP & chef-table platform',
+    subtitle: 'Chef talent, menus, residencies & cultural signal',
+    mission: 'The culinary IP layer of Peppers and Beli — chef talent, menu narrative, residency programming, demand heat, and prestige compounding. Where a restaurant becomes a living cultural stage.',
+    icon: ChefHat,
+    accent: 'clay',
+  },
 ];
 
 export const TRUST_LAYER: { slug: string; name: string; description: string; icon: LucideIcon } = {
@@ -112,7 +123,7 @@ export const PILLARS: PillarConfig[] = [
   },
   {
     id: 'peppers-beli',
-    name: 'Peppers & Beli',
+    name: 'Peppers and Beli',
     oneLiner: 'Heritage restaurant, farm supply chain, and Beli’s Pantry CPG line — grandmother’s recipes meet Michelin craft.',
     role: 'The revenue core. Restaurant + CPG drive recurring cash.',
     maturity: 'Launching',

@@ -52,7 +52,7 @@ export default function ExperienceEnginePage() {
         mission="Manages the chef residencies, wellness stays, and culinary storytelling that translate the Mi Ojo brand world into sensory experience. The slow-compounding asset layer."
         icon={MapPin}
         accent="clay"
-        pillar="Peppers & Beli + Residences"
+        pillar="Peppers and Beli + Residences"
         liveValue="11 / 12 slots booked"
       />
 
